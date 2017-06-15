@@ -1,18 +1,18 @@
 #!/bin/bash
 echo "Bash version ${BASH_VERSION}..."
 
-logfolder=suite-logs-neu
+logfolder=$1
 platforms=spark,java
 
-for props in benchmark.properties # rheem-benchmark-aggresive-reopt.properties 
+for props in benchmark-tenem.properties # rheem-benchmark-aggresive-reopt.properties 
 do
 	properties=$props
 	echo $properties
 
-	base_command="timeout --kill-after 1m 30m time java -Xmx8g -cp /home/jonas.kemper/rheem-benchmark/target/*:/opt/spark/spark-1.6.2-bin-hadoop2.6/lib/spark-assembly-1.6.2-hadoop2.6.0.jar:/home/jonas.kemper/.m2/repository/de/hpi/isg/profiledb-store/0.1.2-SNAPSHOT/*:/home/jonas.kemper/.m2/repository/de/hpi/isg/profiledb-instrumentation/0.1.2-SNAPSHOT/*:/home/jonas.kemper/rheem/rheem-distro/target/rheem-distro_2.11-0.3.1-SNAPSHOT.jar:/home/jonas.kemper/rheem/rheem-distro/target/rheem-distro_2.11-0.3.1-SNAPSHOT-distro/rheem-distro_2.11-0.3.1-SNAPSHOT/* -Drheem.configuration=file:/home/jonas.kemper/rheem-benchmark/$properties -Dorg.slf4j.simpleLogger.defaultLogLevel=debug -Dlog4j.configuration=file:/home/jonas.kemper/log4j.properties -Dorg.slf4j.simpleLogger.log.org.qcri.rheem.core.util.JuelUtils$JuelFunction=debug -Dorg.slf4j.simpleLogger.log.org.qcri.rheem.core.optimizer.DefaultOptimizationContext=debug -Dorg.slf4j.simpleLogger.log.org.apache.spark=debug -Dorg.slf4j.simpleLogger.log.org.qcri.rheem.core.api.Job=debug org.qcri.rheem.apps."
+	base_command="timeout --kill-after 1m 30m time java -Xmx8g -cp /home/jonas.kemper/rheem-benchmark/target/*:/opt/spark/spark-1.6.2-bin-hadoop2.6/lib/spark-assembly-1.6.2-hadoop2.6.0.jar:/home/jonas.kemper/.m2/repository/de/hpi/isg/profiledb-store/0.1.2-SNAPSHOT/*:/home/jonas.kemper/.m2/repository/de/hpi/isg/profiledb-instrumentation/0.1.2-SNAPSHOT/*:/home/jonas.kemper/rheem/rheem-distro/target/rheem-distro_2.10-0.3.1-SNAPSHOT.jar:/home/jonas.kemper/rheem/rheem-distro/target/rheem-distro_2.10-0.3.1-SNAPSHOT-distro/rheem-distro_2.10-0.3.1-SNAPSHOT/* -Drheem.configuration=file:/home/jonas.kemper/$properties -Dorg.slf4j.simpleLogger.defaultLogLevel=debug -Dlog4j.configuration=file:/home/jonas.kemper/log4j.properties -Dorg.slf4j.simpleLogger.log.org.qcri.rheem.core.util.JuelUtils$JuelFunction=debug -Dorg.slf4j.simpleLogger.log.org.qcri.rheem.core.optimizer.DefaultOptimizationContext=debug -Dorg.slf4j.simpleLogger.log.org.apache.spark=debug -Dorg.slf4j.simpleLogger.log.org.qcri.rheem.core.api.Job=debug org.qcri.rheem.apps."
 	
 	echo "TPC-H"
-	for filename in #tpch-10g.properties tpch-5g.properties tpch.properties
+	for filename in tpch-10g.properties tpch-5g.properties tpch.properties
 	do
 		echo $filename
 		for query in Q3File #Q3Hybrid Q1 Q3
@@ -26,7 +26,7 @@ do
 	done
 	
 	echo "KMeans"
-	for filename in #1k 10k 100k 1m 5m 10m
+	for filename in 1k 10k 100k 1m 5m 10m
 		do
 		path=hdfs://tenemhead2/data/2dpoints/kmeans_points_
 		input_file=$path$filename.txt
@@ -83,7 +83,7 @@ do
 	done
 	
 	echo "SimWords"
-	for filename in 01pc #2pc 3pc
+	for filename in 01pc 2pc #3pc
 		do
 		path=hdfs://tenemhead2/data/text/dbpedia-2015-10/long_abstracts_en_
 		input_file=$path$filename.txt
