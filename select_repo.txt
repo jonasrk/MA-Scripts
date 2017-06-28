@@ -1,12 +1,3 @@
-my.udf.kmeans.reduceByKey = {  "p":1,   "lower":6.66756545449e-07,  "upper":0.000335030822836,}
-my.udf.kmeans.flatmap = {  "p":1,   "lower":0.0,  "upper":10.0,}
-my.udf.Sindy.flatmap1 = {  "p":1,   "lower":1.09565992998,  "upper":1.17627776291,}
-my.udf.wordcount.reduce = {  "p":1,   "lower":0.00163305992752,  "upper":0.0203892901198,}
-my.udf.wordcount.flatmap = {  "p":1,   "lower":80.4624322549,  "upper":80.7957667981,}
-my.udf.Sindy.flatmap2 = {  "p":1,   "lower":1.00256176697,  "upper":1.00528716047,}
-my.udf.Sindy.filter1 = {  "p":1,   "lower":1.0,  "upper":1.0,}
-my.udf.tpchq3file.reduce = {  "p":1,   "lower":0.0,  "upper":1.0,}
-my.udf.wordcount.filter = {  "p":1,   "lower":0.999777055462,  "upper":0.999780371219,}
-my.udf.tpchq3file.filter1 = {  "p":1,   "lower":0.192435301924,  "upper":0.202339258574,}
-my.udf.tpchq3file.filter3 = {  "p":1,   "lower":0.539246470827,  "upper":0.542348837597,}
-my.udf.tpchq3file.filter2 = {  "p":1,   "lower":0.482138078673,  "upper":0.487089844011,}
+my.udf.wordcount.reduce = {  "p":1,   "lower":0.000382362439751,  "upper":0.000382362439751,}
+my.udf.wordcount.filter = {  "p":1,   "lower":0.988444845979,  "upper":0.988444845979,}
+my.udf.wordcount.flatmap = {  "p":1,   "lower":86.5414686955,  "upper":86.5414686955,}
