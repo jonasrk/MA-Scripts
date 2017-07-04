@@ -1,6 +1,6 @@
 import sys
 
-with open("/Users/jonas/MA-Scripts/tmp.txt") as f:
+with open("extracted_cards_tmp.txt") as f:
     content = f.readlines()
     # you may also want to remove whitespace characters like `\n` at the end of each line
     content = [x.strip() for x in content]
