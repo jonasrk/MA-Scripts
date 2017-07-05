@@ -1,432 +1,271 @@
-DEBUG dispatcher-event-loop-3 org.apache.spark.scheduler.TaskSchedulerImpl - parentName: , name: TaskSet_1, runningTasks: 0
-DEBUG dispatcher-event-loop-3 org.apache.spark.scheduler.TaskSchedulerImpl - parentName: , name: TaskSet_1, runningTasks: 0
-DEBUG dispatcher-event-loop-3 org.apache.spark.scheduler.TaskSchedulerImpl - parentName: , name: TaskSet_1, runningTasks: 0
-DEBUG dispatcher-event-loop-3 org.apache.spark.scheduler.TaskSchedulerImpl - parentName: , name: TaskSet_1, runningTasks: 0
-ERROR task-result-getter-2 org.apache.spark.scheduler.TaskSetManager - Total size of serialized results of 3 tasks (1224.5 MB) is bigger than spark.driver.maxResultSize (1024.0 MB)
-INFO task-result-getter-2 org.apache.spark.scheduler.TaskSchedulerImpl - Removed TaskSet 1.0, whose tasks have all completed, from pool 
-ERROR task-result-getter-1 org.apache.spark.scheduler.TaskSetManager - Total size of serialized results of 4 tasks (1632.6 MB) is bigger than spark.driver.maxResultSize (1024.0 MB)
-INFO task-result-getter-1 org.apache.spark.scheduler.TaskSchedulerImpl - Removed TaskSet 1.0, whose tasks have all completed, from pool 
-DEBUG task-result-getter-0 org.apache.spark.storage.BlockManager - Getting remote block taskresult_72 as bytes
-DEBUG task-result-getter-0 org.apache.spark.storage.BlockManager - Getting remote block taskresult_72 from BlockManagerId(3, tenem13.hpi.uni-potsdam.de, 47219)
-DEBUG task-result-getter-0 org.apache.spark.network.client.TransportClientFactory - Creating new connection to tenem13.hpi.uni-potsdam.de/172.16.19.106:47219
-INFO dag-scheduler-event-loop org.apache.spark.scheduler.TaskSchedulerImpl - Cancelling stage 1
-DEBUG task-result-getter-0 org.apache.spark.network.client.TransportClientFactory - Connection to tenem13.hpi.uni-potsdam.de/172.16.19.106:47219 successful, running bootstraps...
-DEBUG task-result-getter-0 org.apache.spark.network.client.TransportClientFactory - Successfully created connection to tenem13.hpi.uni-potsdam.de/172.16.19.106:47219 after 3 ms (0 ms spent in bootstraps)
-INFO dag-scheduler-event-loop org.apache.spark.scheduler.DAGScheduler - ResultStage 1 (collect at SparkCollectOperator.java:43) failed in 422.107 s
-INFO main org.apache.spark.scheduler.DAGScheduler - Job 0 failed: collect at SparkCollectOperator.java:43, took 503.804471 s
-INFO dispatcher-event-loop-0 org.apache.spark.storage.BlockManagerInfo - Removed taskresult_71 on tenem16.hpi.uni-potsdam.de:57982 in memory (size: 408.4 MB, free: 2.7 GB)
-INFO dispatcher-event-loop-4 org.apache.spark.storage.BlockManagerInfo - Removed taskresult_74 on tenem20.hpi.uni-potsdam.de:33582 in memory (size: 408.1 MB, free: 2.7 GB)
-DEBUG dag-scheduler-event-loop org.apache.spark.scheduler.DAGScheduler - After removal of stage 1, remaining stages = 1
-DEBUG dag-scheduler-event-loop org.apache.spark.scheduler.DAGScheduler - After removal of stage 0, remaining stages = 0
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkCache[1->1, id=588cd519] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkCache[1->1, id=588cd519] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Setting time estimate of SparkCache[1->1, id=588cd519] to (0:00:00.003 .. 0:02:34.903, p=44.10%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkCollect[1->1, id=3f92c349] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkCollect[1->1, id=3f92c349] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkCollect[1->1, id=769a58e5] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkCollect[1->1, id=769a58e5] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Setting time estimate of SparkCollect[1->1, id=769a58e5] to (0:00:00.008 .. 0:00:03.879, p=44.10%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkObjectFileSink[1->0, id=55f8669d] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkTsvFileSink[1->0, id=6be25526] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkObjectFileSource[0->1, id=42435b98] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Setting time estimate of SparkObjectFileSource[0->1, id=42435b98] to (0:00:00.015 .. 0:00:27.175, p=63.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@JavaObjectFileSource[0->1, id=66ba7e45] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@JavaObjectFileSink[1->0, id=70e02081] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Setting time estimate of JavaObjectFileSink[1->0, id=70e02081] to (0:00:00.004 .. 0:02:23.196, p=63.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@JavaTsvFileSink[1->0, id=9d200de] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@JavaCollect[1->1, id=15fdd1f2] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@JavaCollect[1->1, id=15fdd1f2] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Setting time estimate of JavaCollect[1->1, id=15fdd1f2] to (0:00:00.002 .. 0:00:00.928, p=44.10%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkCache[1->1, id=51b1a8f6] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkCache[1->1, id=51b1a8f6] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkCache[1->1, id=2a389173] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkCache[1->1, id=2a389173] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Setting time estimate of SparkCache[1->1, id=2a389173] to (0:00:00.003 .. 0:02:34.903, p=44.10%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkCollect[1->1, id=213860b8] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkCollect[1->1, id=213860b8] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkBroadcast[1->1, id=4ba89729] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkBroadcast[1->1, id=4ba89729] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkCollectionSource[0->1, id=178270b2] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@JavaObjectFileSink[1->0, id=795fd838] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkObjectFileSource[0->1, id=1b005a0b] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@JavaObjectFileSource[0->1, id=141e879d] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@JavaCollect[1->1, id=109d724c] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@JavaCollect[1->1, id=109d724c] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@JavaObjectFileSink[1->0, id=1704f67f] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@JavaTsvFileSink[1->0, id=e4d2696] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@JavaTsvFileSink[1->0, id=6e0f7aad] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkObjectFileSink[1->0, id=15fb7a32] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkTsvFileSink[1->0, id=257cc1fc] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkCache[1->1, id=1949309d] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkCache[1->1, id=1949309d] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Setting time estimate of SparkCache[1->1, id=1949309d] to (0:00:00.003 .. 0:02:34.903, p=44.10%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@JavaCollect[1->1, id=99a78d7] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@JavaCollect[1->1, id=99a78d7] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkBroadcast[1->1, id=31da6b2e] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkBroadcast[1->1, id=31da6b2e] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkCollectionSource[0->1, id=61c76850] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkCache[1->1, id=70242f38] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkCache[1->1, id=70242f38] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkCache[1->1, id=2a22ad2b] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkCache[1->1, id=2a22ad2b] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Setting time estimate of SparkCache[1->1, id=2a22ad2b] to (0:00:00.003 .. 0:02:34.903, p=44.10%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkCollect[1->1, id=48c3205a] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkCollect[1->1, id=48c3205a] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkObjectFileSink[1->0, id=121c54fa] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkObjectFileSource[0->1, id=4390f46e] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@JavaObjectFileSource[0->1, id=7c6442c2] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkTsvFileSink[1->0, id=2d746ce4] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkCollectionSource[0->1, id=5dbf5634] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Setting time estimate of SparkCollectionSource[0->1, id=5dbf5634] to (0:00:00.003 .. 0:00:15.492, p=63.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@JavaObjectFileSink[1->0, id=1948ea69] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkObjectFileSource[0->1, id=47e4d9d0] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Setting time estimate of SparkObjectFileSource[0->1, id=47e4d9d0] to (0:00:00.015 .. 0:00:27.175, p=63.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@JavaObjectFileSink[1->0, id=49798e84] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Setting time estimate of JavaObjectFileSink[1->0, id=49798e84] to (0:00:00.004 .. 0:02:23.196, p=63.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@JavaTsvFileSink[1->0, id=6ed06f69] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@JavaCollect[1->1, id=3015db78] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@JavaCollect[1->1, id=3015db78] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Setting time estimate of JavaCollect[1->1, id=3015db78] to (0:00:00.002 .. 0:00:00.928, p=44.10%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@JavaObjectFileSink[1->0, id=515ebef3] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@JavaObjectFileSink[1->0, id=545607f2] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Setting time estimate of JavaObjectFileSink[1->0, id=545607f2] to (0:00:00.004 .. 0:02:23.196, p=63.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@JavaTsvFileSink[1->0, id=39109136] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@JavaCollect[1->1, id=67403656] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@JavaCollect[1->1, id=67403656] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Setting time estimate of JavaCollect[1->1, id=67403656] to (0:00:00.002 .. 0:00:00.928, p=44.10%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkCollectionSource[0->1, id=7f9ab969] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Setting time estimate of SparkCollectionSource[0->1, id=7f9ab969] to (0:00:00.003 .. 0:00:15.492, p=63.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of in@SparkCache[1->1, id=746cd757] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Changing cardinality of out@SparkCache[1->1, id=746cd757] from null to (1,000..100,000,000, 70.00%).
+DEBUG main org.qcri.rheem.core.optimizer.DefaultOptimizationContext - Setting time estimate of SparkCache[1->1, id=746cd757] to (0:00:00.003 .. 0:02:34.903, p=44.10%).
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanEnumeration - Created 12 plan implementations.
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanEnumerator - 12 implementations for scope [Alternative[3x ~Alternative[[TextFileSource[source]]], 7c1e2a9e], Alternative[3x ~Alternative[[CollectionSource[init weights]]], 1356d4d4], Alternative[3x ~Alternative[[LocalCallbackSink[collect()]]], 46fa7c39], Alternative[3x ~Alternative[[Map[transform]]], 671a5887]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanEnumerator - (0:00:05.233 .. 0:03:46.538, p=9.80%): [SparkTextFileSource[source], JavaCollectionSource[init weights], JavaLocalCallbackSink[collect()], SparkMap[transform]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanEnumerator - (0:00:05.217 .. 0:04:15.057, p=9.80%): [JavaTextFileSource[source], JavaCollectionSource[init weights], JavaLocalCallbackSink[collect()], SparkMap[transform]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanEnumerator - (0:00:05.258 .. 0:03:46.563, p=9.80%): [SparkTextFileSource[source], SparkCollectionSource[init weights], JavaLocalCallbackSink[collect()], SparkMap[transform]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanEnumerator - (0:00:05.242 .. 0:04:15.082, p=9.80%): [SparkCollectionSource[init weights], JavaTextFileSource[source], JavaLocalCallbackSink[collect()], SparkMap[transform]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanEnumerator - (0:00:00.704 .. 0:03:22.740, p=9.80%): [JavaTextFileSource[source], JavaCollectionSource[init weights], JavaLocalCallbackSink[collect()], JavaMap[transform]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanEnumerator - (0:00:05.233 .. 0:03:19.020, p=9.80%): [SparkTextFileSource[source], JavaCollectionSource[init weights], JavaLocalCallbackSink[collect()], JavaMap[transform]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanEnumerator - (0:00:05.229 .. 0:03:27.265, p=9.80%): [SparkCollectionSource[init weights], JavaTextFileSource[source], JavaLocalCallbackSink[collect()], JavaMap[transform]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanEnumerator - (0:00:05.258 .. 0:03:19.045, p=9.80%): [SparkTextFileSource[source], SparkCollectionSource[init weights], JavaLocalCallbackSink[collect()], JavaMap[transform]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanEnumerator - (0:00:33.586 .. 0:50:50.230, p=9.80%): [SparkTextFileSource[source], SparkCollectionSource[init weights], SparkMap[transform], SparkLocalCallbackSink[collect()]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanEnumerator - (0:00:33.570 .. 0:51:18.749, p=9.80%): [SparkCollectionSource[init weights], JavaTextFileSource[source], SparkMap[transform], SparkLocalCallbackSink[collect()]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanEnumerator - (0:00:33.568 .. 0:50:50.303, p=9.80%): [SparkCollectionSource[init weights], JavaTextFileSource[source], JavaMap[transform], SparkLocalCallbackSink[collect()]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanEnumerator - (0:00:33.597 .. 0:50:42.083, p=9.80%): [SparkTextFileSource[source], SparkCollectionSource[init weights], JavaMap[transform], SparkLocalCallbackSink[collect()]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.LatentOperatorPruningStrategy - (0:00:05.217 .. 0:04:15.057, p=9.80%) < (0:00:05.233 .. 0:03:46.538, p=9.80%): Choosing [JavaTextFileSource[source], JavaCollectionSource[init weights], JavaLocalCallbackSink[collect()], SparkMap[transform]] over [SparkTextFileSource[source], JavaCollectionSource[init weights], JavaLocalCallbackSink[collect()], SparkMap[transform]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.LatentOperatorPruningStrategy - (0:00:05.217 .. 0:04:15.057, p=9.80%) < (0:00:05.258 .. 0:03:46.563, p=9.80%): Choosing [JavaTextFileSource[source], JavaCollectionSource[init weights], JavaLocalCallbackSink[collect()], SparkMap[transform]] over [SparkTextFileSource[source], SparkCollectionSource[init weights], JavaLocalCallbackSink[collect()], SparkMap[transform]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.LatentOperatorPruningStrategy - (0:00:05.217 .. 0:04:15.057, p=9.80%) < (0:00:05.242 .. 0:04:15.082, p=9.80%): Choosing [JavaTextFileSource[source], JavaCollectionSource[init weights], JavaLocalCallbackSink[collect()], SparkMap[transform]] over [SparkCollectionSource[init weights], JavaTextFileSource[source], JavaLocalCallbackSink[collect()], SparkMap[transform]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.LatentOperatorPruningStrategy - (0:00:05.233 .. 0:03:19.020, p=9.80%) < (0:00:05.217 .. 0:04:15.057, p=9.80%): Choosing [SparkTextFileSource[source], JavaCollectionSource[init weights], JavaLocalCallbackSink[collect()], JavaMap[transform]] over [JavaTextFileSource[source], JavaCollectionSource[init weights], JavaLocalCallbackSink[collect()], SparkMap[transform]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.LatentOperatorPruningStrategy - (0:00:05.229 .. 0:03:27.265, p=9.80%) < (0:00:05.233 .. 0:03:19.020, p=9.80%): Choosing [SparkCollectionSource[init weights], JavaTextFileSource[source], JavaLocalCallbackSink[collect()], JavaMap[transform]] over [SparkTextFileSource[source], JavaCollectionSource[init weights], JavaLocalCallbackSink[collect()], JavaMap[transform]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.LatentOperatorPruningStrategy - (0:00:05.229 .. 0:03:27.265, p=9.80%) < (0:00:05.258 .. 0:03:19.045, p=9.80%): Choosing [SparkCollectionSource[init weights], JavaTextFileSource[source], JavaLocalCallbackSink[collect()], JavaMap[transform]] over [SparkTextFileSource[source], SparkCollectionSource[init weights], JavaLocalCallbackSink[collect()], JavaMap[transform]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.LatentOperatorPruningStrategy - (0:00:05.229 .. 0:03:27.265, p=9.80%) < (0:00:33.570 .. 0:51:18.749, p=9.80%): Choosing [SparkCollectionSource[init weights], JavaTextFileSource[source], JavaLocalCallbackSink[collect()], JavaMap[transform]] over [SparkCollectionSource[init weights], JavaTextFileSource[source], SparkMap[transform], SparkLocalCallbackSink[collect()]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.LatentOperatorPruningStrategy - (0:00:05.229 .. 0:03:27.265, p=9.80%) < (0:00:33.568 .. 0:50:50.303, p=9.80%): Choosing [SparkCollectionSource[init weights], JavaTextFileSource[source], JavaLocalCallbackSink[collect()], JavaMap[transform]] over [SparkCollectionSource[init weights], JavaTextFileSource[source], JavaMap[transform], SparkLocalCallbackSink[collect()]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.LatentOperatorPruningStrategy - (0:00:05.229 .. 0:03:27.265, p=9.80%) < (0:00:33.597 .. 0:50:42.083, p=9.80%): Choosing [SparkCollectionSource[init weights], JavaTextFileSource[source], JavaLocalCallbackSink[collect()], JavaMap[transform]] over [SparkTextFileSource[source], SparkCollectionSource[init weights], JavaMap[transform], SparkLocalCallbackSink[collect()]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanEnumerator - Pruned plan enumeration from 12 to 3 implementations.
+DEBUG main org.qcri.rheem.core.api.Job - Enumerated 3 plans.
+DEBUG main org.qcri.rheem.core.api.Job - Plan with operators: [JavaTextFileSource[source], JavaCollectionSource[init weights], JavaLocalCallbackSink[collect()], JavaMap[transform]]
+DEBUG main org.qcri.rheem.core.api.Job - Plan with operators: [SparkCollectionSource[init weights], JavaTextFileSource[source], JavaLocalCallbackSink[collect()], JavaMap[transform]]
+DEBUG main org.qcri.rheem.core.api.Job - Plan with operators: [SparkTextFileSource[source], SparkCollectionSource[init weights], SparkMap[transform], SparkLocalCallbackSink[collect()]]
+INFO main org.qcri.rheem.core.api.Job - Picked PlanImplementation[[Platform[Java Streams]], (0:00:00.704 .. 0:03:22.740, p=9.80%), costs=(704.00..202,740.00 ~ 9.8%) selecitvityKey: ] as best plan.
+INFO main org.qcri.rheem.core.api.Job - Compiling execution plan...
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.ExecutionTaskFlowCompiler$Activator - Connecting output@JavaTextFileSource[source] -> Junction[output@JavaTextFileSource[source]->[in@JavaMap[transform]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.ExecutionTaskFlowCompiler$Activator - Connecting output@JavaCollectionSource[init weights] -> Junction[output@JavaCollectionSource[init weights]->[initIn@JavaDoWhile[3->2, id=11bd0f3b]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.ExecutionTaskFlowCompiler$Activator - Connecting out@JavaMap[transform] -> Junction[out@JavaMap[transform]->[in@JavaRandomSample[1+1->1, id=2bfc268b]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.ExecutionTaskFlowCompiler$Activator - Connecting iterOut@JavaDoWhile[3->2, id=11bd0f3b] -> Junction[iterOut@JavaDoWhile[3->2, id=11bd0f3b]->[weights@JavaMap[1+1->1, id=7671cb68], weights@JavaMap[compute], weights@JavaMap[update], weights@JavaRandomSample[1+1->1, id=2bfc268b]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.ExecutionTaskFlowCompiler$Activator - Connecting finOut@JavaDoWhile[3->2, id=11bd0f3b] -> Junction[finOut@JavaDoWhile[3->2, id=11bd0f3b]->[in@JavaLocalCallbackSink[collect()]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.ExecutionTaskFlowCompiler$Activator - Connecting out@JavaRandomSample[1+1->1, id=2bfc268b] -> Junction[out@JavaRandomSample[1+1->1, id=2bfc268b]->[in@JavaMap[compute]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.ExecutionTaskFlowCompiler$Activator - Connecting out@JavaMap[compute] -> Junction[out@JavaMap[compute]->[in@JavaGlobalReduce[reduce]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.ExecutionTaskFlowCompiler$Activator - Connecting out@JavaGlobalReduce[reduce] -> Junction[out@JavaGlobalReduce[reduce]->[in@JavaMap[update]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.ExecutionTaskFlowCompiler$Activator - Connecting out@JavaMap[update] -> Junction[out@JavaMap[update]->[iterIn@JavaDoWhile[3->2, id=11bd0f3b], in@JavaMap[1+1->1, id=7671cb68]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.ExecutionTaskFlowCompiler$Activator - Connecting out@JavaMap[1+1->1, id=7671cb68] -> Junction[out@JavaMap[1+1->1, id=7671cb68]->[convIn@JavaDoWhile[3->2, id=11bd0f3b]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Established initial stage with [T[JavaCollect[convert out@JavaMap[1+1->1, id=7671cb68]]], T[JavaRandomSample[1+1->1, id=2bfc268b]], T[JavaCollect[convert out@JavaMap[update]]], T[JavaMap[update]], T[JavaTextFileSource[source]], T[JavaCollect[convert out@JavaMap[transform]]], T[JavaMap[1+1->1, id=7671cb68]], T[JavaDoWhile[3->2, id=11bd0f3b]], T[JavaCollectionSource[init weights]], T[JavaGlobalReduce[reduce]], T[JavaLocalCallbackSink[collect()]], T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]], T[JavaMap[transform]], T[JavaMap[compute]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Separating [T[JavaRandomSample[1+1->1, id=2bfc268b]], T[JavaCollect[convert out@JavaMap[1+1->1, id=7671cb68]]], T[JavaCollect[convert out@JavaMap[update]]], T[JavaMap[update]], T[JavaDoWhile[3->2, id=11bd0f3b]], T[JavaGlobalReduce[reduce]], T[JavaMap[1+1->1, id=7671cb68]], T[JavaLocalCallbackSink[collect()]], T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]], T[JavaMap[compute]]] from [T[JavaTextFileSource[source]], T[JavaCollect[convert out@JavaMap[transform]]], T[JavaCollectionSource[init weights]], T[JavaMap[transform]]]...
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Separating [T[JavaRandomSample[1+1->1, id=2bfc268b]], T[JavaCollect[convert out@JavaMap[1+1->1, id=7671cb68]]], T[JavaCollect[convert out@JavaMap[update]]], T[JavaMap[update]], T[JavaGlobalReduce[reduce]], T[JavaMap[1+1->1, id=7671cb68]], T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]], T[JavaMap[compute]]] from [T[JavaDoWhile[3->2, id=11bd0f3b]], T[JavaLocalCallbackSink[collect()]]]...
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Separating [T[JavaRandomSample[1+1->1, id=2bfc268b]], T[JavaCollect[convert out@JavaMap[1+1->1, id=7671cb68]]], T[JavaCollect[convert out@JavaMap[update]]], T[JavaMap[update]], T[JavaGlobalReduce[reduce]], T[JavaMap[1+1->1, id=7671cb68]], T[JavaMap[compute]]] from [T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]]...
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Separating [T[JavaCollect[convert out@JavaMap[1+1->1, id=7671cb68]]], T[JavaMap[1+1->1, id=7671cb68]], T[JavaCollect[convert out@JavaMap[update]]], T[JavaMap[update]]] from [T[JavaRandomSample[1+1->1, id=2bfc268b]], T[JavaGlobalReduce[reduce]], T[JavaMap[compute]]]...
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Separating [T[JavaCollect[convert out@JavaMap[1+1->1, id=7671cb68]]], T[JavaMap[1+1->1, id=7671cb68]]] from [T[JavaCollect[convert out@JavaMap[update]]], T[JavaMap[update]]]...
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Separating [T[JavaLocalCallbackSink[collect()]]] from [T[JavaDoWhile[3->2, id=11bd0f3b]]]...
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Separating [T[JavaTextFileSource[source]], T[JavaMap[transform]], T[JavaCollect[convert out@JavaMap[transform]]]] from [T[JavaCollectionSource[init weights]]]...
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaDoWhile[3->2, id=11bd0f3b]] to [InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]], InterimStage[T[JavaCollectionSource[init weights]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]] to [InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]], InterimStage[T[JavaCollectionSource[init weights]]], InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaMap[1+1->1, id=7671cb68]] to [InterimStage[T[JavaCollectionSource[init weights]]], InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]], InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]], InterimStage[T[JavaMap[1+1->1, id=7671cb68]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaCollect[convert out@JavaMap[1+1->1, id=7671cb68]]] to [InterimStage[T[JavaCollectionSource[init weights]]], InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]], InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]], InterimStage[T[JavaMap[1+1->1, id=7671cb68]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaMap[compute]] to [InterimStage[T[JavaRandomSample[1+1->1, id=2bfc268b]]], InterimStage[T[JavaCollectionSource[init weights]]], InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]], InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaGlobalReduce[reduce]] to [InterimStage[T[JavaRandomSample[1+1->1, id=2bfc268b]]], InterimStage[T[JavaCollectionSource[init weights]]], InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]], InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaMap[update]] to [InterimStage[T[JavaRandomSample[1+1->1, id=2bfc268b]]], InterimStage[T[JavaCollectionSource[init weights]]], InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]], InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]], InterimStage[T[JavaMap[update]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaCollect[convert out@JavaMap[update]]] to [InterimStage[T[JavaRandomSample[1+1->1, id=2bfc268b]]], InterimStage[T[JavaCollectionSource[init weights]]], InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]], InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]], InterimStage[T[JavaMap[update]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaMap[1+1->1, id=7671cb68]] to [InterimStage[T[JavaRandomSample[1+1->1, id=2bfc268b]]], InterimStage[T[JavaCollectionSource[init weights]]], InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]], InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]], InterimStage[T[JavaMap[update]]], InterimStage[T[JavaMap[1+1->1, id=7671cb68]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaCollect[convert out@JavaMap[1+1->1, id=7671cb68]]] to [InterimStage[T[JavaRandomSample[1+1->1, id=2bfc268b]]], InterimStage[T[JavaCollectionSource[init weights]]], InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]], InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]], InterimStage[T[JavaMap[update]]], InterimStage[T[JavaMap[1+1->1, id=7671cb68]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaRandomSample[1+1->1, id=2bfc268b]] to [InterimStage[T[JavaRandomSample[1+1->1, id=2bfc268b]]], InterimStage[T[JavaCollectionSource[init weights]]], InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]], InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaLocalCallbackSink[collect()]] to [InterimStage[T[JavaCollectionSource[init weights]]], InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]], InterimStage[T[JavaLocalCallbackSink[collect()]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaRandomSample[1+1->1, id=2bfc268b]] to [InterimStage[T[JavaRandomSample[1+1->1, id=2bfc268b]]], InterimStage[T[JavaTextFileSource[source]]], InterimStage[T[JavaCollectionSource[init weights]]], InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]], InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaMap[compute]] to [InterimStage[T[JavaRandomSample[1+1->1, id=2bfc268b]]], InterimStage[T[JavaTextFileSource[source]]], InterimStage[T[JavaCollectionSource[init weights]]], InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]], InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaGlobalReduce[reduce]] to [InterimStage[T[JavaRandomSample[1+1->1, id=2bfc268b]]], InterimStage[T[JavaTextFileSource[source]]], InterimStage[T[JavaCollectionSource[init weights]]], InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]], InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaMap[update]] to [InterimStage[T[JavaRandomSample[1+1->1, id=2bfc268b]]], InterimStage[T[JavaTextFileSource[source]]], InterimStage[T[JavaCollectionSource[init weights]]], InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]], InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]], InterimStage[T[JavaMap[update]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaCollect[convert out@JavaMap[update]]] to [InterimStage[T[JavaRandomSample[1+1->1, id=2bfc268b]]], InterimStage[T[JavaTextFileSource[source]]], InterimStage[T[JavaCollectionSource[init weights]]], InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]], InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]], InterimStage[T[JavaMap[update]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaMap[1+1->1, id=7671cb68]] to [InterimStage[T[JavaRandomSample[1+1->1, id=2bfc268b]]], InterimStage[T[JavaCollectionSource[init weights]]], InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]], InterimStage[T[JavaMap[1+1->1, id=7671cb68]]], InterimStage[T[JavaTextFileSource[source]]], InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]], InterimStage[T[JavaMap[update]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaCollect[convert out@JavaMap[1+1->1, id=7671cb68]]] to [InterimStage[T[JavaRandomSample[1+1->1, id=2bfc268b]]], InterimStage[T[JavaCollectionSource[init weights]]], InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]], InterimStage[T[JavaMap[1+1->1, id=7671cb68]]], InterimStage[T[JavaTextFileSource[source]]], InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]], InterimStage[T[JavaMap[update]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - No separable tasks found in marked stage InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - No separable tasks found in marked stage InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - No separable tasks found in marked stage InterimStage[T[JavaRandomSample[1+1->1, id=2bfc268b]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - No separable tasks found in marked stage InterimStage[T[JavaMap[update]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - No separable tasks found in marked stage InterimStage[T[JavaMap[1+1->1, id=7671cb68]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - No separable tasks found in marked stage InterimStage[T[JavaLocalCallbackSink[collect()]]].
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[JavaCollectionSource[init weights]]]: [T[JavaCollectionSource[init weights]]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[JavaDoWhile[3->2, id=11bd0f3b]]]: [T[JavaDoWhile[3->2, id=11bd0f3b]]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]]: [T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[JavaRandomSample[1+1->1, id=2bfc268b]]]: [T[JavaRandomSample[1+1->1, id=2bfc268b]], T[JavaGlobalReduce[reduce]], T[JavaMap[compute]]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[JavaMap[update]]]: [T[JavaCollect[convert out@JavaMap[update]]], T[JavaMap[update]]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[JavaMap[1+1->1, id=7671cb68]]]: [T[JavaCollect[convert out@JavaMap[1+1->1, id=7671cb68]]], T[JavaMap[1+1->1, id=7671cb68]]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[JavaLocalCallbackSink[collect()]]]: [T[JavaLocalCallbackSink[collect()]]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[JavaTextFileSource[source]]]: [T[JavaTextFileSource[source]], T[JavaCollect[convert out@JavaMap[transform]]], T[JavaMap[transform]]]
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - >>> Regular operators
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaTextFileSource[source]: (0:00:00.003 .. 0:00:31.485, p=63.00%)
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaCollectionSource[init weights]: (0:00:00.002 .. 0:00:00.002, p=90.00%)
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaLocalCallbackSink[collect()]: (0:00:00.002 .. 0:00:00.002, p=90.00%)
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaMap[transform]: (0:00:00.003 .. 0:01:16.114, p=9.80%)
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - >>> Glue operators
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaCollect[convert out@JavaMap[transform]]: (0:00:00.002 .. 0:00:00.928, p=44.10%)
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - >>> Loops
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - >>> Regular operators
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaMap[1+1->1, id=7671cb68]: (0:00:00.017 .. 0:00:00.017, p=20.00%)
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaGlobalReduce[reduce]: (0:00:00.016 .. 0:00:00.016, p=20.00%)
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaMap[update]: (0:00:00.017 .. 0:00:00.017, p=20.00%)
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaDoWhile[3->2, id=11bd0f3b]: (0:00:00.003 .. 0:00:00.003, p=20.00%)
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaMap[compute]: (0:00:00.017 .. 0:00:00.017, p=20.00%)
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaRandomSample[1+1->1, id=2bfc268b]: (0:00:00.016 .. 0:01:33.533, p=63.00%)
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - >>> Glue operators
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]: (0:00:00.202 .. 0:00:00.202, p=90.00%)
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaCollect[convert out@JavaMap[update]]: (0:00:00.202 .. 0:00:00.202, p=90.00%)
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaCollect[convert out@JavaMap[1+1->1, id=7671cb68]]: (0:00:00.202 .. 0:00:00.202, p=90.00%)
+DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - >>> Loops
+INFO main org.qcri.rheem.core.api.Job - Current execution plan:
+>>> ExecutionStage[T[JavaCollectionSource[init weights]]]:
+> Out JavaCollectionSource[init weights] => CollectionChannel
+
+>>> ExecutionStage[T[JavaTextFileSource[source]]]:
+>     JavaTextFileSource[source] => StreamChannel => JavaMap[transform]
+>     JavaMap[transform] => StreamChannel => JavaCollect[convert out@JavaMap[transform]]
+> Out JavaCollect[convert out@JavaMap[transform]] => CollectionChannel
+
+>>> ExecutionStage[T[JavaDoWhile[3->2, id=11bd0f3b]]]:
+> In  CollectionChannel => JavaDoWhile[3->2, id=11bd0f3b]
+> In  CollectionChannel => JavaDoWhile[3->2, id=11bd0f3b]
+> In  CollectionChannel => JavaDoWhile[3->2, id=11bd0f3b]
+> Out JavaDoWhile[3->2, id=11bd0f3b] => StreamChannel
+> Out JavaDoWhile[3->2, id=11bd0f3b] => StreamChannel
+
+>>> ExecutionStage[T[JavaRandomSample[1+1->1, id=2bfc268b]]]:
+> In  CollectionChannel => JavaRandomSample[1+1->1, id=2bfc268b]
+> In  CollectionChannel => JavaRandomSample[1+1->1, id=2bfc268b]
+>     JavaRandomSample[1+1->1, id=2bfc268b] => StreamChannel => JavaMap[compute]
+>     JavaMap[compute] => StreamChannel => JavaGlobalReduce[reduce]
+> Out JavaGlobalReduce[reduce] => CollectionChannel
+
+>>> ExecutionStage[T[JavaLocalCallbackSink[collect()]]]:
+> In  StreamChannel => JavaLocalCallbackSink[collect()]
+
+>>> ExecutionStage[T[JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]]]:
+> In  StreamChannel => JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]]
+> Out JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]] => CollectionChannel
+> Out JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]] => CollectionChannel
+> Out JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]] => CollectionChannel
+> Out JavaCollect[convert iterOut@JavaDoWhile[3->2, id=11bd0f3b]] => CollectionChannel
+
+>>> ExecutionStage[T[JavaMap[update]]]:
+> In  CollectionChannel => JavaMap[update]
+> In  CollectionChannel => JavaMap[update]
+>     JavaMap[update] => StreamChannel => JavaCollect[convert out@JavaMap[update]]
+> Out JavaCollect[convert out@JavaMap[update]] => CollectionChannel
+> Out JavaCollect[convert out@JavaMap[update]] => CollectionChannel
+
+>>> ExecutionStage[T[JavaMap[1+1->1, id=7671cb68]]]:
+> In  CollectionChannel => JavaMap[1+1->1, id=7671cb68]
+> In  CollectionChannel => JavaMap[1+1->1, id=7671cb68]
+>     JavaMap[1+1->1, id=7671cb68] => StreamChannel => JavaCollect[convert out@JavaMap[1+1->1, id=7671cb68]]
+> Out JavaCollect[convert out@JavaMap[1+1->1, id=7671cb68]] => CollectionChannel
+
+
+INFO main org.qcri.rheem.core.platform.CrossPlatformExecutor - Activating ExecutionStage[T[JavaTextFileSource[source]]].
+INFO main org.qcri.rheem.core.platform.CrossPlatformExecutor - Activating ExecutionStage[T[JavaCollectionSource[init weights]]].
+DEBUG main org.qcri.rheem.java.channels.StreamChannel - Marked StreamChannel[T[JavaTextFileSource[source]]->[T[JavaMap[transform]]]] for instrumentation.
+DEBUG main org.qcri.rheem.java.channels.CollectionChannel - Marked CollectionChannel[T[JavaCollect[convert out@JavaMap[transform]]]->[T[JavaRandomSample[1+1->1, id=2bfc268b]]]] for instrumentation.
+DEBUG main org.qcri.rheem.java.channels.CollectionChannel - Marked StreamChannel[T[JavaMap[transform]]->[T[JavaCollect[convert out@JavaMap[transform]]]]] for instrumentation.
+DEBUG main org.qcri.rheem.java.channels.StreamChannel - Marked StreamChannel[T[JavaMap[transform]]->[T[JavaCollect[convert out@JavaMap[transform]]]]] for instrumentation.
+DEBUG main org.qcri.rheem.java.channels.StreamChannel - Marked CollectionChannel[T[JavaCollect[convert out@JavaMap[transform]]]->[T[JavaRandomSample[1+1->1, id=2bfc268b]]]] for instrumentation.
+INFO main org.qcri.rheem.core.platform.CrossPlatformExecutor - Having JavaExecutor[0] execute ExecutionStage[T[JavaTextFileSource[source]]]:
+>     JavaTextFileSource[source] => StreamChannel => JavaMap[transform]
+>     JavaMap[transform] => StreamChannel => JavaCollect[convert out@JavaMap[transform]]
+> Out JavaCollect[convert out@JavaMap[transform]] => CollectionChannel
+DEBUG IPC Parameter Sending Thread #0 org.apache.hadoop.ipc.Client - IPC Client (240630125) connection to thor01/172.16.64.55:8020 from jonas.kemper sending #3
+DEBUG IPC Client (240630125) connection to thor01/172.16.64.55:8020 from jonas.kemper org.apache.hadoop.ipc.Client - IPC Client (240630125) connection to thor01/172.16.64.55:8020 from jonas.kemper got value #3
 INFO main org.qcri.rheem.core.api.Job - StopWatch results:
-* Optimization                            - 0:00:01.842
-  * Prepare                               - 0:00:00.285
-    * Prune&Isolate                       - 0:00:00.044
-    * Transformations                     - 0:00:00.241
+* Optimization                            - 0:00:07.731
+  * Prepare                               - 0:00:00.115
+    * Prune&Isolate                       - 0:00:00.016
+    * Transformations                     - 0:00:00.099
     * Sanity                              - 0:00:00.000
-  * Cardinality&Load Estimation           - 0:00:00.961
-    * Create OptimizationContext          - 0:00:00.024
+  * Cardinality&Load Estimation           - 0:00:04.233
+    * Create c                            - 0:00:04.233
     * Create CardinalityEstimationManager - 0:00:00.001
-    * Push Estimation                     - 0:00:00.936
-      * Estimate source cardinalities     - 0:00:00.726
-  * Create Initial Execution Plan         - 0:00:00.596
-    * Enumerate                           - 0:00:00.526
-      * Concatenation                     - 0:00:00.272
-        * Channel Conversion              - 0:00:00.235
-      * Prune                             - 0:00:00.182
-    * Pick Best Plan                      - 0:00:00.010
-    * Split Stages                        - 0:00:00.041
-* Execution                               - 0:08:31.332
-  * Execution 0                           - 0:08:31.332
-    * Configure Breakpoint                - 0:00:00.003
-    * Execute                             - 0:08:31.321
-* Post-processing                         - 0:00:00.002
-  * Release Resources                     - 0:00:00.002
-INFO Thread-2 org.apache.spark.SparkContext - Invoking stop() from shutdown hook
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.Server@2373ad99
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping SelectChannelConnector@0.0.0.0:4040
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@48904d5a
-DEBUG qtp1271084832-60 Selector0 org.spark-project.jetty.io.nio - Stopped Thread[qtp1271084832-60 Selector0,5,main] on org.spark-project.jetty.io.nio.SelectorManager$1@6e3a467b
-DEBUG shuffle-client-1 org.apache.spark.network.client.TransportClient - Sending fetch chunk request 0 to tenem13.hpi.uni-potsdam.de/172.16.19.106:47219
-DEBUG qtp1271084832-61 Selector1 org.spark-project.jetty.io.nio - Stopped Thread[qtp1271084832-61 Selector1,5,main] on org.spark-project.jetty.io.nio.SelectorManager$1@768e61d1
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@48904d5a
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping PooledBuffers [0/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [0/1024@6144,0/1024@32768,0/1024@-]
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED null/null
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED SelectChannelConnector@0.0.0.0:4040
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.ContextHandlerCollection@1d1cbd0f
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.ContextHandlerCollection@1d1cbd0f
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/metrics/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@20eaeaf8
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@20eaeaf8
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-3bf54172
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-3bf54172
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@20eaeaf8
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/metrics/json,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/metrics/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/metrics/json,null} - org.spark-project.jetty.servlet.ServletHandler@20eaeaf8 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/metrics/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@6535117e
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/stages/stage/kill,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@5853ca50
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@5853ca50
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$2-7e5843db
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$2-7e5843db
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@5853ca50
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/stages/stage/kill,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/stages/stage/kill,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/stages/stage/kill,null} - org.spark-project.jetty.servlet.ServletHandler@5853ca50 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/stages/stage/kill,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@6535117e
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@6535117e
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@12e5da86
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/api,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@423c5404
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@423c5404
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping com.sun.jersey.spi.container.servlet.ServletContainer-6e7c351d
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED com.sun.jersey.spi.container.servlet.ServletContainer-6e7c351d
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@423c5404
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/api,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/api,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/api,null} - org.spark-project.jetty.servlet.ServletHandler@423c5404 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/api,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@12e5da86
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@12e5da86
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@737d100a
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@43e065f2
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@43e065f2
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$2-7fb66650
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$2-7fb66650
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@43e065f2
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/,null} - org.spark-project.jetty.servlet.ServletHandler@43e065f2 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@737d100a
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@737d100a
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@3ad85136
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/static,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@42fb8c87
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@42fb8c87
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.DefaultServlet-29a98d9f
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.DefaultServlet-29a98d9f
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@42fb8c87
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/static,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/static,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/static,null} - org.spark-project.jetty.servlet.ServletHandler@42fb8c87 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/static,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@3ad85136
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@3ad85136
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@5ad5be4a
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/executors/threadDump/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@3206174f
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@3206174f
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-2cc75074
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-2cc75074
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@3206174f
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/executors/threadDump/json,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/executors/threadDump/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/executors/threadDump/json,null} - org.spark-project.jetty.servlet.ServletHandler@3206174f as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/executors/threadDump/json,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@5ad5be4a
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@5ad5be4a
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@7f93dd4e
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/executors/threadDump,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@2f0bfe17
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@2f0bfe17
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-1afd72ef
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-1afd72ef
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@2f0bfe17
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/executors/threadDump,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/executors/threadDump,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/executors/threadDump,null} - org.spark-project.jetty.servlet.ServletHandler@2f0bfe17 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/executors/threadDump,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@7f93dd4e
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@7f93dd4e
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@1b7a52dd
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/executors/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@370c1968
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@370c1968
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-5db6b845
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-5db6b845
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@370c1968
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/executors/json,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/executors/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/executors/json,null} - org.spark-project.jetty.servlet.ServletHandler@370c1968 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/executors/json,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@1b7a52dd
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@1b7a52dd
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@4364712f
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/executors,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@3a894088
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@3a894088
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-d277579
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-d277579
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@3a894088
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/executors,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/executors,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/executors,null} - org.spark-project.jetty.servlet.ServletHandler@3a894088 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/executors,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@4364712f
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@4364712f
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@435cc7f9
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/environment/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@f324455
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@f324455
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-6a818392
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-6a818392
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@f324455
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/environment/json,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/environment/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/environment/json,null} - org.spark-project.jetty.servlet.ServletHandler@f324455 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/environment/json,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@435cc7f9
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@435cc7f9
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@53c6f96d
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/environment,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@7b6c6e70
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@7b6c6e70
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-6c841199
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-6c841199
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@7b6c6e70
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/environment,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/environment,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/environment,null} - org.spark-project.jetty.servlet.ServletHandler@7b6c6e70 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/environment,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@53c6f96d
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@53c6f96d
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@136965e3
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/storage/rdd/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@767f6ee7
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@767f6ee7
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-7544ac86
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-7544ac86
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@767f6ee7
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/storage/rdd/json,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/storage/rdd/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/storage/rdd/json,null} - org.spark-project.jetty.servlet.ServletHandler@767f6ee7 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/storage/rdd/json,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@136965e3
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@136965e3
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@4e49ce2b
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/storage/rdd,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@dd71b20
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@dd71b20
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-5c5d6175
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-5c5d6175
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@dd71b20
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/storage/rdd,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/storage/rdd,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/storage/rdd,null} - org.spark-project.jetty.servlet.ServletHandler@dd71b20 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/storage/rdd,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@4e49ce2b
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@4e49ce2b
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@5578be42
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/storage/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@5114b7c7
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@5114b7c7
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-43f1bb92
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-43f1bb92
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@5114b7c7
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/storage/json,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/storage/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/storage/json,null} - org.spark-project.jetty.servlet.ServletHandler@5114b7c7 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/storage/json,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@5578be42
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@5578be42
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@7b676112
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/storage,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@6f9c5048
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@6f9c5048
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-984169e
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-984169e
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@6f9c5048
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/storage,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/storage,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/storage,null} - org.spark-project.jetty.servlet.ServletHandler@6f9c5048 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/storage,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@7b676112
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@7b676112
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@44032fde
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/stages/pool/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@106d77da
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@106d77da
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-57272109
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-57272109
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@106d77da
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/stages/pool/json,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/stages/pool/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/stages/pool/json,null} - org.spark-project.jetty.servlet.ServletHandler@106d77da as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/stages/pool/json,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@44032fde
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@44032fde
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@4c2af006
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/stages/pool,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@5a50d9fc
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@5a50d9fc
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-5a08efdc
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-5a08efdc
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@5a50d9fc
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/stages/pool,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/stages/pool,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/stages/pool,null} - org.spark-project.jetty.servlet.ServletHandler@5a50d9fc as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/stages/pool,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@4c2af006
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@4c2af006
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@52ff99cd
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/stages/stage/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@24534cb0
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@24534cb0
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-26350ea2
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-26350ea2
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@24534cb0
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/stages/stage/json,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/stages/stage/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/stages/stage/json,null} - org.spark-project.jetty.servlet.ServletHandler@24534cb0 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/stages/stage/json,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@52ff99cd
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@52ff99cd
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@177515d1
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/stages/stage,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@63538bb4
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@63538bb4
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-625dfff3
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-625dfff3
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@63538bb4
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/stages/stage,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/stages/stage,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/stages/stage,null} - org.spark-project.jetty.servlet.ServletHandler@63538bb4 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/stages/stage,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@177515d1
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@177515d1
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@4d18b73a
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/stages/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@7b66322e
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@7b66322e
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-7a485a36
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-7a485a36
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@7b66322e
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/stages/json,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/stages/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/stages/json,null} - org.spark-project.jetty.servlet.ServletHandler@7b66322e as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/stages/json,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@4d18b73a
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@4d18b73a
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@480ad82c
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/stages,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@3f183caa
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@3f183caa
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-74e6094b
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-74e6094b
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@3f183caa
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/stages,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/stages,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/stages,null} - org.spark-project.jetty.servlet.ServletHandler@3f183caa as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/stages,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@480ad82c
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@480ad82c
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@77865933
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/jobs/job/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@43a09ce2
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@43a09ce2
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-3e3315d9
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-3e3315d9
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@43a09ce2
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/jobs/job/json,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/jobs/job/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/jobs/job/json,null} - org.spark-project.jetty.servlet.ServletHandler@43a09ce2 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/jobs/job/json,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@77865933
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@77865933
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@53d13cd4
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/jobs/job,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@fb2e3fd
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@fb2e3fd
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-6e4c0d8c
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-6e4c0d8c
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@fb2e3fd
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/jobs/job,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/jobs/job,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/jobs/job,null} - org.spark-project.jetty.servlet.ServletHandler@fb2e3fd as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/jobs/job,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@53d13cd4
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@53d13cd4
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@671c4166
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/jobs/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@642413d4
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@642413d4
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-4adc663e
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-4adc663e
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@642413d4
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/jobs/json,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/jobs/json,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/jobs/json,null} - org.spark-project.jetty.servlet.ServletHandler@642413d4 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/jobs/json,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@671c4166
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@671c4166
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@3291b443
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/jobs,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@5399f6c5
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@5399f6c5
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-38b8b6c0
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-38b8b6c0
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@5399f6c5
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping o.s.j.s.ServletContextHandler{/jobs,null}
-INFO Thread-2 org.spark-project.jetty.server.handler.ContextHandler - stopped o.s.j.s.ServletContextHandler{/jobs,null}
-DEBUG Thread-2 org.spark-project.jetty.util.component.Container - Container o.s.j.s.ServletContextHandler{/jobs,null} - org.spark-project.jetty.servlet.ServletHandler@5399f6c5 as handler
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/jobs,null}
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@3291b443
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@3291b443
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.ContextHandlerCollection@1d1cbd0f
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.Server@2373ad99
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.ErrorHandler@b112b13
-DEBUG Thread-2 org.spark-project.jetty.server.handler.AbstractHandler - stopping org.spark-project.jetty.server.handler.ErrorHandler@b112b13
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.ErrorHandler@b112b13
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - stopping qtp1271084832{8<=8<=8/254,0}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED qtp1271084832{8<=0<=0/254,5}
-DEBUG Thread-2 org.spark-project.jetty.util.component.AbstractLifeCycle - STOPPED org.spark-project.jetty.server.Server@2373ad99
-INFO Thread-2 org.apache.spark.ui.SparkUI - Stopped Spark web UI at http://172.16.21.111:4040
-INFO Thread-2 org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend - Shutting down all executors
-INFO dispatcher-event-loop-3 org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend - Asking each executor to shut down
-ERROR task-result-getter-0 org.apache.spark.util.Utils - Uncaught exception in thread task-result-getter-0
-java.lang.InterruptedException
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:998)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1304)
-	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait(Promise.scala:202)
-	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:218)
-	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223)
-	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:107)
-	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53)
-	at scala.concurrent.Await$.result(package.scala:107)
-	at org.apache.spark.network.BlockTransferService.fetchBlockSync(BlockTransferService.scala:102)
-	at org.apache.spark.storage.BlockManager$$anonfun$doGetRemote$2.apply(BlockManager.scala:598)
-	at org.apache.spark.storage.BlockManager$$anonfun$doGetRemote$2.apply(BlockManager.scala:595)
-	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
-	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:47)
-	at org.apache.spark.storage.BlockManager.doGetRemote(BlockManager.scala:595)
-	at org.apache.spark.storage.BlockManager.getRemoteBytes(BlockManager.scala:588)
-	at org.apache.spark.scheduler.TaskResultGetter$$anon$2$$anonfun$run$1.apply$mcV$sp(TaskResultGetter.scala:70)
-	at org.apache.spark.scheduler.TaskResultGetter$$anon$2$$anonfun$run$1.apply(TaskResultGetter.scala:51)
-	at org.apache.spark.scheduler.TaskResultGetter$$anon$2$$anonfun$run$1.apply(TaskResultGetter.scala:51)
-	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1801)
-	at org.apache.spark.scheduler.TaskResultGetter$$anon$2.run(TaskResultGetter.scala:50)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-INFO dispatcher-event-loop-1 org.apache.spark.MapOutputTrackerMasterEndpoint - MapOutputTrackerMasterEndpoint stopped!
-ERROR shuffle-client-1 org.apache.spark.network.client.TransportResponseHandler - Still have 1 requests outstanding when connection from tenem13.hpi.uni-potsdam.de/172.16.19.106:47219 is closed
-INFO shuffle-client-1 org.apache.spark.network.shuffle.RetryingBlockFetcher - Retrying fetch (1/3) for 1 outstanding blocks after 5000 ms
-INFO Thread-2 org.apache.spark.storage.MemoryStore - MemoryStore cleared
-INFO Thread-2 org.apache.spark.storage.BlockManager - BlockManager stopped
-INFO Thread-2 org.apache.spark.storage.BlockManagerMaster - BlockManagerMaster stopped
-INFO dispatcher-event-loop-4 org.apache.spark.scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint - OutputCommitCoordinator stopped!
-INFO Thread-2 org.apache.spark.SparkContext - Successfully stopped SparkContext
-INFO Thread-2 org.apache.spark.util.ShutdownHookManager - Shutdown hook called
-INFO Thread-2 org.apache.spark.util.ShutdownHookManager - Deleting directory /data/tmp/spark-831758da-7079-4b9b-af3d-f85559ad18b7
-INFO Thread-2 org.apache.spark.util.ShutdownHookManager - Deleting directory /data/tmp/spark-831758da-7079-4b9b-af3d-f85559ad18b7/httpd-6fa28acf-143d-4799-aa30-056713705664
-INFO sparkDriverActorSystem-akka.actor.default-dispatcher-19 akka.remote.RemoteActorRefProvider$RemotingTerminator - Shutting down remote daemon.
-INFO sparkDriverActorSystem-akka.actor.default-dispatcher-19 akka.remote.RemoteActorRefProvider$RemotingTerminator - Remote daemon shut down; proceeding with flushing remote transports.
-DEBUG Thread-2 org.apache.hadoop.ipc.Client - stopping client from cache: org.apache.hadoop.ipc.Client@46d59067
-DEBUG Thread-2 org.apache.hadoop.ipc.Client - removing client from cache: org.apache.hadoop.ipc.Client@46d59067
-DEBUG Thread-2 org.apache.hadoop.ipc.Client - stopping actual client because no more references remain: org.apache.hadoop.ipc.Client@46d59067
+    * Push Estimation                     - 0:00:04.214
+      * Estimate source cardinalities     - 0:00:00.733
+  * Create Initial Execution Plan         - 0:00:03.380
+    * Enumerate                           - 0:00:03.345
+      * Concatenation                     - 0:00:02.697
+        * Channel Conversion              - 0:00:02.681
+      * Prune                             - 0:00:00.168
+    * Pick Best Plan                      - 0:00:00.006
+    * Split Stages                        - 0:00:00.021
+* Execution                               - 0:00:00.042
+  * Execution 0                           - 0:00:00.042
+    * Execute                             - 0:00:00.040
+* Post-processing                         - 0:00:00.000
+  * Release Resources                     - 0:00:00.000
+DEBUG Thread-2 org.apache.hadoop.ipc.Client - stopping client from cache: org.apache.hadoop.ipc.Client@134d26af
+DEBUG Thread-2 org.apache.hadoop.ipc.Client - removing client from cache: org.apache.hadoop.ipc.Client@134d26af
+DEBUG Thread-2 org.apache.hadoop.ipc.Client - stopping actual client because no more references remain: org.apache.hadoop.ipc.Client@134d26af
 DEBUG Thread-2 org.apache.hadoop.ipc.Client - Stopping client
+DEBUG IPC Client (240630125) connection to thor01/172.16.64.55:8020 from jonas.kemper org.apache.hadoop.ipc.Client - IPC Client (240630125) connection to thor01/172.16.64.55:8020 from jonas.kemper: closed
+DEBUG IPC Client (240630125) connection to thor01/172.16.64.55:8020 from jonas.kemper org.apache.hadoop.ipc.Client - IPC Client (240630125) connection to thor01/172.16.64.55:8020 from jonas.kemper: stopped, remaining connections 0
