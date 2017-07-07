@@ -15,8 +15,10 @@ sed -i "s/June24-15uhr/$1/g" ~/MA-Scripts/benchmark-thor-*-$1.properties
 
 sh ~/MA-Scripts/reoptimizer_benchmark_suite.sh suite-logs-thor-baseline-$1 validation $2 benchmark-thor-baseline-$1.properties
 mv ~/.rheem/executions.json ~/.rheem/executions_backup_baseline_$1.json
-sh ~/MA-Scripts/reoptimizer_benchmark_suite.sh suite-logs-thor-baseline-$1 training $2 benchmark-thor-baseline-$1.properties
+
+sh ~/MA-Scripts/reoptimizer_benchmark_suite.sh suite-logs-thor-training-$1 training $2 benchmark-thor-baseline-$1.properties
 sh ~/MA-Scripts/create_and_copy_select_repo.sh benchmark-thor-validation-$1.properties
 mv ~/.rheem/executions.json ~/.rheem/executions_backup_training_$1.json
-sh ~/MA-Scripts/reoptimizer_benchmark_suite.sh suite-logs-thor-baseline-$1 validation $2 benchmark-thor-baseline-$1.properties
+
+sh ~/MA-Scripts/reoptimizer_benchmark_suite.sh suite-logs-thor-validation-$1 validation $2 benchmark-thor-validation-$1.properties
 mv ~/.rheem/executions.json ~/.rheem/executions_backup_validation_$1.json
