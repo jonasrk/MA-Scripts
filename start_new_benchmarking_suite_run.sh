@@ -2,8 +2,8 @@ mkdir ~/suite-logs-thor-baseline-$1
 mkdir ~/suite-logs-thor-training-$1
 mkdir ~/suite-logs-thor-validation-$1
 
-mv ~/MA-Scripts/benchmark-thor.properties ~/MA-Scripts/benchmark-thor_BACKUP_$1.properties
-mv ~/.rheem/executions.json ~/.rheem/executions_backup_$1.json
+#mv ~/MA-Scripts/benchmark-thor.properties ~/MA-Scripts/benchmark-thor_BACKUP_$1.properties
+#mv ~/.rheem/executions.json ~/.rheem/executions_backup_$1.json
 
 cp ~/MA-Scripts/benchmark-thor-blank.properties ~/MA-Scripts/benchmark-thor-baseline-$1.properties
 cp ~/MA-Scripts/benchmark-thor-blank.properties ~/MA-Scripts/benchmark-thor-training-$1.properties
