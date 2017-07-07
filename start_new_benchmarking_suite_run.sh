@@ -10,7 +10,7 @@ cp ~/MA-Scripts/benchmark-thor-blank.properties ~/MA-Scripts/benchmark-thor-trai
 cp ~/MA-Scripts/benchmark-thor-blank.properties ~/MA-Scripts/benchmark-thor-validation-$1.properties
 
 
-sed -i "s/June24-15uhr/$1/g" ~/MA-Scripts/benchmark-thor-*-$1.properties.properties
+sed -i "s/June24-15uhr/$1/g" ~/MA-Scripts/benchmark-thor-*-$1.properties
 
 
 sh ~/MA-Scripts/reoptimizer_benchmark_suite.sh suite-logs-thor-baseline-$1 validation $2 benchmark-thor-baseline-$1.properties
