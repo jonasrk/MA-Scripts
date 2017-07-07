@@ -98,7 +98,6 @@ if [ $1 = "validation" ]; then
 		eval "$base_command$this_command"
 		#sleep 1
 	done
-done	
 
 fi
 
@@ -173,6 +172,7 @@ if [ $1 = "training" ]; then
 		eval "$base_command$this_command"
 		#sleep 1
 	done
-done	
-    
+
 fi
+
+done
