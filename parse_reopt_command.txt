@@ -1,1 +1,0 @@
-sh parse_reopt.sh | sed -e 's/ /, /g' | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n0/, 0/g' > reopt_may25.csv
