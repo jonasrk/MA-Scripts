@@ -131,7 +131,7 @@ if [ $exec_mode = "training" ]; then
 	done
 	
 	echo "Wordcount"
-	for filename in x
+	for filename in #x
 		do
 		path=hdfs://thor01/data/csv/CENSUS/CENSUS.csv
 		input_file=$path
@@ -143,7 +143,7 @@ if [ $exec_mode = "training" ]; then
 	done
 	
 	echo "SINDY"
-	for filename in x
+	for filename in #x
 		do
 		l_path=hdfs://thor01/data/csv/WIKIPEDIA
 		l_path2=/IMAGELINKS.csv
