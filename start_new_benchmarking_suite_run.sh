@@ -45,6 +45,6 @@ if [ $exec_mode = "validate-noexec" ]; then
 
     timeout=$3
     mkdir ~/suite-logs-thor-validation-$filename
-    sh ~/MA-Scripts/create_and_copy_select_repo.sh benchmark-thor-validation-$filename.properties $training_log
+    sh ~/MA-Scripts/reoptimizer_benchmark_suite.sh suite-logs-thor-validation-$filename validation $timeout benchmark-thor-validation-$filename.properties
 
 fi
