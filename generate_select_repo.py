@@ -1,4 +1,6 @@
 import sys, json
+import numpy as np
+from sklearn.linear_model import LinearRegression
 
 # READ FILE
 with open(sys.argv[1:][0]) as f:
@@ -21,8 +23,11 @@ for line in content:
                 all_measurements[key]['in'].append(execGroup['ctx']['inCards'])
                 all_measurements[key]['out'].append(execGroup['ctx']['outCards'])
 
-
 for key in all_measurements:
+
+    xdata = []
+    ydata = []
+
     min = sys.float_info.max
     max = 0.0
 
@@ -34,18 +39,20 @@ for key in all_measurements:
             if all_measurements[key]['in'][i][j]['confidence'] != 1:
                 use_measurement = False
             if all_measurements[key]['in'][i][j]['confidence'] == 1:
-                if all_measurements[key]['in'][i][j]['lowerBound'] < 0 or in_upper_sum + all_measurements[key]['in'][i][j]['upperBound'] < 0:
+                if all_measurements[key]['in'][i][j]['lowerBound'] < 0 or in_upper_sum + \
+                        all_measurements[key]['in'][i][j]['upperBound'] < 0:
                     use_measurement = False
                 in_lower_sum = in_lower_sum + all_measurements[key]['in'][i][j]['lowerBound']
                 in_upper_sum = in_upper_sum + all_measurements[key]['in'][i][j]['upperBound']
-        
+
         out_lower_sum = 0
         out_upper_sum = 0
         for j in range(0, len(all_measurements[key]['out'][i])):
             if all_measurements[key]['out'][i][j]['confidence'] != 1:
                 use_measurement = False
             if all_measurements[key]['out'][i][j]['confidence'] == 1:
-                if all_measurements[key]['out'][i][j]['lowerBound'] < 0 or in_upper_sum + all_measurements[key]['out'][i][j]['upperBound'] < 0:
+                if all_measurements[key]['out'][i][j]['lowerBound'] < 0 or in_upper_sum + \
+                        all_measurements[key]['out'][i][j]['upperBound'] < 0:
                     use_measurement = False
                 out_lower_sum = out_lower_sum + all_measurements[key]['out'][i][j]['lowerBound']
                 out_upper_sum = out_upper_sum + all_measurements[key]['out'][i][j]['upperBound']
@@ -55,6 +62,19 @@ for key in all_measurements:
                 min = selectivity
             if selectivity > max:
                 max = selectivity
-    
-    print(key + " = {" + '  "p":1, ' + '  "lower":' + str(min) + ',' + '  "upper":' + str(max) + ',' + '}')
+            selectivity = 1.0 * (out_lower_sum * out_upper_sum)**1/2 / (in_lower_sum * in_upper_sum)**1/2
+            xdata.append((in_lower_sum * in_upper_sum)**1/2) # TODO JRK: geometric mean right choice? better distinct lower and upper?
+            ydata.append(selectivity)
+
+    xdata = np.array(xdata)
+    ydata = np.array(ydata)
+
+    predictor = LinearRegression(n_jobs=-1)
+    predictor.fit(X=[[x] for x in xdata], y=ydata)
+
+    coefficient = predictor.coef_
+
+    all_measurements[key]['coefficient'] = coefficient
+
+    print(key + " = {" + '  "p":1, ' + '  "lower":' + str(min) + ',' + '  "upper":' + str(max) + ', "coeff":' + str(all_measurements[key]['coefficient'][0]) + '}')
 
