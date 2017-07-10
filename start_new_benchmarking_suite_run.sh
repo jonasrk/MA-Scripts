@@ -19,7 +19,6 @@ if [ $exec_mode = "all" ]; then
     
     sed -i "s/June24-15uhr/$filename/g" ~/MA-Scripts/benchmark-thor-*-$filename.properties
     
-    
     sh ~/MA-Scripts/reoptimizer_benchmark_suite.sh suite-logs-thor-baseline-$filename validation $timeout benchmark-thor-baseline-$filename.properties
     mv ~/.rheem/executions.json ~/.rheem/executions_backup_baseline_$filename.json
     
@@ -46,5 +45,24 @@ if [ $exec_mode = "validate-noexec" ]; then
     timeout=$3
     mkdir ~/suite-logs-thor-validation-$filename
     sh ~/MA-Scripts/reoptimizer_benchmark_suite.sh suite-logs-thor-validation-$filename validation $timeout benchmark-thor-validation-$filename.properties
+
+fi
+
+if [ $exec_mode = "generate-baseline-and-training-logs" ]; then
+
+    timeout=$3
+
+    mkdir ~/suite-logs-thor-baseline-$filename
+    mkdir ~/suite-logs-thor-training-$filename
+    cp ~/MA-Scripts/benchmark-thor-blank.properties ~/MA-Scripts/benchmark-thor-baseline-$filename.properties
+    cp ~/MA-Scripts/benchmark-thor-blank.properties ~/MA-Scripts/benchmark-thor-training-$filename.properties
+    sed -i "s/June24-15uhr/$filename/g" ~/MA-Scripts/benchmark-thor-*-$filename.properties
+    
+    sh ~/MA-Scripts/reoptimizer_benchmark_suite.sh suite-logs-thor-baseline-$filename validation $timeout benchmark-thor-baseline-$filename.properties
+    mv ~/.rheem/executions.json ~/.rheem/executions_backup_baseline_$filename.json
+    
+    sh ~/MA-Scripts/reoptimizer_benchmark_suite.sh suite-logs-thor-training-$filename training $timeout benchmark-thor-baseline-$filename.properties
+    mv ~/.rheem/executions.json ~/.rheem/executions_backup_training_$filename.json
+
 
 fi
