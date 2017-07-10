@@ -13,9 +13,16 @@ if [ $exec_mode = "all" ]; then
     #mv ~/MA-Scripts/benchmark-thor.properties ~/MA-Scripts/benchmark-thor_BACKUP_$filename.properties
     #mv ~/.rheem/executions.json ~/.rheem/executions_backup_$filename.json
     
-    cp ~/MA-Scripts/benchmark-thor-blank.properties ~/MA-Scripts/benchmark-thor-baseline-$filename.properties
-    cp ~/MA-Scripts/benchmark-thor-blank.properties ~/MA-Scripts/benchmark-thor-training-$filename.properties
-    cp ~/MA-Scripts/benchmark-thor-blank.properties ~/MA-Scripts/benchmark-thor-validation-$filename.properties
+    if [ $select_repo_generator = "generate_select_repo-logistic" ]; then
+        cp ~/MA-Scripts/benchmark-thor-blank-logisticTrue.properties ~/MA-Scripts/benchmark-thor-baseline-$filename.properties
+        cp ~/MA-Scripts/benchmark-thor-blank-logisticTrue.properties ~/MA-Scripts/benchmark-thor-training-$filename.properties
+        cp ~/MA-Scripts/benchmark-thor-blank-logisticTrue.properties ~/MA-Scripts/benchmark-thor-validation-$filename.properties
+    fi
+    if [ $select_repo_generator = "generate_select_repo-minmax" ]; then
+        cp ~/MA-Scripts/benchmark-thor-blank-logisticFalse.properties ~/MA-Scripts/benchmark-thor-baseline-$filename.properties
+        cp ~/MA-Scripts/benchmark-thor-blank-logisticFalse.properties ~/MA-Scripts/benchmark-thor-training-$filename.properties
+        cp ~/MA-Scripts/benchmark-thor-blank-logisticFalse.properties ~/MA-Scripts/benchmark-thor-validation-$filename.properties
+    fi
     
     
     sed -i "s/June24-15uhr/$filename/g" ~/MA-Scripts/benchmark-thor-*-$filename.properties
@@ -37,7 +44,12 @@ if [ $exec_mode = "regenarate_repo" ]; then
     training_log=$3
     select_repo_generator=$4
 
-    cp ~/MA-Scripts/benchmark-thor-blank-noexec.properties ~/MA-Scripts/benchmark-thor-validation-$filename.properties
+    if [ $select_repo_generator = "generate_select_repo-logistic" ]; then
+        cp ~/MA-Scripts/benchmark-thor-blank-noexec-logisticTrue.properties ~/MA-Scripts/benchmark-thor-validation-$filename.properties
+    fi
+    if [ $select_repo_generator = "generate_select_repo-minmax" ]; then
+        cp ~/MA-Scripts/benchmark-thor-blank-noexec-logisticFalse.properties ~/MA-Scripts/benchmark-thor-validation-$filename.properties
+    fi
     sed -i "s/June24-15uhr/$filename/g" ~/MA-Scripts/benchmark-thor-*-$filename.properties
     sh ~/MA-Scripts/create_and_copy_select_repo.sh benchmark-thor-validation-$filename.properties $training_log $select_repo_generator
 
