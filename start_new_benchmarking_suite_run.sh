@@ -18,7 +18,7 @@ if [ $exec_mode = "all" ]; then
         cp ~/MA-Scripts/benchmark-thor-blank-logisticTrue.properties ~/MA-Scripts/benchmark-thor-training-$filename.properties
         cp ~/MA-Scripts/benchmark-thor-blank-logisticTrue.properties ~/MA-Scripts/benchmark-thor-validation-$filename.properties
     fi
-    if [ $select_repo_generator = "generate_select_repo-minmax" ]; then
+    if [ $select_repo_generator = "decode_udf_json" ]; then
         cp ~/MA-Scripts/benchmark-thor-blank-logisticFalse.properties ~/MA-Scripts/benchmark-thor-baseline-$filename.properties
         cp ~/MA-Scripts/benchmark-thor-blank-logisticFalse.properties ~/MA-Scripts/benchmark-thor-training-$filename.properties
         cp ~/MA-Scripts/benchmark-thor-blank-logisticFalse.properties ~/MA-Scripts/benchmark-thor-validation-$filename.properties
@@ -47,7 +47,7 @@ if [ $exec_mode = "regenarate_repo" ]; then
     if [ $select_repo_generator = "generate_select_repo-logistic" ]; then
         cp ~/MA-Scripts/benchmark-thor-blank-noexec-logisticTrue.properties ~/MA-Scripts/benchmark-thor-validation-$filename.properties
     fi
-    if [ $select_repo_generator = "generate_select_repo-minmax" ]; then
+    if [ $select_repo_generator = "decode_udf_json" ]; then
         cp ~/MA-Scripts/benchmark-thor-blank-noexec-logisticFalse.properties ~/MA-Scripts/benchmark-thor-validation-$filename.properties
     fi
     sed -i "s/June24-15uhr/$filename/g" ~/MA-Scripts/benchmark-thor-*-$filename.properties
