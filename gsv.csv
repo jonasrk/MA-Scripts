@@ -13,8 +13,8 @@ function importCSVFromGoogleDrive(mode, filename) {
   
   cell.setFormulas(formulas);
  
-  cell.copyTo(sheet.getRange(3, 3, sheet.getLastRow()));
-  
+  cell.copyTo(sheet.getRange(3, 3, sheet.getLastRow() - 2));
+   
   cell = sheet.getRange(1,4)
   cell.setValue(mode + " in lower")
   cell = sheet.getRange(1,5)
@@ -45,34 +45,34 @@ function importCSVFromGoogleDriveThreeTimes(filename) {
   
   var sheet2 = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("validation" + "-" + filename);
   
-  var cell = sheet2.getRange(1, 4, sheet.getLastRow() - 1)
-  cell.copyTo(sheet.getRange(1, 6, sheet.getLastRow() - 1));
+  var cell = sheet2.getRange(1, 4, sheet.getLastRow())
+  cell.copyTo(sheet.getRange(1, 6, sheet.getLastRow()));
   cell = sheet2.getRange(1, 5, sheet.getLastRow())
-  cell.copyTo(sheet.getRange(1, 7, sheet.getLastRow() - 1));
+  cell.copyTo(sheet.getRange(1, 7, sheet.getLastRow()));
   cell = sheet2.getRange(1, 7, sheet.getLastRow())
-  cell.copyTo(sheet.getRange(1, 11, sheet.getLastRow() - 1));
+  cell.copyTo(sheet.getRange(1, 11, sheet.getLastRow()));
   cell = sheet2.getRange(1, 8, sheet.getLastRow())
-  cell.copyTo(sheet.getRange(1, 12, sheet.getLastRow() - 1));
+  cell.copyTo(sheet.getRange(1, 12, sheet.getLastRow()));
   
   sheet.insertColumnAfter(5);
   cell = sheet.getRange(1,6)
   cell.setValue("act in")
   cell = sheet.getRange(2,6)
   var formulas = [
-   ["=VLOOKUP(C2,'act_cards_July06-00uhr23'!C2:I1120, 5, FALSE)"]
+   ["=VLOOKUP(C2,'act_cards_July06-00uhr23'!C$2:I$1120, 5, FALSE)"]
  ];
   cell.setFormulas(formulas);
-  cell.copyTo(sheet.getRange(2, 6, sheet.getLastRow() - 2));
+  cell.copyTo(sheet.getRange(2, 6, sheet.getLastRow() - 1));
   
   sheet.insertColumnAfter(11);
   cell = sheet.getRange(1,12)
   cell.setValue("act out")
   cell = sheet.getRange(2,12)
   var formulas = [
-   ["=VLOOKUP(C2,'act_cards_July06-00uhr23'!C2:I1120, 2, FALSE)"]
+   ["=VLOOKUP(C2,'act_cards_July06-00uhr23'!C$2:I$1120, 2, FALSE)"]
  ];
   cell.setFormulas(formulas);
-  cell.copyTo(sheet.getRange(2, 12, sheet.getLastRow() - 2));
+  cell.copyTo(sheet.getRange(2, 12, sheet.getLastRow() - 1));
   
   cell = sheet.getRange(1,16)
   cell.setValue("baseline out error")
@@ -81,7 +81,7 @@ function importCSVFromGoogleDriveThreeTimes(filename) {
    ["=( IF(L2<1,0,LOG10(L2))-IF(J2<1,0,LOG10(J2)))^2+( IF(L2<1,0,LOG10(L2))-IF(K2<1,0,LOG10(K2)))^2"]
  ];
   cell.setFormulas(formulas);
-  cell.copyTo(sheet.getRange(2, 16, sheet.getLastRow() - 2));
+  cell.copyTo(sheet.getRange(2, 16, sheet.getLastRow() - 1));
   
   cell = sheet.getRange(1,17)
   cell.setValue("validation out error")
@@ -90,7 +90,7 @@ function importCSVFromGoogleDriveThreeTimes(filename) {
    ["=( IF(L2<1,0,LOG10(L2))-IF(M2<1,0,LOG10(M2)))^2+( IF(L2<1,0,LOG10(L2))-IF(N2<1,0,LOG10(N2)))^2"]
  ];
   cell.setFormulas(formulas);
-  cell.copyTo(sheet.getRange(2, 17, sheet.getLastRow() - 2));
+  cell.copyTo(sheet.getRange(2, 17, sheet.getLastRow() - 1));
   
   cell = sheet.getRange(1,18)
   cell.setValue("error diff")
@@ -99,31 +99,75 @@ function importCSVFromGoogleDriveThreeTimes(filename) {
    ["=P2-Q2"]
  ];
   cell.setFormulas(formulas);
-  cell.copyTo(sheet.getRange(2, 18, sheet.getLastRow() - 2));
+  cell.copyTo(sheet.getRange(2, 18, sheet.getLastRow() - 1));
+  
+  cell = sheet.getRange(1,19)
+  cell.setValue("if error")
+  cell = sheet.getRange(2,19)
+  var formulas = [
+   ["=IFERROR(R2, \"\")"]
+ ];
+  cell.setFormulas(formulas);
+  cell.copyTo(sheet.getRange(2, 19, sheet.getLastRow() - 1));
+  
   
   var sheet3 = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("act_cards_July06-00uhr23");
   var range = sheet3.getRange(4, 10)
-  range.copyFormatToRange(sheet, 18, 18, 2, sheet.getLastRow() - 2)
+  range.copyFormatToRange(sheet, 19, 19, 2, sheet.getLastRow() - 1)
   
   var sheet_dashboard = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Dashboard");
+  
+  
+  
   
   cell = sheet_dashboard.getRange(sheet_dashboard.getLastRow() + 1,1)
   cell.setValue(filename);
   
-  cell = sheet.getRange(135,18)
+  cell = sheet.getRange(135,19)
   var formulas = [
-   ["=COUNTIF(R2:R131,\">0\")"]
+   ["=COUNTIF(S2:S131,\">0\")"]
   ];
   cell.setFormulas(formulas);
   cell.copyValuesToRange(sheet_dashboard, 2, 2, sheet_dashboard.getLastRow(), sheet_dashboard.getLastRow())
   
-  cell = sheet.getRange(136,18)
+  cell = sheet.getRange(136,19)
   var formulas = [
-   ["=COUNTIF(R2:R131,\"<0\")"]
+   ["=COUNTIF(S2:S131,\"<0\")"]
   ];
   cell.setFormulas(formulas);
   cell.copyValuesToRange(sheet_dashboard, 3, 3, sheet_dashboard.getLastRow(), sheet_dashboard.getLastRow())
   
+  cell = sheet.getRange(137,19)
+  var formulas = [
+   ["=MEDIAN(S2:S131)"]
+  ];
+  cell.setFormulas(formulas);
+  cell.copyValuesToRange(sheet_dashboard, 7, 7, sheet_dashboard.getLastRow(), sheet_dashboard.getLastRow())
+  
+  cell = sheet.getRange(138,19)
+  var formulas = [
+   ["=AVERAGE(S2:S131)"]
+  ];
+  cell.setFormulas(formulas);
+  cell.copyValuesToRange(sheet_dashboard, 8, 8, sheet_dashboard.getLastRow(), sheet_dashboard.getLastRow())
+  
+  cell = sheet.getRange(139,19)
+  var formulas = [
+   ["=COUNTIF(S2:S131,\"=0\")"]
+  ];
+  cell.setFormulas(formulas);
+  cell.copyValuesToRange(sheet_dashboard, 4, 4, sheet_dashboard.getLastRow(), sheet_dashboard.getLastRow())
+  
+  
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("baseline" + "-" + filename);
+ SpreadsheetApp.getActiveSpreadsheet().deleteSheet(sheet);
+ 
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("training" + "-" + filename);
+ SpreadsheetApp.getActiveSpreadsheet().deleteSheet(sheet);
+ 
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("validation" + "-" + filename);
+ SpreadsheetApp.getActiveSpreadsheet().deleteSheet(sheet);
+  
 }
 
-importCSVFromGoogleDriveThreeTimes("July07-18uhr37");
+importCSVFromGoogleDriveThreeTimes("July09-18uhr48");
