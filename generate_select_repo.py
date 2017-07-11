@@ -77,10 +77,10 @@ for key in all_measurements:
 
         coefficient = predictor.coef_
     except ValueError:
-        coefficient = 0.0
+        coefficient = [0.0]
 
     all_measurements[key]['coefficient'] = coefficient
 
     if create_this_key:
-        print(key + " = {" + '  "p":1, ' + '  "lower":' + str(min) + ',' + '  "upper":' + str(max) + ', "coeff":' + str(all_measurements[key]['coefficient']) + '}')
+        print(key + " = {" + '  "p":1, ' + '  "lower":' + str(min) + ',' + '  "upper":' + str(max) + ', "coeff":' + str(all_measurements[key]['coefficient'][0]) + '}')
 
