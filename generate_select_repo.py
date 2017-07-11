@@ -76,11 +76,14 @@ for key in all_measurements:
         predictor.fit(X=[[x] for x in xdata], y=ydata)
 
         coefficient = predictor.coef_
+        intercept = predictor.intercept_
     except ValueError:
         coefficient = [0.0]
+        intercept = [0.0]
 
     all_measurements[key]['coefficient'] = coefficient
+    all_measurements[key]['intercept'] = intercept
 
     if create_this_key:
-        print(key + " = {" + '  "p":1, ' + '  "lower":' + str(min) + ',' + '  "upper":' + str(max) + ', "coeff":' + str(all_measurements[key]['coefficient'][0]) + '}')
+        print(key + " = {" + '  "p":1, ' + '  "lower":' + str(min) + ',' + '  "upper":' + str(max) + ', "coeff":' + str(all_measurements[key]['coefficient'][0]) + ', "intercept":' + str(all_measurements[key]['intercept']) + '}')
 
