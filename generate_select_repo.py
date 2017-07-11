@@ -44,7 +44,6 @@ for key in all_measurements:
                     use_measurement = False
                 in_lower_sum = in_lower_sum + all_measurements[key]['in'][i][j]['lowerBound']
                 in_upper_sum = in_upper_sum + all_measurements[key]['in'][i][j]['upperBound']
-
         out_lower_sum = 0
         out_upper_sum = 0
         for j in range(0, len(all_measurements[key]['out'][i])):
@@ -69,12 +68,15 @@ for key in all_measurements:
     xdata = np.array(xdata)
     ydata = np.array(ydata)
 
-    predictor = LinearRegression(n_jobs=-1)
-    predictor.fit(X=[[x] for x in xdata], y=ydata)
+    try:
+        predictor = LinearRegression(n_jobs=-1)
+        predictor.fit(X=[[x] for x in xdata], y=ydata)
 
-    coefficient = predictor.coef_
+        coefficient = predictor.coef_
+    except ValueError:
+        coefficient = 0.0
 
     all_measurements[key]['coefficient'] = coefficient
 
-    print(key + " = {" + '  "p":1, ' + '  "lower":' + str(min) + ',' + '  "upper":' + str(max) + ', "coeff":' + str(all_measurements[key]['coefficient'][0]) + '}')
+    print(key + " = {" + '  "p":1, ' + '  "lower":' + str(min) + ',' + '  "upper":' + str(max) + ', "coeff":' + str(all_measurements[key]['coefficient']) + '}')
 
