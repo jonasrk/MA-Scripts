@@ -25,6 +25,8 @@ for line in content:
 
 for key in all_measurements:
 
+    create_this_key = False
+
     xdata = []
     ydata = []
 
@@ -58,6 +60,7 @@ for key in all_measurements:
         if use_measurement:
             selectivity = 1.0 * out_lower_sum / in_lower_sum
             if selectivity < min:
+                create_this_key = True
                 min = selectivity
             if selectivity > max:
                 max = selectivity
@@ -78,5 +81,6 @@ for key in all_measurements:
 
     all_measurements[key]['coefficient'] = coefficient
 
-    print(key + " = {" + '  "p":1, ' + '  "lower":' + str(min) + ',' + '  "upper":' + str(max) + ', "coeff":' + str(all_measurements[key]['coefficient']) + '}')
+    if create_this_key:
+        print(key + " = {" + '  "p":1, ' + '  "lower":' + str(min) + ',' + '  "upper":' + str(max) + ', "coeff":' + str(all_measurements[key]['coefficient']) + '}')
 
