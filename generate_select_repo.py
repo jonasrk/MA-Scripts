@@ -1,9 +1,10 @@
 import sys, json
 import numpy as np
 from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
 
 # READ FILE
-with open(sys.argv[1:][0]) as f:
+with open(sys.argv[1]) as f:
     content = f.readlines()
     content = [x.strip() for x in content]
 
@@ -32,6 +33,7 @@ for key in all_measurements:
 
     min = sys.float_info.max
     max = 0.0
+    max_card = 0
 
     for i in range(0, len(all_measurements[key]['in'])):
         in_lower_sum = 0
@@ -66,10 +68,14 @@ for key in all_measurements:
                 max = selectivity
             selectivity = 1.0 * (out_lower_sum * out_upper_sum)**1/2 / (in_lower_sum * in_upper_sum)**1/2
             xdata.append((in_lower_sum * in_upper_sum)**1/2) # TODO JRK: geometric mean right choice? better distinct lower and upper?
+            if (in_lower_sum * in_upper_sum)**1/2 > max_card:
+                max_card = (in_lower_sum * in_upper_sum)**1/2
             ydata.append(selectivity)
 
     xdata = np.array(xdata)
     ydata = np.array(ydata)
+
+
 
     try:
         predictor = LinearRegression(n_jobs=-1)
@@ -80,6 +86,19 @@ for key in all_measurements:
     except ValueError:
         coefficient = [0.0]
         intercept = [0.0]
+
+    plt.scatter(xdata, ydata)
+    plt.title(key)
+    x = np.linspace(0, max_card, 100)
+    y = x * coefficient + intercept
+    plt.plot(x, y, "r--")
+    # if key == "my.udf.Sindy.flatmap1":
+
+    from os.path import expanduser
+    home = expanduser("~")
+
+    plt.savefig(home + '/suite-logs-thor-validation-' + sys.argv[2] + '/' + sys.argv[2] + '-' + key + '.png')
+    plt.close()
 
     all_measurements[key]['coefficient'] = coefficient
     all_measurements[key]['intercept'] = intercept
