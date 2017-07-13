@@ -1,4 +1,4 @@
-i=16
+i=1
 
 while true; do
 
