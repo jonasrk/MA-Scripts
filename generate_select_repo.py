@@ -1,7 +1,7 @@
 import sys, json
 import numpy as np
 from sklearn.linear_model import LinearRegression
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 # READ FILE
 with open(sys.argv[1]) as f:
@@ -87,18 +87,18 @@ for key in all_measurements:
         coefficient = [0.0]
         intercept = [0.0]
 
-    plt.scatter(xdata, ydata)
-    plt.title(key)
-    x = np.linspace(0, max_card, 100)
-    y = x * coefficient + intercept
-    plt.plot(x, y, "r--")
-    # if key == "my.udf.Sindy.flatmap1":
+    # plt.scatter(xdata, ydata)
+    # plt.title(key)
+    # x = np.linspace(0, max_card, 100)
+    # y = x * coefficient + intercept
+    # plt.plot(x, y, "r--")
+    # # if key == "my.udf.Sindy.flatmap1":
 
-    from os.path import expanduser
-    home = expanduser("~")
+    # from os.path import expanduser
+    # home = expanduser("~")
 
-    plt.savefig(home + '/suite-logs-thor-validation-' + sys.argv[2] + '/' + sys.argv[2] + '-' + key + '.png')
-    plt.close()
+    # plt.savefig(home + '/suite-logs-thor-validation-' + sys.argv[2] + '/' + sys.argv[2] + '-' + key + '.png')
+    # plt.close()
 
     all_measurements[key]['coefficient'] = coefficient
     all_measurements[key]['intercept'] = intercept
