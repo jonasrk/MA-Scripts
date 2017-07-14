@@ -69,7 +69,7 @@ def read_and_process_json(file, print_repository):
 
             # calculate selectivity
             if use_measurement:
-                selectivity = 1.0 * out_lower_sum / in_lower_sum
+                selectivity = 1.0 * ((out_lower_sum * out_upper_sum)**(1/2)) / ((in_lower_sum * in_upper_sum)**(1/2)  )
 
                 # store min an max selectivity for minmax algorithm
                 if selectivity < min:
@@ -79,7 +79,6 @@ def read_and_process_json(file, print_repository):
                     max = selectivity
 
                 # calculate geometric mean selectivity for linear regression learning
-                selectivity = 1.0 * (out_lower_sum * out_upper_sum)**1/2 / (in_lower_sum * in_upper_sum)**1/2
                 xdata.append((in_lower_sum * in_upper_sum)**(1/2)) # TODO JRK: geometric mean right choice? better distinct lower and upper?
                 if (in_lower_sum * in_upper_sum)**(1/2) > max_card:
                     max_card = (in_lower_sum * in_upper_sum)**(1/2)
@@ -88,6 +87,8 @@ def read_and_process_json(file, print_repository):
 
         all_measurements[key]['xdata'] = xdata
         all_measurements[key]['ydata'] = ydata
+        all_measurements[key]['min'] = min
+        all_measurements[key]['max'] = max
 
         # linear regression
 
@@ -116,7 +117,7 @@ def read_and_process_json(file, print_repository):
     return all_measurements
 
 
-def execute_generate_plots(date_id):
+def execute_generate_plots(date_id, file_identifier, plot_type):
     import matplotlib.pyplot as plt
     import csv
 
@@ -124,7 +125,7 @@ def execute_generate_plots(date_id):
 
         if all_measurements2[key]['coefficient'] != 0.0: # TODO JRK: Why would it?
             my_dpi = 96
-            plt.figure(figsize=(200 / my_dpi, 150 / my_dpi), dpi=my_dpi)
+            plt.figure(figsize=(2000 / my_dpi, 1500 / my_dpi), dpi=my_dpi)
             plt.title(key)
             ax = plt.gca()
 
@@ -157,27 +158,37 @@ def execute_generate_plots(date_id):
                 max_baseline = max(default_estimator_x)
             max_card = max([all_measurements2[key]['max_card'], all_measurements1[key]['max_card'], max_baseline])
 
-            # the linear function estimator
-            x = np.linspace(0, max_card, 100)
-            y = x * all_measurements2[key]['coefficient'] + all_measurements2[key]['intercept']
-            ax.set_xscale('log')
-            plt.plot(x, y, "r--")
+            if plot_type == "linear":
+                # the linear function estimator
+                x = np.linspace(0, max_card, 100)
+                y = x * all_measurements2[key]['coefficient'] + all_measurements2[key]['intercept']
+                ax.set_xscale('log')
+                plt.plot(x, y, "r--")
+            elif plot_type == "minmax":
+                x = np.linspace(0, max_card, 100)
+                y = 100 * [all_measurements2[key]['min']]
+                ax.set_xscale('log')
+                plt.plot(x, y, "r--")
+                x = np.linspace(0, max_card, 100)
+                y = 100 * [all_measurements2[key]['max']]
+                ax.set_xscale('log')
+                plt.plot(x, y, "r--")
 
             # save image file
             from os.path import expanduser
             home = expanduser("~")
             plt.savefig(
-                home + '/Google Drive/suite-logs/' + date_id + '/linear_training_validation-' + date_id + '-' + key + '.png',
+                home + '/Google Drive/suite-logs/' + date_id + '/' + file_identifier + '-' + date_id + '-' + key + '.png',
                 dpi=my_dpi)
             plt.close()
 
 
 # baseline / validation data
-all_measurements1 = read_and_process_json(file=sys.argv[1], print_repository=True)
+all_measurements1 = read_and_process_json(file=sys.argv[1], print_repository=False)
 # training data
-all_measurements2 = read_and_process_json(file=sys.argv[2], print_repository=False)
+all_measurements2 = read_and_process_json(file=sys.argv[2], print_repository=True)
 
 generate_plots=sys.argv[4]
 
 if generate_plots == "generate_plots":
-    execute_generate_plots(date_id=sys.argv[3])
+    execute_generate_plots(date_id=sys.argv[3], file_identifier=sys.argv[5], plot_type="logistic")
