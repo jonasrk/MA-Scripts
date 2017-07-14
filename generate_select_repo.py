@@ -125,7 +125,7 @@ def execute_generate_plots(date_id, file_identifier, plot_type):
 
         if all_measurements2[key]['coefficient'] != 0.0: # TODO JRK: Why would it?
             my_dpi = 96
-            plt.figure(figsize=(200 / my_dpi, 150 / my_dpi), dpi=my_dpi)
+            plt.figure(figsize=(2000 / my_dpi, 1500 / my_dpi), dpi=my_dpi)
             plt.title(key)
             ax = plt.gca()
 
@@ -156,22 +156,22 @@ def execute_generate_plots(date_id, file_identifier, plot_type):
             max_baseline = 0
             if len(default_estimator_x) > 0:
                 max_baseline = max(default_estimator_x)
-            max_card = max([all_measurements2[key]['max_card'], all_measurements1[key]['max_card'], max_baseline])
+            max_card = max([all_measurements2[key]['max_card'], all_measurements1[key]['max_card']]) #, max_baseline])
+
+            # ax.set_xscale('log')
+            plt.xlim([0, max_card])
 
             if plot_type == "linear":
                 # the linear function estimator
                 x = np.linspace(0, max_card, 100)
                 y = x * all_measurements2[key]['coefficient'] + all_measurements2[key]['intercept']
-                ax.set_xscale('log')
                 plt.plot(x, y, "r--")
             elif plot_type == "minmax":
                 x = np.linspace(0, max_card, 100)
                 y = 100 * [all_measurements2[key]['min']]
-                ax.set_xscale('log')
                 plt.plot(x, y, "r--")
                 x = np.linspace(0, max_card, 100)
                 y = 100 * [all_measurements2[key]['max']]
-                ax.set_xscale('log')
                 plt.plot(x, y, "r--")
 
             # save image file
@@ -192,4 +192,4 @@ generate_plots=sys.argv[4]
 if generate_plots == "generate_plots":
     # baseline / validation data
     all_measurements1 = read_and_process_json(file=sys.argv[1], print_repository=False)
-    execute_generate_plots(date_id=sys.argv[3], file_identifier=sys.argv[5], plot_type="minmax")
+    execute_generate_plots(date_id=sys.argv[3], file_identifier=sys.argv[5], plot_type="linear")
