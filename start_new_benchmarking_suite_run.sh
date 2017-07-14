@@ -51,7 +51,7 @@ if [ $exec_mode = "regenarate_repo" ]; then
         cp ~/MA-Scripts/benchmark-thor-blank-noexec-logisticFalse.properties ~/MA-Scripts/benchmark-thor-validation-$filename.properties
     fi
     sed -i "s/June24-15uhr/$filename/g" ~/MA-Scripts/benchmark-thor-*-$filename.properties
-    sh ~/MA-Scripts/create_and_copy_select_repo.sh benchmark-thor-validation-$filename.properties $training_log generate_select_repo
+    sh ~/MA-Scripts/create_and_copy_select_repo.sh benchmark-thor-validation-$filename.properties $training_log generate_select_repo $filename
 
 fi
 

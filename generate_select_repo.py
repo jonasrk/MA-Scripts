@@ -1,7 +1,6 @@
 import sys, json
 import numpy as np
 from sklearn.linear_model import LinearRegression
-import matplotlib.pyplot as plt
 
 # READ FILE
 with open(sys.argv[1]) as f:
@@ -87,22 +86,19 @@ for key in all_measurements:
         coefficient = [0.0]
         intercept = [0.0]
 
-    my_dpi = 96
-    plt.figure(figsize=(200 / my_dpi, 150 / my_dpi), dpi=my_dpi)
 
-    plt.scatter(xdata, ydata)
-    plt.title(key)
-    x = np.linspace(0, max_card, 100)
-    y = x * coefficient + intercept
-    plt.plot(x, y, "r--")
-    # if key == "my.udf.Sindy.flatmap1":
+    if sys.argv[2] == "generate_plots":
+        import matplotlib.pyplot as plt
+        my_dpi = 96
+        plt.figure(figsize=(200 / my_dpi, 150 / my_dpi), dpi=my_dpi)
 
-    from os.path import expanduser
-    home = expanduser("~")
-
-
-    plt.savefig(home + '/Google Drive/suite-logs/' + sys.argv[2] +  '/' + sys.argv[2] + '-' + key + '.png', dpi=my_dpi)
-    plt.close()
+        plt.scatter(xdata, ydata)
+        plt.title(key)
+        x = np.linspace(0, max_card, 100)
+        y = x * coefficient + intercept
+        plt.plot(x, y, "r--")
+        plt.savefig(home + '/Google Drive/suite-logs/' + sys.argv[2] +  '/' + sys.argv[2] + '-' + key + '.png', dpi=my_dpi)
+        plt.close()
 
     all_measurements[key]['coefficient'] = coefficient
     all_measurements[key]['intercept'] = intercept
