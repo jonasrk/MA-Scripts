@@ -125,7 +125,7 @@ def execute_generate_plots(date_id, file_identifier, plot_type):
 
         if all_measurements2[key]['coefficient'] != 0.0: # TODO JRK: Why would it?
             my_dpi = 96
-            plt.figure(figsize=(2000 / my_dpi, 1500 / my_dpi), dpi=my_dpi)
+            plt.figure(figsize=(200 / my_dpi, 150 / my_dpi), dpi=my_dpi)
             plt.title(key)
             ax = plt.gca()
 
@@ -183,12 +183,13 @@ def execute_generate_plots(date_id, file_identifier, plot_type):
             plt.close()
 
 
-# baseline / validation data
-all_measurements1 = read_and_process_json(file=sys.argv[1], print_repository=False)
+
 # training data
 all_measurements2 = read_and_process_json(file=sys.argv[2], print_repository=True)
 
 generate_plots=sys.argv[4]
 
 if generate_plots == "generate_plots":
-    execute_generate_plots(date_id=sys.argv[3], file_identifier=sys.argv[5], plot_type="logistic")
+    # baseline / validation data
+    all_measurements1 = read_and_process_json(file=sys.argv[1], print_repository=False)
+    execute_generate_plots(date_id=sys.argv[3], file_identifier=sys.argv[5], plot_type="minmax")

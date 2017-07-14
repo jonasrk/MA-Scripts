@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c44b2d0-2c94-4158-9c99-67d8316dde71" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generate_select_repo.py" afterPath="$PROJECT_DIR$/generate_select_repo.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +17,8 @@
       <file leaf-file-name="generate_select_repo.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generate_select_repo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="71" column="118" lean-forward="false" selection-start-line="71" selection-start-column="118" selection-end-line="71" selection-end-column="118" />
+            <state relative-caret-position="-2434">
+              <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -178,7 +177,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MA-Scripts" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generate_select_repo.py" />
-      <option name="PARAMETERS" value="$USER_HOME$/suite-logs/July13-23uhr10/executions_backup_baseline_July13-23uhr10.json $USER_HOME$/suite-logs/July13-23uhr10/executions_backup_baseline_July13-23uhr10.json July13-23uhr10 generate_plots foo_minmax_training_validation" />
+      <option name="PARAMETERS" value="$USER_HOME$/suite-logs/July13-23uhr10/executions_backup_baseline_July13-23uhr10.json $USER_HOME$/suite-logs/July13-23uhr10/executions_backup_baseline_July13-23uhr10.json July13-23uhr10 generate_plots minmax_baseline_validation" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
@@ -465,8 +464,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/generate_select_repo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="71" column="118" lean-forward="false" selection-start-line="71" selection-start-column="118" selection-end-line="71" selection-end-column="118" />
+        <state relative-caret-position="-2434">
+          <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
