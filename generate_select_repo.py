@@ -87,6 +87,9 @@ for key in all_measurements:
         coefficient = [0.0]
         intercept = [0.0]
 
+    my_dpi = 96
+    plt.figure(figsize=(200 / my_dpi, 150 / my_dpi), dpi=my_dpi)
+
     plt.scatter(xdata, ydata)
     plt.title(key)
     x = np.linspace(0, max_card, 100)
@@ -97,7 +100,8 @@ for key in all_measurements:
     from os.path import expanduser
     home = expanduser("~")
 
-    plt.savefig(home + '/suite-logs-thor-validation-' + sys.argv[2] + '/' + sys.argv[2] + '-' + key + '.png')
+
+    plt.savefig(home + '/Google Drive/suite-logs/' + sys.argv[2] +  '/' + sys.argv[2] + '-' + key + '.png', dpi=my_dpi)
     plt.close()
 
     all_measurements[key]['coefficient'] = coefficient
