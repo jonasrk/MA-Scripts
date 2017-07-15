@@ -144,7 +144,7 @@ def read_and_process_json(file, print_repository):
                 s = s + "lin"
             elif error_sum_minmax == min([error_sum_lin, error_sum_log, error_sum_minmax]):
                 s = s + "minmax"
-            print(s + '}')
+            print(s + '"}')
 
     f.close()
 
