@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c44b2d0-2c94-4158-9c99-67d8316dde71" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generate_select_repo.py" afterPath="$PROJECT_DIR$/generate_select_repo.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,10 +17,11 @@
       <file leaf-file-name="generate_select_repo.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generate_select_repo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="129" column="19" lean-forward="false" selection-start-line="129" selection-start-column="19" selection-end-line="129" selection-end-column="19" />
+            <state relative-caret-position="292">
+              <caret line="214" column="66" lean-forward="false" selection-start-line="214" selection-start-column="66" selection-end-line="214" selection-end-column="66" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
+                <element signature="e#1408#3968#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -201,7 +201,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MA-Scripts" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generate_select_repo.py" />
-      <option name="PARAMETERS" value="$USER_HOME$/suite-logs/July13-23uhr10/executions_backup_baseline_July13-23uhr10.json $USER_HOME$/suite-logs/July13-23uhr10/executions_backup_training_July13-23uhr10.json July13-23uhr10 generate_plots TEST_log_training_validation" />
+      <option name="PARAMETERS" value="$USER_HOME$/suite-logs/July13-23uhr10/executions_backup_baseline_July13-23uhr10.json $USER_HOME$/suite-logs/July13-23uhr10/executions_backup_training_July13-23uhr10.json July13-23uhr10 generate_plots TEST_log_training_validation log_and_linear_and_minmax" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
@@ -306,7 +306,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4817073" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4817073" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -328,18 +328,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/generate_select_repo.py</url>
-          <line>136</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/generate_select_repo.py</url>
-          <line>133</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
@@ -351,6 +339,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#1408#3968#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -361,6 +350,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#1408#3968#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -371,6 +361,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#1408#3968#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -395,6 +386,7 @@
           <caret line="90" column="40" lean-forward="false" selection-start-line="90" selection-start-column="40" selection-end-line="90" selection-end-column="40" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#1408#3968#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -405,33 +397,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/suite-logs/executions_backup_baseline_July10-16uhr31.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate_select_repo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate_select_repo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#1408#3968#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -449,6 +415,36 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#1408#3968#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate_select_repo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#1408#3968#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/suite-logs/executions_backup_baseline_July10-16uhr31.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate_select_repo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#1408#3968#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -527,10 +523,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/generate_select_repo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="129" column="19" lean-forward="false" selection-start-line="129" selection-start-column="19" selection-end-line="129" selection-end-column="19" />
+        <state relative-caret-position="292">
+          <caret line="214" column="66" lean-forward="false" selection-start-line="214" selection-start-column="66" selection-end-line="214" selection-end-column="66" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#1408#3968#0" expanded="false" />
           </folding>
         </state>
       </provider>

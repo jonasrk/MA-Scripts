@@ -28,13 +28,14 @@ def read_and_process_json(file, print_repository):
 
     # process every operator key
     for key in all_measurements:
+
         create_this_key = False
 
         xdata = []
         ydata = []
 
-        select_min = sys.float_info.max
-        max = 0.0
+        minimumg_selectivity = sys.float_info.max
+        maximum_selectivity = 0.0
         max_card = 0
 
         # for every measurement of this operator
@@ -72,13 +73,13 @@ def read_and_process_json(file, print_repository):
                 selectivity = 1.0 * ((out_lower_sum * out_upper_sum)**(1/2)) / ((in_lower_sum * in_upper_sum)**(1/2)  )
 
                 # store min an max selectivity for minmax algorithm
-                if selectivity < select_min:
+                if selectivity < minimumg_selectivity:
                     create_this_key = True
-                    select_min = selectivity
-                if selectivity > max:
-                    max = selectivity
+                    minimumg_selectivity = selectivity
+                if selectivity > maximum_selectivity:
+                    maximum_selectivity = selectivity
 
-                # calculate geometric mean selectivity for linear regression learning
+                # calculate geometric mean selectivity for regression learning
                 xdata.append((in_lower_sum * in_upper_sum)**(1/2)) # TODO JRK: geometric mean right choice? better distinct lower and upper?
                 if (in_lower_sum * in_upper_sum)**(1/2) > max_card:
                     max_card = (in_lower_sum * in_upper_sum)**(1/2)
@@ -87,11 +88,10 @@ def read_and_process_json(file, print_repository):
 
         all_measurements[key]['xdata'] = xdata
         all_measurements[key]['ydata'] = ydata
-        all_measurements[key]['min'] = select_min
-        all_measurements[key]['max'] = max
+        all_measurements[key]['min'] = minimumg_selectivity
+        all_measurements[key]['max'] = maximum_selectivity
 
         # linear regression
-
         xdata = np.array(xdata)
         ydata = np.array(ydata)
 
@@ -109,77 +109,49 @@ def read_and_process_json(file, print_repository):
         all_measurements[key]['intercept'] = intercept
 
         # log curve fit
-
         params, residuals, rank, singular_values, rcond = np.polyfit(np.log(xdata), ydata, 1, full=True)
-        error_sum_log = 0
-        for i in range(0, len(xdata)):
-            y_val = params[0] * np.log(xdata[i]) + params[1]
-            error = (y_val - ydata[i]) ** 2
-            error_sum_log = error_sum_log + error
 
-        error_sum_lin = 0
-        for i in range(0, len(xdata)):
-            y_val = xdata[i] * all_measurements[key]['coefficient'] + all_measurements[key]['intercept']
-            error = (y_val - ydata[i]) ** 2
-            error_sum_lin = error_sum_lin + error
+        all_measurements[key]['log_coeff'] = params[0]
+        all_measurements[key]['log_intercept'] = params[1]
 
-        error_sum_minmax = 0
+        def calculate_error_sum(error_sum, y1, y2):
+            error = (y1 - y2) ** 2
+            return error_sum + error
+
+        # calculate errors for all algorithms
+        error_sum_log, error_sum_lin, error_sum_minmax = 0, 0, 0
         for i in range(0, len(xdata)):
-            y_val = all_measurements[key]['min']
-            error = (y_val - ydata[i]) ** 2
-            exp = 3
-            error_sum_minmax = error_sum_minmax + error / (2**exp)
-            y_val = all_measurements[key]['max']
-            error = (y_val - ydata[i]) ** 2
-            error_sum_minmax = error_sum_minmax + error / (2**exp)
+            error_sum_log = calculate_error_sum(error_sum_log, params[0] * np.log(xdata[i]) + params[1], ydata[i])
+            error_sum_lin = calculate_error_sum(error_sum_lin, xdata[i] * all_measurements[key]['coefficient'] + all_measurements[key]['intercept'], ydata[i])
+            error_sum_minmax = calculate_error_sum(error_sum_minmax, all_measurements[key]['min'], ydata[i])
+            error_sum_minmax = calculate_error_sum(error_sum_minmax, all_measurements[key]['max'], ydata[i])
+
+
+
+        s = (key + " = {" + '  "p":1, ' +
+            '  "lower":' + str(minimumg_selectivity) + ',' +
+            '  "upper":' + str(maximum_selectivity) +
+            ', "coeff":' + str(all_measurements[key]['coefficient'][0]) +
+            ', "intercept":' + str(all_measurements[key]['intercept']) +
+            ', "log_coeff":' + str(params[0]) +
+            ', "log_intercept":' + str(params[1]) +
+            ', "best": "')
 
         if create_this_key and print_repository:
             if error_sum_log == min([error_sum_lin[0], error_sum_log, error_sum_minmax]):
-                print(key +
-                      " = {" + '  "p":1, ' +
-                      '  "lower":' + str(select_min) + ',' +
-                      '  "upper":' + str(max) +
-                      ', "coeff":' + str(all_measurements[key]['coefficient'][0]) +
-                      ', "intercept":' + str(all_measurements[key]['intercept']) +
-                      ', "log_coeff":' + str(params[0]) +
-                      ', "log_intercept":' + str(params[1]) +
-                      ', "best": "log"' +
-                      '}')
-
+                s = s + "log"
             elif error_sum_lin == min([error_sum_lin, error_sum_log, error_sum_minmax]):
-                print(key +
-                      " = {" + '  "p":1, ' +
-                      '  "lower":' + str(select_min) + ',' +
-                      '  "upper":' + str(max) +
-                      ', "coeff":' + str(all_measurements[key]['coefficient'][0]) +
-                      ', "intercept":' + str(all_measurements[key]['intercept']) +
-                      ', "log_coeff":' + str(params[0]) +
-                      ', "log_intercept":' + str(params[1]) +
-                      ', "best": "lin"' +
-                      '}')
-
+                s = s + "lin"
             elif error_sum_minmax == min([error_sum_lin, error_sum_log, error_sum_minmax]):
-                print(key +
-                      " = {" + '  "p":1, ' +
-                      '  "lower":' + str(select_min) + ',' +
-                      '  "upper":' + str(max) +
-                      ', "coeff":' + str(all_measurements[key]['coefficient'][0]) +
-                      ', "intercept":' + str(all_measurements[key]['intercept']) +
-                      ', "log_coeff":' + str(params[0]) +
-                      ', "log_intercept":' + str(params[1]) +
-                      ', "best": "minmax"' +
-                      '}')
-
-
-
+                s = s + "minmax"
+            print(s + '}')
 
     f.close()
-
 
     return all_measurements
 
 
-def execute_generate_plots(date_id, file_identifier, plot_type):
+def execute_generate_plots(date_id, file_identifier, plot_type, all_measurements1, all_measurements2):
     import matplotlib.pyplot as plt
     import csv
 
@@ -196,14 +168,15 @@ def execute_generate_plots(date_id, file_identifier, plot_type):
 
             # the validation data
             ax.scatter(all_measurements1[key]['xdata'], all_measurements1[key]['ydata'], c="blue", marker='+')
-            default_estimator_x = []
-            default_estimator_y = []
 
             # baseline estimates
+            default_estimator_x = []
+            default_estimator_y = []
             with open('/Users/jonas/Google Drive/suite-logs/' + date_id + '/est_cards_baseline-' + date_id + '.csv',
                       'rt') as csvfile:
                 spamreader = csv.reader(csvfile, delimiter=';', quotechar='|')
                 for row in spamreader:
+                    # read the baseline estimates to calculate the baseline selectivities
                     if (row[1].split('-')[0] == key):
                         default_estimator_x.append(
                             (int(row[2].replace(',', '')) * int(row[3].replace(',', ''))) ** (1 / 2))
@@ -212,35 +185,35 @@ def execute_generate_plots(date_id, file_identifier, plot_type):
                             (int(row[2].replace(',', '')) * int(row[3].replace(',', ''))) ** (1 / 2))
                         default_estimator_y.append(int(row[6].replace(',', '')) / int(row[3].replace(',', '')) * 1.0)
             csvfile.close()
+
             ax.scatter(default_estimator_x, default_estimator_y, c="green", marker=(3, 2))
 
             # max value of x axis for function plotting
             max_baseline = 0
             if len(default_estimator_x) > 0:
                 max_baseline = max(default_estimator_x)
-            max_card = max([all_measurements2[key]['max_card'], all_measurements1[key]['max_card']]) #, max_baseline])
 
-            # ax.set_xscale('log')
+            max_card = max([all_measurements2[key]['max_card'], all_measurements1[key]['max_card'], max_baseline])
+
+            ax.set_xscale('log')
             plt.xlim([0, max_card])
 
-            if plot_type == "linear":
+            if "linear" in plot_type:
                 # the linear function estimator
                 x = np.linspace(0, max_card, 100)
                 y = x * all_measurements2[key]['coefficient'] + all_measurements2[key]['intercept']
                 plt.plot(x, y, "r--")
-            elif plot_type == "minmax":
+            if "minmax" in plot_type:
                 x = np.linspace(0, max_card, 100)
                 y = 100 * [all_measurements2[key]['min']]
                 plt.plot(x, y, "r--")
                 x = np.linspace(0, max_card, 100)
                 y = 100 * [all_measurements2[key]['max']]
                 plt.plot(x, y, "r--")
-            # elif plot_type == "log":
-
-
-
-
-                # plt.plot(x, y, "r--")
+            if "log" in plot_type:
+                x = np.linspace(0.0001, max_card, 100)
+                y = all_measurements2[key]['log_coeff'] * np.log(x) + all_measurements2[key]['log_intercept']
+                plt.plot(x, y, "r--")
 
             # save image file
             from os.path import expanduser
@@ -251,13 +224,24 @@ def execute_generate_plots(date_id, file_identifier, plot_type):
             plt.close()
 
 
+def main():
 
-# training data
-all_measurements2 = read_and_process_json(file=sys.argv[2], print_repository=True)
+    ## sys.argv[1] : validation data file
+    ## sys.argv[2] : training data file
+    ## sys.argv[3] : date_id
+    ## sys.argv[4] = "generate_plots"
+    ## sys.argv[5] : image file identifier
+    ## sys.argv[6] : can contain log, minmax and linear
 
-generate_plots=sys.argv[4]
+    # training data
+    all_measurements2 = read_and_process_json(file=sys.argv[2], print_repository=True)
 
-if generate_plots == "generate_plots":
-    # baseline / validation data
-    all_measurements1 = read_and_process_json(file=sys.argv[1], print_repository=False)
-    execute_generate_plots(date_id=sys.argv[3], file_identifier=sys.argv[5], plot_type="log")
+    generate_plots = sys.argv[4]
+    if generate_plots == "generate_plots":
+        # baseline / validation data
+        all_measurements1 = read_and_process_json(file=sys.argv[1], print_repository=False)
+        execute_generate_plots(date_id=sys.argv[3], file_identifier=sys.argv[5], plot_type=sys.argv[6], all_measurements1=all_measurements1, all_measurements2=all_measurements2)
+
+
+if __name__ == "__main__":
+    main()
