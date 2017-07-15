@@ -2,6 +2,9 @@ import sys, json
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
+import warnings
+warnings.filterwarnings(action="ignore", module="scipy", message="^internal gelsd")
+
 
 def read_and_process_json(file, print_repository):
     # Read file
@@ -108,8 +111,10 @@ def read_and_process_json(file, print_repository):
         all_measurements[key]['coefficient'] = coefficient
         all_measurements[key]['intercept'] = intercept
 
+
+
         # log curve fit
-        params, residuals, rank, singular_values, rcond = np.polyfit(np.log(xdata), ydata, 1, full=True)
+        params, residuals, rank, singular_values, rcond = np.polyfit(np.log([x if x!=1.0 else 1.0001 for x in xdata]), ydata, 1, full=True)
 
         all_measurements[key]['log_coeff'] = params[0]
         all_measurements[key]['log_intercept'] = params[1]
@@ -140,10 +145,13 @@ def read_and_process_json(file, print_repository):
         if create_this_key and print_repository:
             if error_sum_log == min([error_sum_lin[0], error_sum_log, error_sum_minmax]):
                 s = s + "log"
+                all_measurements[key]['best']="log"
             elif error_sum_lin == min([error_sum_lin, error_sum_log, error_sum_minmax]):
                 s = s + "lin"
+                all_measurements[key]['best'] = "lin"
             elif error_sum_minmax == min([error_sum_lin, error_sum_log, error_sum_minmax]):
                 s = s + "minmax"
+                all_measurements[key]['best'] = "minmax"
             print(s + '"}')
 
     f.close()
@@ -159,7 +167,7 @@ def execute_generate_plots(date_id, file_identifier, plot_type, all_measurements
 
         if all_measurements2[key]['coefficient'] != 0.0: # TODO JRK: Why would it?
             my_dpi = 96
-            plt.figure(figsize=(2000 / my_dpi, 1500 / my_dpi), dpi=my_dpi)
+            plt.figure(figsize=(200 / my_dpi, 150 / my_dpi), dpi=my_dpi)
             plt.title(key)
             ax = plt.gca()
 
@@ -198,19 +206,23 @@ def execute_generate_plots(date_id, file_identifier, plot_type, all_measurements
             ax.set_xscale('log')
             plt.xlim([0, max_card])
 
-            if "linear" in plot_type:
+            best=""
+            if "best"==plot_type:
+                best = all_measurements2[key]['best']
+
+            if "lin" in plot_type or best=="lin":
                 # the linear function estimator
                 x = np.linspace(0, max_card, 100)
                 y = x * all_measurements2[key]['coefficient'] + all_measurements2[key]['intercept']
                 plt.plot(x, y, "r--")
-            if "minmax" in plot_type:
+            if "minmax" in plot_type or best=="minmax":
                 x = np.linspace(0, max_card, 100)
                 y = 100 * [all_measurements2[key]['min']]
                 plt.plot(x, y, "r--")
                 x = np.linspace(0, max_card, 100)
                 y = 100 * [all_measurements2[key]['max']]
                 plt.plot(x, y, "r--")
-            if "log" in plot_type:
+            if "log" in plot_type or best=="log":
                 x = np.linspace(0.0001, max_card, 100)
                 y = all_measurements2[key]['log_coeff'] * np.log(x) + all_measurements2[key]['log_intercept']
                 plt.plot(x, y, "r--")
