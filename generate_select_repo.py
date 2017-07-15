@@ -33,7 +33,7 @@ def read_and_process_json(file, print_repository):
         xdata = []
         ydata = []
 
-        min = sys.float_info.max
+        select_min = sys.float_info.max
         max = 0.0
         max_card = 0
 
@@ -72,9 +72,9 @@ def read_and_process_json(file, print_repository):
                 selectivity = 1.0 * ((out_lower_sum * out_upper_sum)**(1/2)) / ((in_lower_sum * in_upper_sum)**(1/2)  )
 
                 # store min an max selectivity for minmax algorithm
-                if selectivity < min:
+                if selectivity < select_min:
                     create_this_key = True
-                    min = selectivity
+                    select_min = selectivity
                 if selectivity > max:
                     max = selectivity
 
@@ -87,7 +87,7 @@ def read_and_process_json(file, print_repository):
 
         all_measurements[key]['xdata'] = xdata
         all_measurements[key]['ydata'] = ydata
-        all_measurements[key]['min'] = min
+        all_measurements[key]['min'] = select_min
         all_measurements[key]['max'] = max
 
         # linear regression
@@ -108,8 +108,70 @@ def read_and_process_json(file, print_repository):
         all_measurements[key]['coefficient'] = coefficient
         all_measurements[key]['intercept'] = intercept
 
+        # log curve fit
+
+        params, residuals, rank, singular_values, rcond = np.polyfit(np.log(xdata), ydata, 1, full=True)
+        error_sum_log = 0
+        for i in range(0, len(xdata)):
+            y_val = params[0] * np.log(xdata[i]) + params[1]
+            error = (y_val - ydata[i]) ** 2
+            error_sum_log = error_sum_log + error
+
+        error_sum_lin = 0
+        for i in range(0, len(xdata)):
+            y_val = xdata[i] * all_measurements[key]['coefficient'] + all_measurements[key]['intercept']
+            error = (y_val - ydata[i]) ** 2
+            error_sum_lin = error_sum_lin + error
+
+        error_sum_minmax = 0
+        for i in range(0, len(xdata)):
+            y_val = all_measurements[key]['min']
+            error = (y_val - ydata[i]) ** 2
+            exp = 3
+            error_sum_minmax = error_sum_minmax + error / (2**exp)
+            y_val = all_measurements[key]['max']
+            error = (y_val - ydata[i]) ** 2
+            error_sum_minmax = error_sum_minmax + error / (2**exp)
+
         if create_this_key and print_repository:
-            print(key + " = {" + '  "p":1, ' + '  "lower":' + str(min) + ',' + '  "upper":' + str(max) + ', "coeff":' + str(all_measurements[key]['coefficient'][0]) + ', "intercept":' + str(all_measurements[key]['intercept']) + '}')
+            if error_sum_log == min([error_sum_lin[0], error_sum_log, error_sum_minmax]):
+                print(key +
+                      " = {" + '  "p":1, ' +
+                      '  "lower":' + str(select_min) + ',' +
+                      '  "upper":' + str(max) +
+                      ', "coeff":' + str(all_measurements[key]['coefficient'][0]) +
+                      ', "intercept":' + str(all_measurements[key]['intercept']) +
+                      ', "log_coeff":' + str(params[0]) +
+                      ', "log_intercept":' + str(params[1]) +
+                      ', "best": "log"' +
+                      '}')
+
+            elif error_sum_lin == min([error_sum_lin, error_sum_log, error_sum_minmax]):
+                print(key +
+                      " = {" + '  "p":1, ' +
+                      '  "lower":' + str(select_min) + ',' +
+                      '  "upper":' + str(max) +
+                      ', "coeff":' + str(all_measurements[key]['coefficient'][0]) +
+                      ', "intercept":' + str(all_measurements[key]['intercept']) +
+                      ', "log_coeff":' + str(params[0]) +
+                      ', "log_intercept":' + str(params[1]) +
+                      ', "best": "lin"' +
+                      '}')
+
+            elif error_sum_minmax == min([error_sum_lin, error_sum_log, error_sum_minmax]):
+                print(key +
+                      " = {" + '  "p":1, ' +
+                      '  "lower":' + str(select_min) + ',' +
+                      '  "upper":' + str(max) +
+                      ', "coeff":' + str(all_measurements[key]['coefficient'][0]) +
+                      ', "intercept":' + str(all_measurements[key]['intercept']) +
+                      ', "log_coeff":' + str(params[0]) +
+                      ', "log_intercept":' + str(params[1]) +
+                      ', "best": "minmax"' +
+                      '}')
+
+
+
 
     f.close()
 
@@ -173,6 +235,12 @@ def execute_generate_plots(date_id, file_identifier, plot_type):
                 x = np.linspace(0, max_card, 100)
                 y = 100 * [all_measurements2[key]['max']]
                 plt.plot(x, y, "r--")
+            # elif plot_type == "log":
+
+
+
+
+                # plt.plot(x, y, "r--")
 
             # save image file
             from os.path import expanduser
@@ -192,4 +260,4 @@ generate_plots=sys.argv[4]
 if generate_plots == "generate_plots":
     # baseline / validation data
     all_measurements1 = read_and_process_json(file=sys.argv[1], print_repository=False)
-    execute_generate_plots(date_id=sys.argv[3], file_identifier=sys.argv[5], plot_type="linear")
+    execute_generate_plots(date_id=sys.argv[3], file_identifier=sys.argv[5], plot_type="log")
