@@ -19,7 +19,7 @@ function parse_card_est {
          upper=`gzcat $1 | perl -p0e 's/Picked.*//igs' | grep -i cardinality | grep -i -F "$line" | grep -i $3  | tail -1 | sed -e 's/^.*to (//' | sed -e 's/^.*\.\.//' | sed -e 's/, .*//'`
 	     
          if [ $3 = "in0@" ]; then
-            upper1=`gzcat $1 | perl -p0e 's/Picked.*//igs' | grep -i cardinality | grep -i -F "$line" | grep -i in1@  | tail -1 | sed -e 's/^.*to (//' | sed -e 's/\.\..*//'`
+            upper1=`gzcat $1 | perl -p0e 's/Picked.*//igs' | grep -i cardinality | grep -i -F "$line" | grep -i in1@  | tail -1 | sed -e 's/^.*to (//' | sed -e 's/^.*\.\.//' | sed -e 's/, .*//'`
             upper=`echo $upper | sed 's/,//g'`
             upper1=`echo $upper1 | sed 's/,//g'`
             upper=$(($upper+$upper1))

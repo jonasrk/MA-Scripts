@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5c44b2d0-2c94-4158-9c99-67d8316dde71" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generate_select_repo.py" afterPath="$PROJECT_DIR$/generate_select_repo.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/select_repo.txt" afterPath="$PROJECT_DIR$/select_repo.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,11 +18,32 @@
       <file leaf-file-name="generate_select_repo.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generate_select_repo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2434">
-              <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+            <state relative-caret-position="105">
+              <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
+                <element signature="e#1408#3968#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_pydev_execfile.py" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pydevd_frame.py" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydevd_bundle/pydevd_frame.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="772" column="0" lean-forward="false" selection-start-line="772" selection-start-column="0" selection-end-line="772" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -34,6 +56,11 @@
       <find>sys.argv[2]</find>
       <find>.replace(',', '')</find>
       <find>plt</find>
+      <find>min([error_sum_lin[0], error_sum_log, error_sum_minmax])</find>
+      <find>error_sum_log</find>
+      <find>error</find>
+      <find>my\.udf\.wordcount\.reduce \= \{  \&quot;p\&quot;\:1\,   \&quot;lower\&quot;\:0\.000382362439751257\,  \&quot;upper\&quot;\:0\.000382362439751257\, \&quot;coeff\&quot;\:0\.0\, \&quot;intercept\&quot;\:0\.000382362439751\, \&quot;log_coeff\&quot;\:1\.14804999951e\-05\, \&quot;log_intercept\&quot;\:0\.000191181219876\, \&quot;best\&quot;\: \&quot;lin\&quot;\}\nmy\.udf\.tpchq3file\.join2 \= \{  \&quot;p\&quot;\:1\,   \&quot;lower\&quot;\:0\.0022996297553876653\,  \&quot;upper\&quot;\:0\.009080028431635754\, \&quot;coeff\&quot;\:1\.32787487616e\-09\, \&quot;intercept\&quot;\:9\.78897183589e\-05\, \&quot;log_coeff\&quot;\:0\.00482250831255\, \&quot;log_intercept\&quot;\:\-0\.066764373594\, \&quot;best\&quot;\: \&quot;lin\&quot;\}\nmy\.udf\.CrocoPR\.union \= \{  \&quot;p\&quot;\:1\,   \&quot;lower\&quot;\:1\.0\,  \&quot;upper\&quot;\:1\.0\, \&quot;coeff\&quot;\:0\.0\, \&quot;intercept\&quot;\:1\.0\, \&quot;log_coeff\&quot;\:\-2\.07706783423e\-17\, \&quot;log_intercept\&quot;\:1\.0\, \&quot;best\&quot;\: \&quot;lin\&quot;\}\nmy\.udf\.Sindy\.flatmap2 \= \{  \&quot;p\&quot;\:1\,   \&quot;lower\&quot;\:1\.0002391435020845\,  \&quot;upper\&quot;\:1\.0002391435020845\, \&quot;coeff\&quot;\:0\.0\, \&quot;intercept\&quot;\:1\.0002391435\, \&quot;log_coeff\&quot;\:0\.0302882084525\, \&quot;log_intercept\&quot;\:0\.500119571751\, \&quot;best\&quot;\: \&quot;lin\&quot;\}\nmy\.udf\.Sindy\.flatmap1 \= \{  \&quot;p\&quot;\:1\,   \&quot;lower\&quot;\:1\.0113828528336415\,  \&quot;upper\&quot;\:1\.0185925758284942\, \&quot;coeff\&quot;\:\-5\.44263453777e\-10\, \&quot;intercept\&quot;\:1\.01901583645\, \&quot;log_coeff\&quot;\:\-0\.00249277658053\, \&quot;log_intercept\&quot;\:1\.05240476006\, \&quot;best\&quot;\: \&quot;lin\&quot;\}\nmy\.udf\.tpchq3file\.join1 \= \{  \&quot;p\&quot;\:1\,   \&quot;lower\&quot;\:0\.0022675736961451248\,  \&quot;upper\&quot;\:0\.19401901184533518\, \&quot;coeff\&quot;\:1\.21932233464e\-07\, \&quot;intercept\&quot;\:0\.0232922147443\, \&quot;log_coeff\&quot;\:0\.0313021431304\, \&quot;log_intercept\&quot;\:\-0\.282506494462\, \&quot;best\&quot;\: \&quot;log\&quot;\}\nmy\.udf\.CrocoPR\.join1 \= \{  \&quot;p\&quot;\:1\,   \&quot;lower\&quot;\:0\.3747970672951034\,  \&quot;upper\&quot;\:0\.949273087087323\, \&quot;coeff\&quot;\:3\.75060238754e\-08\, \&quot;intercept\&quot;\:0\.484837326486\, \&quot;log_coeff\&quot;\:0\.114705711201\, \&quot;log_intercept\&quot;\:\-0\.962887522641\, \&quot;best\&quot;\: \&quot;log\&quot;\}</find>
+      <find>Unknown field</find>
     </findStrings>
     <replaceStrings>
       <replace>date_id</replace>
@@ -177,7 +204,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MA-Scripts" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generate_select_repo.py" />
-      <option name="PARAMETERS" value="$USER_HOME$/suite-logs/July13-23uhr10/executions_backup_baseline_July13-23uhr10.json $USER_HOME$/suite-logs/July13-23uhr10/executions_backup_baseline_July13-23uhr10.json July13-23uhr10 generate_plots minmax_baseline_validation" />
+      <option name="PARAMETERS" value="$USER_HOME$/suite-logs/July13-23uhr10/executions_backup_baseline_July13-23uhr10.json $USER_HOME$/suite-logs/July13-23uhr10/executions_backup_training_July13-23uhr10.json July13-23uhr10 generate_plots TEST_log_training_validation log_and_linear_and_minmax" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
@@ -282,20 +309,20 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4817073" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4817073" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39939025" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -304,15 +331,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <condition expression="key==&quot;my.udf.wordcount.flatmap&quot;" language="Python" />
-          <url>file://$PROJECT_DIR$/generate_select_repo.py</url>
-          <line>71</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="10" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -323,6 +342,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#1408#3968#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -333,6 +353,18 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#1408#3968#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate_select_repo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#1408#3968#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -357,6 +389,7 @@
           <caret line="90" column="40" lean-forward="false" selection-start-line="90" selection-start-column="40" selection-end-line="90" selection-end-column="40" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#1408#3968#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -367,33 +400,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/suite-logs/executions_backup_baseline_July10-16uhr31.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate_select_repo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate_select_repo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#1408#3968#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -411,6 +418,36 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#1408#3968#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate_select_repo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#1408#3968#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/suite-logs/executions_backup_baseline_July10-16uhr31.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate_select_repo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#1408#3968#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -452,6 +489,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="984" column="41" lean-forward="false" selection-start-line="984" selection-start-column="38" selection-end-line="984" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -462,12 +500,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydevd_bundle/pydevd_frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="772" column="0" lean-forward="false" selection-start-line="772" selection-start-column="0" selection-end-line="772" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/site-packages/numpy/lib/polynomial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="583" column="0" lean-forward="false" selection-start-line="583" selection-start-column="0" selection-end-line="583" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/generate_select_repo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2434">
-          <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        <state relative-caret-position="105">
+          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#1408#3968#0" expanded="false" />
           </folding>
         </state>
       </provider>
