@@ -1,145 +1,858 @@
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaLocalCallbackSink[collect()]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Hotfix]]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollect[convert out@SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaMap[Make page ranks readable]]], InterimStage[T[JavaPageRank[1->1, id=6f46426d]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaDistinct[my.udf.CrocoPR.distinct2-Distinct vertices]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaMap[Add vertex IDs]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaCollect[convert out@JavaMap[Add vertex IDs]]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]] to [InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkCache[convert out@JavaMap[Add vertex IDs]]] to [InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkCollect[convert out@SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaMap[Set target vertex ID]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaCollect[convert out@JavaMap[Set target vertex ID]]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaPageRank[1->1, id=6f46426d]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[JavaPageRank[1->1, id=6f46426d]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaMap[Hotfix]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[JavaPageRank[1->1, id=6f46426d]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaCollect[convert out@JavaMap[Hotfix]]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[JavaPageRank[1->1, id=6f46426d]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkCollectionSource[convert out@JavaMap[Hotfix]]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Hotfix]]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[JavaPageRank[1->1, id=6f46426d]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Hotfix]]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[JavaPageRank[1->1, id=6f46426d]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkCollect[convert out@SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Hotfix]]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollect[convert out@SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[JavaPageRank[1->1, id=6f46426d]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaMap[Make page ranks readable]] to [InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollect[convert out@SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Hotfix]]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[JavaMap[Make page ranks readable]]], InterimStage[T[JavaPageRank[1->1, id=6f46426d]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaLocalCallbackSink[collect()]] to [InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollect[convert out@SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Hotfix]]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[JavaMap[Make page ranks readable]]], InterimStage[T[JavaPageRank[1->1, id=6f46426d]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkMap[Set source vertex ID]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaFilter[Filter comments]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaMap[Parse lines]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaUnionAll[Union links]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaCollect[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkMap[Set source vertex ID]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkCollect[convert out@SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaMap[Set target vertex ID]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaCollect[convert out@JavaMap[Set target vertex ID]]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaPageRank[1->1, id=6f46426d]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[JavaPageRank[1->1, id=6f46426d]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaMap[Hotfix]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[JavaPageRank[1->1, id=6f46426d]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaCollect[convert out@JavaMap[Hotfix]]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[JavaPageRank[1->1, id=6f46426d]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkCollectionSource[convert out@JavaMap[Hotfix]]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Hotfix]]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[JavaPageRank[1->1, id=6f46426d]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Hotfix]]]], InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[JavaPageRank[1->1, id=6f46426d]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkCollect[convert out@SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]] to [InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollect[convert out@SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]], InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Hotfix]]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[JavaPageRank[1->1, id=6f46426d]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaMap[Make page ranks readable]] to [InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollect[convert out@SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]], InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Hotfix]]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[JavaMap[Make page ranks readable]]], InterimStage[T[JavaPageRank[1->1, id=6f46426d]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaLocalCallbackSink[collect()]] to [InterimStage[T[SparkMap[Set source vertex ID]]], InterimStage[T[JavaMap[Set target vertex ID]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[SparkCollect[convert out@SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]]], InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]], InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[SparkCollectionSource[convert out@JavaMap[Hotfix]]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]], InterimStage[T[SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[JavaMap[Make page ranks readable]]], InterimStage[T[JavaPageRank[1->1, id=6f46426d]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaDistinct[my.udf.CrocoPR.distinct2-Distinct vertices]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaMap[Add vertex IDs]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[JavaCollect[convert out@JavaMap[Add vertex IDs]]] to [InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]] to [InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Updated required stages of T[SparkCache[convert out@JavaMap[Add vertex IDs]]] to [InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]], InterimStage[T[JavaFilter[Filter comments]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]], InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]], InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - No separable tasks found in marked stage InterimStage[T[SparkMap[Set source vertex ID]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Separating [T[JavaCollect[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]], T[JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]], T[JavaUnionAll[Union links]], T[JavaFilter[Filter comments]], T[JavaMap[Parse lines]]] from [T[JavaFilter[Filter comments]], T[JavaMap[Parse lines]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]]...
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - No separable tasks found in marked stage InterimStage[T[JavaMap[Set target vertex ID]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - No separable tasks found in marked stage InterimStage[T[JavaMap[Make page ranks readable]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - No separable tasks found in marked stage InterimStage[T[SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - No separable tasks found in marked stage InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - No separable tasks found in marked stage InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - No separable tasks found in marked stage InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - No separable tasks found in marked stage InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - No separable tasks found in marked stage InterimStage[T[SparkCollectionSource[convert out@JavaMap[Hotfix]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - No separable tasks found in marked stage InterimStage[T[SparkCollect[convert out@SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - No separable tasks found in marked stage InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - No separable tasks found in marked stage InterimStage[T[JavaPageRank[1->1, id=6f46426d]]].
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[SparkMap[Set source vertex ID]]]: [T[SparkMap[Set source vertex ID]]]
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]]: [T[JavaFilter[Filter comments]], T[JavaMap[Parse lines]], T[JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]]]
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]: [T[SparkCollect[convert output@SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]], T[SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]]
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[JavaMap[Set target vertex ID]]]: [T[JavaMap[Set target vertex ID]], T[JavaCollect[convert out@JavaMap[Set target vertex ID]]]]
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[JavaMap[Make page ranks readable]]]: [T[JavaLocalCallbackSink[collect()]], T[JavaMap[Make page ranks readable]]]
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]]: [T[SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]]
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]]: [T[SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]], T[SparkCollect[convert out@SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]]]
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]]: [T[SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]]]
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]]: [T[SparkCache[convert out@JavaMap[Add vertex IDs]]], T[SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]]]
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]]: [T[SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]]]
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[SparkCollectionSource[convert out@JavaMap[Hotfix]]]]: [T[SparkCollectionSource[convert out@JavaMap[Hotfix]]]]
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[SparkCollect[convert out@SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]]]: [T[SparkCollect[convert out@SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]]]
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]]]: [T[JavaMap[Add vertex IDs]], T[JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]], T[JavaDistinct[my.udf.CrocoPR.distinct2-Distinct vertices]], T[JavaCollect[convert out@JavaMap[Add vertex IDs]]]]
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[JavaPageRank[1->1, id=6f46426d]]]: [T[JavaMap[Hotfix]], T[JavaPageRank[1->1, id=6f46426d]], T[JavaCollect[convert out@JavaMap[Hotfix]]]]
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.StageAssignmentTraversal - Final stage InterimStage[T[JavaFilter[Filter comments]]]: [T[JavaCollect[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]], T[JavaFilter[Filter comments]], T[JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]], T[JavaUnionAll[Union links]], T[JavaMap[Parse lines]]]
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - >>> Regular operators
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]: (0:00:01.259 .. 0:00:01.390, p=85.50%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaFilter[Filter comments]: (0:00:00.675 .. 0:00:11.172, p=16.24%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaMap[Parse lines]: (0:00:00.129 .. 0:00:11.337, p=14.62%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]: (0:00:00.277 .. 0:00:04.951, p=65.79%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaFlatMap[my.udf.CrocoPR.flatMap-Flatten vertices]: (0:00:00.256 .. 0:00:19.605, p=14.62%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaMap[Hotfix]: (0:00:00.003 .. 0:00:00.789, p=3.66%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaUnionAll[Union links]: (0:00:00.002 .. 0:00:00.002, p=56.25%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaLocalCallbackSink[collect()]: (0:00:00.002 .. 0:00:00.013, p=38.48%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaPageRank[1->1, id=6f46426d]: (0:00:00.123 .. 0:00:11.382, p=32.90%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_001.ttl]: (0:00:00.011 .. 0:00:00.013, p=85.50%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaFilter[Filter comments]: (0:00:00.004 .. 0:00:00.025, p=16.24%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of SparkMap[Set source vertex ID]: (0:00:00.086 .. 0:00:14.078, p=14.62%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaMap[Add vertex IDs]: (0:00:00.003 .. 0:00:00.524, p=7.31%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaMap[Set target vertex ID]: (0:00:00.038 .. 0:00:40.678, p=14.62%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]: (0:00:00.322 .. 0:00:35.035, p=6.25%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaMap[Make page ranks readable]: (0:00:00.003 .. 0:00:00.789, p=3.66%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]: (0:00:00.019 .. 0:00:09.507, p=1.56%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaMap[Parse lines]: (0:00:00.003 .. 0:00:00.025, p=14.62%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaDistinct[my.udf.CrocoPR.distinct2-Distinct vertices]: (0:00:00.111 .. 0:00:08.610, p=65.79%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of SparkJoin[my.udf.CrocoPR.join1-Join source vertex IDs]: (0:00:00.424 .. 0:00:22.144, p=6.25%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - >>> Glue operators
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaCollect[convert out@JavaMap[Set target vertex ID]]: (0:00:00.005 .. 0:00:00.496, p=65.79%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaCollect[convert out@JavaMap[Add vertex IDs]]: (0:00:00.002 .. 0:00:00.231, p=65.79%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of SparkCollectionSource[convert out@JavaMap[Add vertex IDs]]: (0:00:00.004 .. 0:00:02.074, p=76.95%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of SparkCache[convert out@JavaMap[Add vertex IDs]]: (0:00:00.032 .. 0:00:20.724, p=65.79%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaCollect[convert out@JavaMap[Hotfix]]: (0:00:00.002 .. 0:00:00.011, p=16.45%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of SparkCollectionSource[convert out@JavaMap[Hotfix]]: (0:00:00.008 .. 0:00:00.530, p=38.48%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of SparkCollect[convert out@SparkJoin[my.udf.CrocoPR.join3-Join page ranks with vertex IDs]]: (0:00:00.013 .. 0:00:00.143, p=16.45%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of JavaCollect[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]: (0:00:00.008 .. 0:00:00.139, p=65.79%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of SparkCollectionSource[convert out@JavaDistinct[my.udf.CrocoPR.distinct1-Distinct links]]: (0:00:00.052 .. 0:00:01.100, p=76.95%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of SparkCollect[convert output@SparkTextFileSource[Load hdfs://thor01/data/rdf/dbpedia/dbpedia-2016-04/page_links_en_uris_de-0_5.ttl]]: (0:00:00.256 .. 0:00:00.282, p=81.23%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - Estimated execution time of SparkCollect[convert out@SparkJoin[my.udf.CrocoPR.join2-Join target vertex IDs]]: (0:00:00.014 .. 0:00:00.996, p=65.79%)
-DEBUG main org.qcri.rheem.core.optimizer.enumeration.PlanImplementation - >>> Loops
-WARN main org.qcri.rheem.core.profiling.CardinalityRepository - Cardinality repository currently disabled.
-INFO main org.qcri.rheem.core.profiling.ExecutionLog - Curating execution log at /home/jonas.kemper/.rheem/executions.json.
-INFO main org.qcri.rheem.core.api.Job - Accumulated execution time: 0:00:00.000 (0 ms) (effective: 0:00:00.000 (0 ms), overhead: 0:00:00.000 (0 ms))
-INFO main org.qcri.rheem.core.api.Job - Estimated execution time (plan 1): (0:00:08.646 .. 0:03:43.295, p=1.56%)
-INFO main org.qcri.rheem.core.api.Job - Accumulated costs: 0.00 .. 0.00
-INFO main org.qcri.rheem.core.api.Job - Estimated costs (plan 1): (8,646.00..223,295.00 ~ 1.6%) selecitvityKey: 
-INFO main org.qcri.rheem.core.api.Job - Plan metrics: 32 virtual operators, 64 execution operators, 32 alternatives, 2148532224 combinations
-INFO main org.qcri.rheem.core.api.Job - StopWatch results:
-* Optimization                            - 0:00:02.177
-  * Prepare                               - 0:00:00.168
-    * Prune&Isolate                       - 0:00:00.014
-    * Transformations                     - 0:00:00.154
-    * Sanity                              - 0:00:00.000
-  * Cardinality&Load Estimation           - 0:00:01.218
-    * Create c                            - 0:00:01.218
-    * Create CardinalityEstimationManager - 0:00:00.001
-    * Push Estimation                     - 0:00:01.206
-      * Estimate source cardinalities     - 0:00:01.124
-  * Create Initial Execution Plan         - 0:00:00.789
-    * Enumerate                           - 0:00:00.751
-      * Concatenation                     - 0:00:00.510
-        * Channel Conversion              - 0:00:00.477
-      * Prune                             - 0:00:00.193
-    * Pick Best Plan                      - 0:00:00.003
-    * Split Stages                        - 0:00:00.026
-* Execution                               - 0:00:00.006
-  * Execution 0                           - 0:00:00.006
-* Post-processing                         - 0:00:00.005
-  * Log measurements                      - 0:00:00.004
-  * Release Resources                     - 0:00:00.001
-DEBUG Thread-2 org.apache.hadoop.ipc.Client - stopping client from cache: org.apache.hadoop.ipc.Client@c5dc4a2
-DEBUG Thread-2 org.apache.hadoop.ipc.Client - removing client from cache: org.apache.hadoop.ipc.Client@c5dc4a2
-DEBUG Thread-2 org.apache.hadoop.ipc.Client - stopping actual client because no more references remain: org.apache.hadoop.ipc.Client@c5dc4a2
-DEBUG Thread-2 org.apache.hadoop.ipc.Client - Stopping client
-DEBUG IPC Client (1638435724) connection to thor01/172.16.64.55:8020 from jonas.kemper org.apache.hadoop.ipc.Client - IPC Client (1638435724) connection to thor01/172.16.64.55:8020 from jonas.kemper: closed
-DEBUG IPC Client (1638435724) connection to thor01/172.16.64.55:8020 from jonas.kemper org.apache.hadoop.ipc.Client - IPC Client (1638435724) connection to thor01/172.16.64.55:8020 from jonas.kemper: stopped, remaining connections 0
+DEBUG dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Valid locality levels for TaskSet 0.0: ANY
+WARN task-result-getter-2 org.apache.spark.storage.BlockManager - Failed to fetch block from 1 locations. Most recent failure cause:
+java.util.concurrent.ExecutionException: Boxed Error
+	at scala.concurrent.impl.Promise$.resolver(Promise.scala:55)
+	at scala.concurrent.impl.Promise$.scala$concurrent$impl$Promise$$resolveTry(Promise.scala:47)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:244)
+	at scala.concurrent.Promise$class.complete(Promise.scala:55)
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153)
+	at scala.concurrent.Promise$class.failure(Promise.scala:104)
+	at scala.concurrent.impl.Promise$DefaultPromise.failure(Promise.scala:153)
+	at org.apache.spark.network.BlockTransferService$$anon$1.onBlockFetchFailure(BlockTransferService.scala:92)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$RetryingBlockFetchListener.onBlockFetchFailure(RetryingBlockFetcher.java:230)
+	at org.apache.spark.network.shuffle.OneForOneBlockFetcher.failRemainingBlocks(OneForOneBlockFetcher.java:123)
+	at org.apache.spark.network.shuffle.OneForOneBlockFetcher.access$300(OneForOneBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.OneForOneBlockFetcher$ChunkCallback.onFailure(OneForOneBlockFetcher.java:79)
+	at org.apache.spark.network.client.TransportResponseHandler.failOutstandingRequests(TransportResponseHandler.java:107)
+	at org.apache.spark.network.client.TransportResponseHandler.exceptionCaught(TransportResponseHandler.java:134)
+	at org.apache.spark.network.server.TransportChannelHandler.exceptionCaught(TransportChannelHandler.java:82)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:246)
+	at io.netty.channel.AbstractChannelHandlerContext.notifyHandlerException(AbstractChannelHandlerContext.java:737)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:310)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:266)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at org.apache.spark.network.util.TransportFrameDecoder.channelRead(TransportFrameDecoder.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at java.nio.DirectByteBuffer.slice(DirectByteBuffer.java:213)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.nioBuffer(PooledUnsafeDirectByteBuf.java:348)
+	at io.netty.buffer.SlicedByteBuf.nioBuffer(SlicedByteBuf.java:271)
+	at io.netty.buffer.CompositeByteBuf.nioBuffers(CompositeByteBuf.java:1189)
+	at io.netty.buffer.CompositeByteBuf.nioBuffer(CompositeByteBuf.java:1161)
+	at io.netty.buffer.AbstractDerivedByteBuf.nioBuffer(AbstractDerivedByteBuf.java:73)
+	at io.netty.buffer.AbstractByteBuf.nioBuffer(AbstractByteBuf.java:939)
+	at org.apache.spark.network.buffer.NettyManagedBuffer.nioByteBuffer(NettyManagedBuffer.java:45)
+	at org.apache.spark.network.BlockTransferService$$anon$1.onBlockFetchSuccess(BlockTransferService.scala:96)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$RetryingBlockFetchListener.onBlockFetchSuccess(RetryingBlockFetcher.java:206)
+	at org.apache.spark.network.shuffle.OneForOneBlockFetcher$ChunkCallback.onSuccess(OneForOneBlockFetcher.java:72)
+	at org.apache.spark.network.client.TransportResponseHandler.handle(TransportResponseHandler.java:150)
+	at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:106)
+	at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:51)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:266)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at org.apache.spark.network.util.TransportFrameDecoder.channelRead(TransportFrameDecoder.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+WARN dispatcher-event-loop-8 org.apache.spark.HeartbeatReceiver - Removing executor 1 with no recent heartbeats: 173177 ms exceeds timeout 120000 ms
+DEBUG dispatcher-event-loop-15 org.apache.spark.scheduler.TaskSchedulerImpl - parentName: , name: TaskSet_0, runningTasks: 0
+INFO kill-executor-thread org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend - Requesting to kill executor(s) 2
+INFO dag-scheduler-event-loop org.apache.spark.scheduler.DAGScheduler - Executor lost: 2 (epoch 0)
+DEBUG dispatcher-event-loop-15 org.apache.spark.scheduler.TaskSetManager - Valid locality levels for TaskSet 0.0: ANY
+INFO dispatcher-event-loop-0 org.apache.spark.storage.BlockManagerMasterEndpoint - Trying to remove executor 2 from BlockManagerMaster.
+INFO dispatcher-event-loop-0 org.apache.spark.storage.BlockManagerMasterEndpoint - Removing block manager BlockManagerId(2, thor03.hpi.uni-potsdam.de, 35741)
+WARN task-result-getter-2 org.apache.spark.scheduler.TaskSetManager - Lost task 19.0 in stage 0.0 (TID 19, thor04.hpi.uni-potsdam.de): TaskResultLost (result lost from block manager)
+INFO dag-scheduler-event-loop org.apache.spark.storage.BlockManagerMaster - Removed 2 successfully in removeExecutor
+ERROR dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSchedulerImpl - Lost executor 1 on thor02.hpi.uni-potsdam.de: Executor heartbeat timed out after 173177 ms
+DEBUG dag-scheduler-event-loop org.apache.spark.MapOutputTrackerMaster - Increasing epoch to 1
+WARN dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Lost task 27.0 in stage 0.0 (TID 27, thor02.hpi.uni-potsdam.de): ExecutorLostFailure (executor 1 exited caused by one of the running tasks) Reason: Executor heartbeat timed out after 173177 ms
+WARN dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Lost task 13.0 in stage 0.0 (TID 9, thor02.hpi.uni-potsdam.de): ExecutorLostFailure (executor 1 exited caused by one of the running tasks) Reason: Executor heartbeat timed out after 173177 ms
+WARN dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Lost task 18.0 in stage 0.0 (TID 18, thor02.hpi.uni-potsdam.de): ExecutorLostFailure (executor 1 exited caused by one of the running tasks) Reason: Executor heartbeat timed out after 173177 ms
+WARN dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Lost task 6.0 in stage 0.0 (TID 3, thor02.hpi.uni-potsdam.de): ExecutorLostFailure (executor 1 exited caused by one of the running tasks) Reason: Executor heartbeat timed out after 173177 ms
+WARN dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Lost task 20.0 in stage 0.0 (TID 21, thor02.hpi.uni-potsdam.de): ExecutorLostFailure (executor 1 exited caused by one of the running tasks) Reason: Executor heartbeat timed out after 173177 ms
+WARN dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Lost task 29.0 in stage 0.0 (TID 30, thor02.hpi.uni-potsdam.de): ExecutorLostFailure (executor 1 exited caused by one of the running tasks) Reason: Executor heartbeat timed out after 173177 ms
+WARN dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Lost task 11.0 in stage 0.0 (TID 6, thor02.hpi.uni-potsdam.de): ExecutorLostFailure (executor 1 exited caused by one of the running tasks) Reason: Executor heartbeat timed out after 173177 ms
+WARN dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Lost task 24.0 in stage 0.0 (TID 24, thor02.hpi.uni-potsdam.de): ExecutorLostFailure (executor 1 exited caused by one of the running tasks) Reason: Executor heartbeat timed out after 173177 ms
+WARN dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Lost task 2.0 in stage 0.0 (TID 0, thor02.hpi.uni-potsdam.de): ExecutorLostFailure (executor 1 exited caused by one of the running tasks) Reason: Executor heartbeat timed out after 173177 ms
+DEBUG dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Valid locality levels for TaskSet 0.0: NODE_LOCAL, ANY
+WARN dispatcher-event-loop-8 org.apache.spark.HeartbeatReceiver - Removing executor 0 with no recent heartbeats: 173179 ms exceeds timeout 120000 ms
+DEBUG dispatcher-event-loop-15 org.apache.spark.scheduler.TaskSchedulerImpl - parentName: , name: TaskSet_0, runningTasks: 0
+INFO dag-scheduler-event-loop org.apache.spark.scheduler.DAGScheduler - Executor lost: 1 (epoch 1)
+DEBUG task-result-getter-2 org.apache.spark.scheduler.TaskResultGetter - Fetching indirect task result for TID 6
+INFO dispatcher-event-loop-13 org.apache.spark.storage.BlockManagerMasterEndpoint - Trying to remove executor 1 from BlockManagerMaster.
+DEBUG dispatcher-event-loop-15 org.apache.spark.scheduler.TaskSetManager - Valid locality levels for TaskSet 0.0: NODE_LOCAL, ANY
+INFO dispatcher-event-loop-13 org.apache.spark.storage.BlockManagerMasterEndpoint - Removing block manager BlockManagerId(1, thor02.hpi.uni-potsdam.de, 40139)
+INFO dag-scheduler-event-loop org.apache.spark.storage.BlockManagerMaster - Removed 1 successfully in removeExecutor
+DEBUG dag-scheduler-event-loop org.apache.spark.MapOutputTrackerMaster - Increasing epoch to 2
+INFO dag-scheduler-event-loop org.apache.spark.scheduler.DAGScheduler - Host added was in lost list earlier: thor02.hpi.uni-potsdam.de
+INFO dispatcher-event-loop-15 org.apache.spark.scheduler.TaskSetManager - Starting task 2.1 in stage 0.0 (TID 31, thor02.hpi.uni-potsdam.de, partition 2,NODE_LOCAL, 2457 bytes)
+INFO dispatcher-event-loop-15 org.apache.spark.scheduler.TaskSetManager - Starting task 24.1 in stage 0.0 (TID 32, thor01.hpi.uni-potsdam.de, partition 24,NODE_LOCAL, 2457 bytes)
+INFO dispatcher-event-loop-15 org.apache.spark.scheduler.TaskSetManager - Starting task 11.1 in stage 0.0 (TID 33, thor04.hpi.uni-potsdam.de, partition 11,NODE_LOCAL, 2457 bytes)
+INFO dispatcher-event-loop-15 org.apache.spark.scheduler.TaskSetManager - Starting task 18.1 in stage 0.0 (TID 34, thor03.hpi.uni-potsdam.de, partition 18,NODE_LOCAL, 2457 bytes)
+INFO dispatcher-event-loop-15 org.apache.spark.scheduler.TaskSetManager - Starting task 29.1 in stage 0.0 (TID 35, thor02.hpi.uni-potsdam.de, partition 29,NODE_LOCAL, 2457 bytes)
+INFO dispatcher-event-loop-15 org.apache.spark.scheduler.TaskSetManager - Starting task 20.1 in stage 0.0 (TID 36, thor01.hpi.uni-potsdam.de, partition 20,NODE_LOCAL, 2457 bytes)
+INFO dispatcher-event-loop-15 org.apache.spark.scheduler.TaskSetManager - Starting task 6.1 in stage 0.0 (TID 37, thor04.hpi.uni-potsdam.de, partition 6,NODE_LOCAL, 2457 bytes)
+INFO dispatcher-event-loop-15 org.apache.spark.scheduler.TaskSetManager - Starting task 13.1 in stage 0.0 (TID 38, thor03.hpi.uni-potsdam.de, partition 13,NODE_LOCAL, 2457 bytes)
+INFO dispatcher-event-loop-15 org.apache.spark.scheduler.TaskSetManager - Starting task 27.1 in stage 0.0 (TID 39, thor02.hpi.uni-potsdam.de, partition 27,NODE_LOCAL, 2457 bytes)
+INFO dispatcher-event-loop-15 org.apache.spark.scheduler.TaskSetManager - Starting task 19.1 in stage 0.0 (TID 40, thor01.hpi.uni-potsdam.de, partition 19,NODE_LOCAL, 2457 bytes)
+DEBUG dispatcher-event-loop-15 org.apache.spark.scheduler.TaskSetManager - No tasks for locality level NODE_LOCAL, so moving to locality level ANY
+DEBUG task-result-getter-2 org.apache.spark.storage.BlockManager - Getting remote block taskresult_6 as bytes
+ERROR dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSchedulerImpl - Lost executor 0 on thor04.hpi.uni-potsdam.de: Executor heartbeat timed out after 173179 ms
+WARN dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Lost task 6.1 in stage 0.0 (TID 37, thor04.hpi.uni-potsdam.de): ExecutorLostFailure (executor 0 exited caused by one of the running tasks) Reason: Executor heartbeat timed out after 173179 ms
+WARN dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Lost task 0.0 in stage 0.0 (TID 1, thor04.hpi.uni-potsdam.de): ExecutorLostFailure (executor 0 exited caused by one of the running tasks) Reason: Executor heartbeat timed out after 173179 ms
+DEBUG task-result-getter-2 org.apache.spark.storage.BlockManager - Block taskresult_6 not found
+WARN dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Lost task 11.1 in stage 0.0 (TID 33, thor04.hpi.uni-potsdam.de): ExecutorLostFailure (executor 0 exited caused by one of the running tasks) Reason: Executor heartbeat timed out after 173179 ms
+DEBUG dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Valid locality levels for TaskSet 0.0: NODE_LOCAL, ANY
+INFO dag-scheduler-event-loop org.apache.spark.scheduler.DAGScheduler - Executor lost: 0 (epoch 2)
+DEBUG task-result-getter-2 org.apache.spark.scheduler.TaskResultGetter - Fetching indirect task result for TID 27
+WARN dispatcher-event-loop-8 org.apache.spark.HeartbeatReceiver - Removing executor 3 with no recent heartbeats: 173176 ms exceeds timeout 120000 ms
+DEBUG task-result-getter-2 org.apache.spark.storage.BlockManager - Getting remote block taskresult_27 as bytes
+INFO dispatcher-event-loop-19 org.apache.spark.storage.BlockManagerMasterEndpoint - Trying to remove executor 0 from BlockManagerMaster.
+ERROR dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSchedulerImpl - Lost executor 3 on thor01.hpi.uni-potsdam.de: Executor heartbeat timed out after 173176 ms
+INFO dispatcher-event-loop-19 org.apache.spark.storage.BlockManagerMasterEndpoint - Removing block manager BlockManagerId(0, thor04.hpi.uni-potsdam.de, 42815)
+WARN dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Lost task 24.1 in stage 0.0 (TID 32, thor01.hpi.uni-potsdam.de): ExecutorLostFailure (executor 3 exited caused by one of the running tasks) Reason: Executor heartbeat timed out after 173176 ms
+INFO dag-scheduler-event-loop org.apache.spark.storage.BlockManagerMaster - Removed 0 successfully in removeExecutor
+DEBUG task-result-getter-2 org.apache.spark.storage.BlockManager - Block taskresult_27 not found
+WARN dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Lost task 19.1 in stage 0.0 (TID 40, thor01.hpi.uni-potsdam.de): ExecutorLostFailure (executor 3 exited caused by one of the running tasks) Reason: Executor heartbeat timed out after 173176 ms
+DEBUG dag-scheduler-event-loop org.apache.spark.MapOutputTrackerMaster - Increasing epoch to 3
+WARN dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Lost task 20.1 in stage 0.0 (TID 36, thor01.hpi.uni-potsdam.de): ExecutorLostFailure (executor 3 exited caused by one of the running tasks) Reason: Executor heartbeat timed out after 173176 ms
+DEBUG dispatcher-event-loop-8 org.apache.spark.scheduler.TaskSetManager - Valid locality levels for TaskSet 0.0: NODE_LOCAL, ANY
+INFO dag-scheduler-event-loop org.apache.spark.scheduler.DAGScheduler - Executor lost: 3 (epoch 3)
+DEBUG task-result-getter-2 org.apache.spark.scheduler.TaskResultGetter - Fetching indirect task result for TID 30
+INFO dispatcher-event-loop-4 org.apache.spark.storage.BlockManagerMasterEndpoint - Trying to remove executor 3 from BlockManagerMaster.
+DEBUG task-result-getter-2 org.apache.spark.storage.BlockManager - Getting remote block taskresult_30 as bytes
+INFO dispatcher-event-loop-4 org.apache.spark.storage.BlockManagerMasterEndpoint - Removing block manager BlockManagerId(3, thor01.hpi.uni-potsdam.de, 38384)
+WARN dispatcher-event-loop-8 org.apache.spark.rpc.netty.NettyRpcEnv - Ignored message: true
+INFO dag-scheduler-event-loop org.apache.spark.storage.BlockManagerMaster - Removed 3 successfully in removeExecutor
+WARN dispatcher-event-loop-8 org.apache.spark.rpc.netty.NettyRpcEnv - Ignored message: true
+DEBUG task-result-getter-2 org.apache.spark.storage.BlockManager - Block taskresult_30 not found
+WARN dispatcher-event-loop-8 org.apache.spark.rpc.netty.NettyRpcEnv - Ignored message: true
+DEBUG dag-scheduler-event-loop org.apache.spark.MapOutputTrackerMaster - Increasing epoch to 4
+DEBUG task-result-getter-2 org.apache.spark.scheduler.TaskResultGetter - Fetching indirect task result for TID 21
+DEBUG task-result-getter-2 org.apache.spark.storage.BlockManager - Getting remote block taskresult_21 as bytes
+DEBUG task-result-getter-2 org.apache.spark.storage.BlockManager - Block taskresult_21 not found
+DEBUG task-result-getter-2 org.apache.spark.scheduler.TaskResultGetter - Fetching indirect task result for TID 18
+DEBUG task-result-getter-2 org.apache.spark.storage.BlockManager - Getting remote block taskresult_18 as bytes
+DEBUG task-result-getter-2 org.apache.spark.storage.BlockManager - Block taskresult_18 not found
+DEBUG task-result-getter-2 org.apache.spark.scheduler.TaskResultGetter - Fetching indirect task result for TID 3
+DEBUG task-result-getter-2 org.apache.spark.storage.BlockManager - Getting remote block taskresult_3 as bytes
+DEBUG task-result-getter-2 org.apache.spark.storage.BlockManager - Block taskresult_3 not found
+DEBUG task-result-getter-2 org.apache.spark.scheduler.TaskResultGetter - Fetching indirect task result for TID 24
+DEBUG task-result-getter-2 org.apache.spark.storage.BlockManager - Getting remote block taskresult_24 as bytes
+DEBUG task-result-getter-2 org.apache.spark.storage.BlockManager - Block taskresult_24 not found
+ERROR shuffle-client-2 org.apache.spark.network.client.TransportResponseHandler - Still have 2 requests outstanding when connection from thor02.hpi.uni-potsdam.de/172.16.64.56:40139 is closed
+INFO shuffle-client-2 org.apache.spark.network.shuffle.RetryingBlockFetcher - Retrying fetch (1/3) for 1 outstanding blocks after 5000 ms
+INFO shuffle-client-2 org.apache.spark.network.shuffle.RetryingBlockFetcher - Retrying fetch (1/3) for 1 outstanding blocks after 5000 ms
+WARN shuffle-client-0 org.apache.spark.network.server.TransportChannelHandler - Exception in connection from thor01/172.16.64.55:7077
+java.lang.OutOfMemoryError: Java heap space
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethod(Class.java:2128)
+	at java.io.ObjectStreamClass.getInheritableMethod(ObjectStreamClass.java:1442)
+	at java.io.ObjectStreamClass.access$2200(ObjectStreamClass.java:72)
+	at java.io.ObjectStreamClass$2.run(ObjectStreamClass.java:508)
+	at java.io.ObjectStreamClass$2.run(ObjectStreamClass.java:472)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.io.ObjectStreamClass.<init>(ObjectStreamClass.java:472)
+	at java.io.ObjectStreamClass.lookup(ObjectStreamClass.java:369)
+	at java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:598)
+	at java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1630)
+	at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1521)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1781)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:373)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:76)
+	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:109)
+	at org.apache.spark.rpc.netty.NettyRpcEnv$$anonfun$deserialize$1$$anonfun$apply$1.apply(NettyRpcEnv.scala:258)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:58)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:310)
+	at org.apache.spark.rpc.netty.NettyRpcEnv$$anonfun$deserialize$1.apply(NettyRpcEnv.scala:257)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:58)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:256)
+	at org.apache.spark.rpc.netty.NettyRpcHandler.internalReceive(NettyRpcEnv.scala:588)
+	at org.apache.spark.rpc.netty.NettyRpcHandler.receive(NettyRpcEnv.scala:570)
+	at org.apache.spark.network.server.TransportRequestHandler.processRpcRequest(TransportRequestHandler.java:149)
+	at org.apache.spark.network.server.TransportRequestHandler.handle(TransportRequestHandler.java:102)
+	at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:104)
+	at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:51)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+WARN dispatcher-event-loop-1 org.apache.spark.deploy.client.AppClient$ClientEndpoint - Could not connect to thor01:7077: java.lang.OutOfMemoryError: Java heap space
+WARN dispatcher-event-loop-1 org.apache.spark.deploy.client.AppClient$ClientEndpoint - Connection to 172.16.64.55:7077 failed; waiting for master to reconnect...
+WARN dispatcher-event-loop-1 org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend - Disconnected from Spark cluster! Waiting for reconnection...
+WARN shuffle-server-1 org.apache.spark.network.server.TransportChannelHandler - Exception in connection from thor03.hpi.uni-potsdam.de/172.16.64.57:42532
+java.lang.OutOfMemoryError: Java heap space
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethod(Class.java:2128)
+	at java.io.ObjectStreamClass.getInheritableMethod(ObjectStreamClass.java:1442)
+	at java.io.ObjectStreamClass.access$2200(ObjectStreamClass.java:72)
+	at java.io.ObjectStreamClass$2.run(ObjectStreamClass.java:508)
+	at java.io.ObjectStreamClass$2.run(ObjectStreamClass.java:472)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.io.ObjectStreamClass.<init>(ObjectStreamClass.java:472)
+	at java.io.ObjectStreamClass.lookup(ObjectStreamClass.java:369)
+	at java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:598)
+	at java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1630)
+	at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1521)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1781)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:373)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:76)
+	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:109)
+	at org.apache.spark.rpc.netty.NettyRpcEnv$$anonfun$deserialize$1$$anonfun$apply$1.apply(NettyRpcEnv.scala:258)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:58)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:310)
+	at org.apache.spark.rpc.netty.NettyRpcEnv$$anonfun$deserialize$1.apply(NettyRpcEnv.scala:257)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:58)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:256)
+	at org.apache.spark.rpc.netty.NettyRpcHandler.internalReceive(NettyRpcEnv.scala:588)
+	at org.apache.spark.rpc.netty.NettyRpcHandler.receive(NettyRpcEnv.scala:570)
+	at org.apache.spark.network.server.TransportRequestHandler.processRpcRequest(TransportRequestHandler.java:149)
+	at org.apache.spark.network.server.TransportRequestHandler.handle(TransportRequestHandler.java:102)
+	at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:104)
+	at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:51)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+INFO Block Fetch Retry-1 org.apache.spark.network.client.TransportClientFactory - Found inactive connection to thor02.hpi.uni-potsdam.de/172.16.64.56:40139, creating a new one.
+DEBUG Block Fetch Retry-1 org.apache.spark.network.client.TransportClientFactory - Creating new connection to thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+INFO Block Fetch Retry-0 org.apache.spark.network.client.TransportClientFactory - Found inactive connection to thor02.hpi.uni-potsdam.de/172.16.64.56:40139, creating a new one.
+ERROR Block Fetch Retry-1 org.apache.spark.network.shuffle.RetryingBlockFetcher - Exception while beginning fetch of 1 outstanding blocks (after 1 retries)
+java.io.IOException: Failed to connect to thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+DEBUG Block Fetch Retry-0 org.apache.spark.network.client.TransportClientFactory - Creating new connection to thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+INFO Block Fetch Retry-1 org.apache.spark.network.shuffle.RetryingBlockFetcher - Retrying fetch (2/3) for 1 outstanding blocks after 5000 ms
+ERROR Block Fetch Retry-0 org.apache.spark.network.shuffle.RetryingBlockFetcher - Exception while beginning fetch of 1 outstanding blocks (after 1 retries)
+java.io.IOException: Failed to connect to thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+INFO Block Fetch Retry-0 org.apache.spark.network.shuffle.RetryingBlockFetcher - Retrying fetch (2/3) for 1 outstanding blocks after 5000 ms
+INFO Block Fetch Retry-2 org.apache.spark.network.client.TransportClientFactory - Found inactive connection to thor02.hpi.uni-potsdam.de/172.16.64.56:40139, creating a new one.
+DEBUG Block Fetch Retry-2 org.apache.spark.network.client.TransportClientFactory - Creating new connection to thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+ERROR Block Fetch Retry-2 org.apache.spark.network.shuffle.RetryingBlockFetcher - Exception while beginning fetch of 1 outstanding blocks (after 2 retries)
+java.io.IOException: Failed to connect to thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+INFO Block Fetch Retry-2 org.apache.spark.network.shuffle.RetryingBlockFetcher - Retrying fetch (3/3) for 1 outstanding blocks after 5000 ms
+INFO Block Fetch Retry-1 org.apache.spark.network.client.TransportClientFactory - Found inactive connection to thor02.hpi.uni-potsdam.de/172.16.64.56:40139, creating a new one.
+DEBUG Block Fetch Retry-1 org.apache.spark.network.client.TransportClientFactory - Creating new connection to thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+ERROR Block Fetch Retry-1 org.apache.spark.network.shuffle.RetryingBlockFetcher - Exception while beginning fetch of 1 outstanding blocks (after 2 retries)
+java.io.IOException: Failed to connect to thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+INFO Block Fetch Retry-1 org.apache.spark.network.shuffle.RetryingBlockFetcher - Retrying fetch (3/3) for 1 outstanding blocks after 5000 ms
+INFO Block Fetch Retry-0 org.apache.spark.network.client.TransportClientFactory - Found inactive connection to thor02.hpi.uni-potsdam.de/172.16.64.56:40139, creating a new one.
+DEBUG Block Fetch Retry-0 org.apache.spark.network.client.TransportClientFactory - Creating new connection to thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+ERROR Block Fetch Retry-0 org.apache.spark.network.shuffle.RetryingBlockFetcher - Exception while beginning fetch of 1 outstanding blocks (after 3 retries)
+java.io.IOException: Failed to connect to thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+WARN task-result-getter-3 org.apache.spark.storage.BlockManager - Failed to fetch block from 1 locations. Most recent failure cause:
+java.io.IOException: Failed to connect to thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+INFO Block Fetch Retry-2 org.apache.spark.network.client.TransportClientFactory - Found inactive connection to thor02.hpi.uni-potsdam.de/172.16.64.56:40139, creating a new one.
+DEBUG Block Fetch Retry-2 org.apache.spark.network.client.TransportClientFactory - Creating new connection to thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+ERROR Block Fetch Retry-2 org.apache.spark.network.shuffle.RetryingBlockFetcher - Exception while beginning fetch of 1 outstanding blocks (after 3 retries)
+java.io.IOException: Failed to connect to thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+WARN task-result-getter-1 org.apache.spark.storage.BlockManager - Failed to fetch block from 1 locations. Most recent failure cause:
+java.io.IOException: Failed to connect to thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: thor02.hpi.uni-potsdam.de/172.16.64.56:40139
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+WARN kill-executor-thread org.apache.spark.rpc.netty.NettyRpcEndpointRef - Error sending message [message = KillExecutors(app-20170715160442-0028,List(2))] in 1 attempts
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [120 seconds]. This timeout is controlled by spark.rpc.askTimeout
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:48)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:63)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:101)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:77)
+	at org.apache.spark.deploy.client.AppClient.killExecutors(AppClient.scala:318)
+	at org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend.doKillExecutors(SparkDeploySchedulerBackend.scala:178)
+	at org.apache.spark.scheduler.cluster.CoarseGrainedSchedulerBackend.killExecutors(CoarseGrainedSchedulerBackend.scala:512)
+	at org.apache.spark.SparkContext.killAndReplaceExecutor(SparkContext.scala:1499)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3$$anonfun$run$3.apply$mcV$sp(HeartbeatReceiver.scala:206)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1219)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3.run(HeartbeatReceiver.scala:203)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [120 seconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223)
+	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:190)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53)
+	at scala.concurrent.Await$.result(package.scala:190)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
+WARN kill-executor-thread org.apache.spark.rpc.netty.NettyRpcEndpointRef - Error sending message [message = KillExecutors(app-20170715160442-0028,List(2))] in 2 attempts
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [120 seconds]. This timeout is controlled by spark.rpc.askTimeout
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:48)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:63)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:101)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:77)
+	at org.apache.spark.deploy.client.AppClient.killExecutors(AppClient.scala:318)
+	at org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend.doKillExecutors(SparkDeploySchedulerBackend.scala:178)
+	at org.apache.spark.scheduler.cluster.CoarseGrainedSchedulerBackend.killExecutors(CoarseGrainedSchedulerBackend.scala:512)
+	at org.apache.spark.SparkContext.killAndReplaceExecutor(SparkContext.scala:1499)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3$$anonfun$run$3.apply$mcV$sp(HeartbeatReceiver.scala:206)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1219)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3.run(HeartbeatReceiver.scala:203)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [120 seconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223)
+	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:190)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53)
+	at scala.concurrent.Await$.result(package.scala:190)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
+WARN kill-executor-thread org.apache.spark.rpc.netty.NettyRpcEndpointRef - Error sending message [message = KillExecutors(app-20170715160442-0028,List(2))] in 3 attempts
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [120 seconds]. This timeout is controlled by spark.rpc.askTimeout
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:48)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:63)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:101)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:77)
+	at org.apache.spark.deploy.client.AppClient.killExecutors(AppClient.scala:318)
+	at org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend.doKillExecutors(SparkDeploySchedulerBackend.scala:178)
+	at org.apache.spark.scheduler.cluster.CoarseGrainedSchedulerBackend.killExecutors(CoarseGrainedSchedulerBackend.scala:512)
+	at org.apache.spark.SparkContext.killAndReplaceExecutor(SparkContext.scala:1499)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3$$anonfun$run$3.apply$mcV$sp(HeartbeatReceiver.scala:206)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1219)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3.run(HeartbeatReceiver.scala:203)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [120 seconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223)
+	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:190)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53)
+	at scala.concurrent.Await$.result(package.scala:190)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
+ERROR kill-executor-thread org.apache.spark.util.Utils - Uncaught exception in thread kill-executor-thread
+org.apache.spark.SparkException: Error sending message [message = KillExecutors(app-20170715160442-0028,List(2))]
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:118)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:77)
+	at org.apache.spark.deploy.client.AppClient.killExecutors(AppClient.scala:318)
+	at org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend.doKillExecutors(SparkDeploySchedulerBackend.scala:178)
+	at org.apache.spark.scheduler.cluster.CoarseGrainedSchedulerBackend.killExecutors(CoarseGrainedSchedulerBackend.scala:512)
+	at org.apache.spark.SparkContext.killAndReplaceExecutor(SparkContext.scala:1499)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3$$anonfun$run$3.apply$mcV$sp(HeartbeatReceiver.scala:206)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1219)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3.run(HeartbeatReceiver.scala:203)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [120 seconds]. This timeout is controlled by spark.rpc.askTimeout
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:48)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:63)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:101)
+	... 13 more
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [120 seconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223)
+	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:190)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53)
+	at scala.concurrent.Await$.result(package.scala:190)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
+INFO kill-executor-thread org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend - Requesting to kill executor(s) 1
+WARN kill-executor-thread org.apache.spark.rpc.netty.NettyRpcEndpointRef - Error sending message [message = KillExecutors(app-20170715160442-0028,List(1))] in 1 attempts
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [120 seconds]. This timeout is controlled by spark.rpc.askTimeout
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:48)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:63)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:101)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:77)
+	at org.apache.spark.deploy.client.AppClient.killExecutors(AppClient.scala:318)
+	at org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend.doKillExecutors(SparkDeploySchedulerBackend.scala:178)
+	at org.apache.spark.scheduler.cluster.CoarseGrainedSchedulerBackend.killExecutors(CoarseGrainedSchedulerBackend.scala:512)
+	at org.apache.spark.SparkContext.killAndReplaceExecutor(SparkContext.scala:1499)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3$$anonfun$run$3.apply$mcV$sp(HeartbeatReceiver.scala:206)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1219)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3.run(HeartbeatReceiver.scala:203)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [120 seconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223)
+	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:190)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53)
+	at scala.concurrent.Await$.result(package.scala:190)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
+WARN kill-executor-thread org.apache.spark.rpc.netty.NettyRpcEndpointRef - Error sending message [message = KillExecutors(app-20170715160442-0028,List(1))] in 2 attempts
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [120 seconds]. This timeout is controlled by spark.rpc.askTimeout
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:48)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:63)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:101)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:77)
+	at org.apache.spark.deploy.client.AppClient.killExecutors(AppClient.scala:318)
+	at org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend.doKillExecutors(SparkDeploySchedulerBackend.scala:178)
+	at org.apache.spark.scheduler.cluster.CoarseGrainedSchedulerBackend.killExecutors(CoarseGrainedSchedulerBackend.scala:512)
+	at org.apache.spark.SparkContext.killAndReplaceExecutor(SparkContext.scala:1499)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3$$anonfun$run$3.apply$mcV$sp(HeartbeatReceiver.scala:206)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1219)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3.run(HeartbeatReceiver.scala:203)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [120 seconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223)
+	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:190)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53)
+	at scala.concurrent.Await$.result(package.scala:190)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
+WARN kill-executor-thread org.apache.spark.rpc.netty.NettyRpcEndpointRef - Error sending message [message = KillExecutors(app-20170715160442-0028,List(1))] in 3 attempts
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [120 seconds]. This timeout is controlled by spark.rpc.askTimeout
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:48)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:63)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:101)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:77)
+	at org.apache.spark.deploy.client.AppClient.killExecutors(AppClient.scala:318)
+	at org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend.doKillExecutors(SparkDeploySchedulerBackend.scala:178)
+	at org.apache.spark.scheduler.cluster.CoarseGrainedSchedulerBackend.killExecutors(CoarseGrainedSchedulerBackend.scala:512)
+	at org.apache.spark.SparkContext.killAndReplaceExecutor(SparkContext.scala:1499)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3$$anonfun$run$3.apply$mcV$sp(HeartbeatReceiver.scala:206)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1219)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3.run(HeartbeatReceiver.scala:203)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [120 seconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223)
+	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:190)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53)
+	at scala.concurrent.Await$.result(package.scala:190)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
+ERROR kill-executor-thread org.apache.spark.util.Utils - Uncaught exception in thread kill-executor-thread
+org.apache.spark.SparkException: Error sending message [message = KillExecutors(app-20170715160442-0028,List(1))]
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:118)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:77)
+	at org.apache.spark.deploy.client.AppClient.killExecutors(AppClient.scala:318)
+	at org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend.doKillExecutors(SparkDeploySchedulerBackend.scala:178)
+	at org.apache.spark.scheduler.cluster.CoarseGrainedSchedulerBackend.killExecutors(CoarseGrainedSchedulerBackend.scala:512)
+	at org.apache.spark.SparkContext.killAndReplaceExecutor(SparkContext.scala:1499)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3$$anonfun$run$3.apply$mcV$sp(HeartbeatReceiver.scala:206)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1219)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3.run(HeartbeatReceiver.scala:203)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [120 seconds]. This timeout is controlled by spark.rpc.askTimeout
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:48)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:63)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:101)
+	... 13 more
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [120 seconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223)
+	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:190)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53)
+	at scala.concurrent.Await$.result(package.scala:190)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
+INFO kill-executor-thread org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend - Requesting to kill executor(s) 0
+WARN kill-executor-thread org.apache.spark.rpc.netty.NettyRpcEndpointRef - Error sending message [message = KillExecutors(app-20170715160442-0028,List(0))] in 1 attempts
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [120 seconds]. This timeout is controlled by spark.rpc.askTimeout
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:48)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:63)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:101)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:77)
+	at org.apache.spark.deploy.client.AppClient.killExecutors(AppClient.scala:318)
+	at org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend.doKillExecutors(SparkDeploySchedulerBackend.scala:178)
+	at org.apache.spark.scheduler.cluster.CoarseGrainedSchedulerBackend.killExecutors(CoarseGrainedSchedulerBackend.scala:512)
+	at org.apache.spark.SparkContext.killAndReplaceExecutor(SparkContext.scala:1499)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3$$anonfun$run$3.apply$mcV$sp(HeartbeatReceiver.scala:206)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1219)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3.run(HeartbeatReceiver.scala:203)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [120 seconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223)
+	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:190)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53)
+	at scala.concurrent.Await$.result(package.scala:190)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
+WARN kill-executor-thread org.apache.spark.rpc.netty.NettyRpcEndpointRef - Error sending message [message = KillExecutors(app-20170715160442-0028,List(0))] in 2 attempts
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [120 seconds]. This timeout is controlled by spark.rpc.askTimeout
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:48)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:63)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:101)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:77)
+	at org.apache.spark.deploy.client.AppClient.killExecutors(AppClient.scala:318)
+	at org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend.doKillExecutors(SparkDeploySchedulerBackend.scala:178)
+	at org.apache.spark.scheduler.cluster.CoarseGrainedSchedulerBackend.killExecutors(CoarseGrainedSchedulerBackend.scala:512)
+	at org.apache.spark.SparkContext.killAndReplaceExecutor(SparkContext.scala:1499)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3$$anonfun$run$3.apply$mcV$sp(HeartbeatReceiver.scala:206)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1219)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3.run(HeartbeatReceiver.scala:203)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [120 seconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223)
+	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:190)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53)
+	at scala.concurrent.Await$.result(package.scala:190)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
+WARN kill-executor-thread org.apache.spark.rpc.netty.NettyRpcEndpointRef - Error sending message [message = KillExecutors(app-20170715160442-0028,List(0))] in 3 attempts
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [120 seconds]. This timeout is controlled by spark.rpc.askTimeout
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:48)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:63)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:101)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:77)
+	at org.apache.spark.deploy.client.AppClient.killExecutors(AppClient.scala:318)
+	at org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend.doKillExecutors(SparkDeploySchedulerBackend.scala:178)
+	at org.apache.spark.scheduler.cluster.CoarseGrainedSchedulerBackend.killExecutors(CoarseGrainedSchedulerBackend.scala:512)
+	at org.apache.spark.SparkContext.killAndReplaceExecutor(SparkContext.scala:1499)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3$$anonfun$run$3.apply$mcV$sp(HeartbeatReceiver.scala:206)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1219)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3.run(HeartbeatReceiver.scala:203)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [120 seconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223)
+	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:190)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53)
+	at scala.concurrent.Await$.result(package.scala:190)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
+ERROR kill-executor-thread org.apache.spark.util.Utils - Uncaught exception in thread kill-executor-thread
+org.apache.spark.SparkException: Error sending message [message = KillExecutors(app-20170715160442-0028,List(0))]
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:118)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:77)
+	at org.apache.spark.deploy.client.AppClient.killExecutors(AppClient.scala:318)
+	at org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend.doKillExecutors(SparkDeploySchedulerBackend.scala:178)
+	at org.apache.spark.scheduler.cluster.CoarseGrainedSchedulerBackend.killExecutors(CoarseGrainedSchedulerBackend.scala:512)
+	at org.apache.spark.SparkContext.killAndReplaceExecutor(SparkContext.scala:1499)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3$$anonfun$run$3.apply$mcV$sp(HeartbeatReceiver.scala:206)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1219)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3.run(HeartbeatReceiver.scala:203)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [120 seconds]. This timeout is controlled by spark.rpc.askTimeout
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:48)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:63)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:101)
+	... 13 more
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [120 seconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223)
+	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:190)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53)
+	at scala.concurrent.Await$.result(package.scala:190)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
+INFO kill-executor-thread org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend - Requesting to kill executor(s) 3
+WARN kill-executor-thread org.apache.spark.rpc.netty.NettyRpcEndpointRef - Error sending message [message = KillExecutors(app-20170715160442-0028,List(3))] in 1 attempts
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [120 seconds]. This timeout is controlled by spark.rpc.askTimeout
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:48)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:63)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:101)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:77)
+	at org.apache.spark.deploy.client.AppClient.killExecutors(AppClient.scala:318)
+	at org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend.doKillExecutors(SparkDeploySchedulerBackend.scala:178)
+	at org.apache.spark.scheduler.cluster.CoarseGrainedSchedulerBackend.killExecutors(CoarseGrainedSchedulerBackend.scala:512)
+	at org.apache.spark.SparkContext.killAndReplaceExecutor(SparkContext.scala:1499)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3$$anonfun$run$3.apply$mcV$sp(HeartbeatReceiver.scala:206)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1219)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3.run(HeartbeatReceiver.scala:203)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [120 seconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223)
+	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:190)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53)
+	at scala.concurrent.Await$.result(package.scala:190)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
+WARN kill-executor-thread org.apache.spark.rpc.netty.NettyRpcEndpointRef - Error sending message [message = KillExecutors(app-20170715160442-0028,List(3))] in 2 attempts
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [120 seconds]. This timeout is controlled by spark.rpc.askTimeout
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:48)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:63)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:101)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:77)
+	at org.apache.spark.deploy.client.AppClient.killExecutors(AppClient.scala:318)
+	at org.apache.spark.scheduler.cluster.SparkDeploySchedulerBackend.doKillExecutors(SparkDeploySchedulerBackend.scala:178)
+	at org.apache.spark.scheduler.cluster.CoarseGrainedSchedulerBackend.killExecutors(CoarseGrainedSchedulerBackend.scala:512)
+	at org.apache.spark.SparkContext.killAndReplaceExecutor(SparkContext.scala:1499)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3$$anonfun$run$3.apply$mcV$sp(HeartbeatReceiver.scala:206)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1219)
+	at org.apache.spark.HeartbeatReceiver$$anonfun$org$apache$spark$HeartbeatReceiver$$expireDeadHosts$3$$anon$3.run(HeartbeatReceiver.scala:203)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [120 seconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223)
+	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:190)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53)
+	at scala.concurrent.Await$.result(package.scala:190)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
