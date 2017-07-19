@@ -43,7 +43,7 @@ def read_and_process_json(file, print_repository):
 
         # for every measurement of this operator
         for i in range(0, len(all_measurements[key]['in'])):
-            in_lower_sum = 0
+            in_lower_max = 0
             in_upper_sum = 0
             use_measurement = True
 
@@ -55,8 +55,8 @@ def read_and_process_json(file, print_repository):
                     if all_measurements[key]['in'][i][j]['lowerBound'] < 0 or in_upper_sum + \
                             all_measurements[key]['in'][i][j]['upperBound'] < 0:
                         use_measurement = False
-                    in_lower_sum = in_lower_sum + all_measurements[key]['in'][i][j]['lowerBound']
-                    in_upper_sum = in_upper_sum + all_measurements[key]['in'][i][j]['upperBound']
+                    in_lower_max = max(in_lower_max, all_measurements[key]['in'][i][j]['lowerBound'])
+                    in_upper_sum = max(in_upper_sum, all_measurements[key]['in'][i][j]['upperBound'])
             out_lower_sum = 0
             out_upper_sum = 0
 
@@ -73,7 +73,7 @@ def read_and_process_json(file, print_repository):
 
             # calculate selectivity
             if use_measurement:
-                selectivity = 1.0 * ((out_lower_sum * out_upper_sum)**(1/2)) / ((in_lower_sum * in_upper_sum)**(1/2)  )
+                selectivity = 1.0 * ((out_lower_sum * out_upper_sum)**(1/2)) / ((in_lower_max * in_upper_sum)**(1/2)  )
 
                 # store min an max selectivity for minmax algorithm
                 if selectivity < minimumg_selectivity:
@@ -83,9 +83,9 @@ def read_and_process_json(file, print_repository):
                     maximum_selectivity = selectivity
 
                 # calculate geometric mean selectivity for regression learning
-                xdata.append((in_lower_sum * in_upper_sum)**(1/2)) # TODO JRK: geometric mean right choice? better distinct lower and upper?
-                if (in_lower_sum * in_upper_sum)**(1/2) > max_card:
-                    max_card = (in_lower_sum * in_upper_sum)**(1/2)
+                xdata.append((in_lower_max * in_upper_sum)**(1/2)) # TODO JRK: geometric mean right choice? better distinct lower and upper?
+                if (in_lower_max * in_upper_sum)**(1/2) > max_card:
+                    max_card = (in_lower_max * in_upper_sum)**(1/2)
                     all_measurements[key]['max_card'] = max_card
                 ydata.append(selectivity)
 
@@ -159,7 +159,7 @@ def read_and_process_json(file, print_repository):
     return all_measurements
 
 
-def execute_generate_plots(date_id, file_identifier, plot_type, all_measurements1, all_measurements2):
+def execute_generate_plots(date_id, file_identifier, plot_type, all_measurements1, all_measurements2, image_scale):
     import matplotlib.pyplot as plt
     import csv
 
@@ -167,34 +167,43 @@ def execute_generate_plots(date_id, file_identifier, plot_type, all_measurements
 
         if all_measurements2[key]['coefficient'] != 0.0: # TODO JRK: Why would it?
             my_dpi = 96
-            plt.figure(figsize=(200 / my_dpi, 150 / my_dpi), dpi=my_dpi)
-            plt.title(key)
+            plt.figure(figsize=(200 * image_scale / my_dpi, 150 * image_scale / my_dpi), dpi=my_dpi)
+            plt.title("Selectivity profile: " + key)
             ax = plt.gca()
 
             # the training data
-            ax.scatter(all_measurements2[key]['xdata'], all_measurements2[key]['ydata'], c="red", marker=(5, 2))
+            ax.scatter(all_measurements2[key]['xdata'], all_measurements2[key]['ydata'], c="red", marker=(5, 2), s=250, label='Training data')
 
             # the validation data
-            ax.scatter(all_measurements1[key]['xdata'], all_measurements1[key]['ydata'], c="blue", marker='+')
+            ax.scatter(all_measurements1[key]['xdata'], all_measurements1[key]['ydata'], c="blue", marker='+', s=250, label='Validation data')
 
             # baseline estimates
             default_estimator_x = []
             default_estimator_y = []
+            def_est_factor_1 = 0
+            def_est_factor_2 = 0
             with open('/Users/jonas/Google Drive/suite-logs/' + date_id + '/est_cards_baseline-' + date_id + '.csv',
                       'rt') as csvfile:
                 spamreader = csv.reader(csvfile, delimiter=';', quotechar='|')
                 for row in spamreader:
                     # read the baseline estimates to calculate the baseline selectivities
                     if (row[1].split('-')[0] == key):
+
                         default_estimator_x.append(
                             (int(row[2].replace(',', '')) * int(row[3].replace(',', ''))) ** (1 / 2))
                         default_estimator_y.append(int(row[5].replace(',', '')) / int(row[2].replace(',', '')) * 1.0)
+                        def_est_factor_1 = int(row[5].replace(',', '')) / int(row[2].replace(',', '')) * 1.0
+
                         default_estimator_x.append(
                             (int(row[2].replace(',', '')) * int(row[3].replace(',', ''))) ** (1 / 2))
                         default_estimator_y.append(int(row[6].replace(',', '')) / int(row[3].replace(',', '')) * 1.0)
+                        def_est_factor_2 = int(row[6].replace(',', '')) / int(row[3].replace(',', '')) * 1.0
+
             csvfile.close()
 
-            ax.scatter(default_estimator_x, default_estimator_y, c="green", marker=(3, 2))
+
+
+            # ax.scatter(default_estimator_x, default_estimator_y, c="green", marker=(3, 2), s=250, label='Default estimator')
 
             # max value of x axis for function plotting
             max_baseline = 0
@@ -203,8 +212,19 @@ def execute_generate_plots(date_id, file_identifier, plot_type, all_measurements
 
             max_card = max([all_measurements2[key]['max_card'], all_measurements1[key]['max_card'], max_baseline])
 
+
+            x = np.linspace(0, max_card, 100)
+            y = [def_est_factor_1] * 100
+            plt.plot(x, y, "g--", label='Default estimator')
+            x = np.linspace(0, max_card, 100)
+            y = [def_est_factor_2] * 100
+            plt.plot(x, y, "g--")
+
             ax.set_xscale('log')
-            plt.xlim([0, max_card])
+            plt.xlim([0, max_card*1.2])
+            plt.ylim(ymin=0)
+            plt.xlabel("Input cardinality")
+            plt.ylabel("Operator selectivity")
 
             best=""
             if "best"==plot_type:
@@ -214,18 +234,21 @@ def execute_generate_plots(date_id, file_identifier, plot_type, all_measurements
                 # the linear function estimator
                 x = np.linspace(0, max_card, 100)
                 y = x * all_measurements2[key]['coefficient'] + all_measurements2[key]['intercept']
-                plt.plot(x, y, "r--")
+                plt.plot(x, y, "k--", label='"Linear" estimator')
             if "minmax" in plot_type or best=="minmax":
                 x = np.linspace(0, max_card, 100)
                 y = 100 * [all_measurements2[key]['min']]
-                plt.plot(x, y, "r--")
+                plt.plot(x, y, "m--", label='"Minmax" estimator')
                 x = np.linspace(0, max_card, 100)
                 y = 100 * [all_measurements2[key]['max']]
-                plt.plot(x, y, "r--")
+                plt.plot(x, y, "m--")
             if "log" in plot_type or best=="log":
                 x = np.linspace(0.0001, max_card, 100)
                 y = all_measurements2[key]['log_coeff'] * np.log(x) + all_measurements2[key]['log_intercept']
-                plt.plot(x, y, "r--")
+                plt.plot(x, y, "c--", label='"Log function" estimator')
+
+
+            plt.legend(loc='best ', shadow=True, framealpha=1.0, edgecolor='k')
 
             # save image file
             from os.path import expanduser
@@ -244,6 +267,7 @@ def main():
     ## sys.argv[4] = "generate_plots"
     ## sys.argv[5] : image file identifier
     ## sys.argv[6] : can contain log, minmax and linear
+    ## sys.argv[7] : image_scale
 
     # training data
     all_measurements2 = read_and_process_json(file=sys.argv[2], print_repository=True)
@@ -252,7 +276,7 @@ def main():
     if generate_plots == "generate_plots":
         # baseline / validation data
         all_measurements1 = read_and_process_json(file=sys.argv[1], print_repository=False)
-        execute_generate_plots(date_id=sys.argv[3], file_identifier=sys.argv[5], plot_type=sys.argv[6], all_measurements1=all_measurements1, all_measurements2=all_measurements2)
+        execute_generate_plots(date_id=sys.argv[3], file_identifier=sys.argv[5], plot_type=sys.argv[6], all_measurements1=all_measurements1, all_measurements2=all_measurements2, image_scale=int(sys.argv[7]))
 
 
 if __name__ == "__main__":
