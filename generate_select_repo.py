@@ -248,7 +248,7 @@ def execute_generate_plots(date_id, file_identifier, plot_type, all_measurements
                 plt.plot(x, y, "c--", label='"Log function" estimator')
 
 
-            plt.legend(loc='best ', shadow=True, framealpha=1.0, edgecolor='k')
+            plt.legend(loc='best', shadow=True, framealpha=1.0, edgecolor='k')
 
             # save image file
             from os.path import expanduser

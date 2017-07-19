@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c44b2d0-2c94-4158-9c99-67d8316dde71" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generate_select_repo.py" afterPath="$PROJECT_DIR$/generate_select_repo.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +17,21 @@
       <file leaf-file-name="generate_select_repo.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generate_select_repo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="661">
-              <caret line="221" column="0" lean-forward="true" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
+            <state relative-caret-position="71">
+              <caret line="250" column="32" lean-forward="true" selection-start-line="250" selection-start-column="32" selection-end-line="250" selection-end-column="32" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="legend.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python3.4/site-packages/matplotlib/legend.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="325" column="0" lean-forward="false" selection-start-line="325" selection-start-column="0" selection-end-line="325" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -51,6 +60,7 @@
       <find>my\.udf\.wordcount\.reduce \= \{  \&quot;p\&quot;\:1\,   \&quot;lower\&quot;\:0\.000382362439751257\,  \&quot;upper\&quot;\:0\.000382362439751257\, \&quot;coeff\&quot;\:0\.0\, \&quot;intercept\&quot;\:0\.000382362439751\, \&quot;log_coeff\&quot;\:1\.14804999951e\-05\, \&quot;log_intercept\&quot;\:0\.000191181219876\, \&quot;best\&quot;\: \&quot;lin\&quot;\}\nmy\.udf\.tpchq3file\.join2 \= \{  \&quot;p\&quot;\:1\,   \&quot;lower\&quot;\:0\.0022996297553876653\,  \&quot;upper\&quot;\:0\.009080028431635754\, \&quot;coeff\&quot;\:1\.32787487616e\-09\, \&quot;intercept\&quot;\:9\.78897183589e\-05\, \&quot;log_coeff\&quot;\:0\.00482250831255\, \&quot;log_intercept\&quot;\:\-0\.066764373594\, \&quot;best\&quot;\: \&quot;lin\&quot;\}\nmy\.udf\.CrocoPR\.union \= \{  \&quot;p\&quot;\:1\,   \&quot;lower\&quot;\:1\.0\,  \&quot;upper\&quot;\:1\.0\, \&quot;coeff\&quot;\:0\.0\, \&quot;intercept\&quot;\:1\.0\, \&quot;log_coeff\&quot;\:\-2\.07706783423e\-17\, \&quot;log_intercept\&quot;\:1\.0\, \&quot;best\&quot;\: \&quot;lin\&quot;\}\nmy\.udf\.Sindy\.flatmap2 \= \{  \&quot;p\&quot;\:1\,   \&quot;lower\&quot;\:1\.0002391435020845\,  \&quot;upper\&quot;\:1\.0002391435020845\, \&quot;coeff\&quot;\:0\.0\, \&quot;intercept\&quot;\:1\.0002391435\, \&quot;log_coeff\&quot;\:0\.0302882084525\, \&quot;log_intercept\&quot;\:0\.500119571751\, \&quot;best\&quot;\: \&quot;lin\&quot;\}\nmy\.udf\.Sindy\.flatmap1 \= \{  \&quot;p\&quot;\:1\,   \&quot;lower\&quot;\:1\.0113828528336415\,  \&quot;upper\&quot;\:1\.0185925758284942\, \&quot;coeff\&quot;\:\-5\.44263453777e\-10\, \&quot;intercept\&quot;\:1\.01901583645\, \&quot;log_coeff\&quot;\:\-0\.00249277658053\, \&quot;log_intercept\&quot;\:1\.05240476006\, \&quot;best\&quot;\: \&quot;lin\&quot;\}\nmy\.udf\.tpchq3file\.join1 \= \{  \&quot;p\&quot;\:1\,   \&quot;lower\&quot;\:0\.0022675736961451248\,  \&quot;upper\&quot;\:0\.19401901184533518\, \&quot;coeff\&quot;\:1\.21932233464e\-07\, \&quot;intercept\&quot;\:0\.0232922147443\, \&quot;log_coeff\&quot;\:0\.0313021431304\, \&quot;log_intercept\&quot;\:\-0\.282506494462\, \&quot;best\&quot;\: \&quot;log\&quot;\}\nmy\.udf\.CrocoPR\.join1 \= \{  \&quot;p\&quot;\:1\,   \&quot;lower\&quot;\:0\.3747970672951034\,  \&quot;upper\&quot;\:0\.949273087087323\, \&quot;coeff\&quot;\:3\.75060238754e\-08\, \&quot;intercept\&quot;\:0\.484837326486\, \&quot;log_coeff\&quot;\:0\.114705711201\, \&quot;log_intercept\&quot;\:\-0\.962887522641\, \&quot;best\&quot;\: \&quot;log\&quot;\}</find>
       <find>Unknown field</find>
       <find>scatter</find>
+      <find>best</find>
     </findStrings>
     <replaceStrings>
       <replace>date_id</replace>
@@ -282,7 +292,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.70535713" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.70528454" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -560,10 +570,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/lib/python3.4/site-packages/matplotlib/legend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="325" column="0" lean-forward="false" selection-start-line="325" selection-start-column="0" selection-end-line="325" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/generate_select_repo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="221" column="0" lean-forward="true" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
+        <state relative-caret-position="71">
+          <caret line="250" column="32" lean-forward="true" selection-start-line="250" selection-start-column="32" selection-end-line="250" selection-end-column="32" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
