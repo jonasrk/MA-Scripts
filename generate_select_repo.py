@@ -94,65 +94,67 @@ def read_and_process_json(file, print_repository):
         all_measurements[key]['min'] = minimumg_selectivity
         all_measurements[key]['max'] = maximum_selectivity
 
-        # linear regression
-        xdata = np.array(xdata)
-        ydata = np.array(ydata)
+        if len(xdata) > 0 and len(ydata) > 0:
 
-        try:
-            predictor = LinearRegression(n_jobs=-1)
-            predictor.fit(X=[[x] for x in xdata], y=ydata)
+            # linear regression
+            xdata = np.array(xdata)
+            ydata = np.array(ydata)
 
-            coefficient = predictor.coef_
-            intercept = predictor.intercept_
-        except ValueError:
-            coefficient = [0.0]
-            intercept = [0.0]
+            try:
+                predictor = LinearRegression(n_jobs=-1)
+                predictor.fit(X=[[x] for x in xdata], y=ydata)
 
-        all_measurements[key]['coefficient'] = coefficient
-        all_measurements[key]['intercept'] = intercept
+                coefficient = predictor.coef_
+                intercept = predictor.intercept_
+            except ValueError:
+                coefficient = [0.0]
+                intercept = [0.0]
 
-
-
-        # log curve fit
-        params, residuals, rank, singular_values, rcond = np.polyfit(np.log([x if x!=1.0 else 1.0001 for x in xdata]), ydata, 1, full=True)
-
-        all_measurements[key]['log_coeff'] = params[0]
-        all_measurements[key]['log_intercept'] = params[1]
-
-        def calculate_error_sum(error_sum, y1, y2):
-            error = (y1 - y2) ** 2
-            return error_sum + error
-
-        # calculate errors for all algorithms
-        error_sum_log, error_sum_lin, error_sum_minmax = 0, 0, 0
-        for i in range(0, len(xdata)):
-            error_sum_log = calculate_error_sum(error_sum_log, params[0] * np.log(xdata[i]) + params[1], ydata[i])
-            error_sum_lin = calculate_error_sum(error_sum_lin, xdata[i] * all_measurements[key]['coefficient'] + all_measurements[key]['intercept'], ydata[i])
-            error_sum_minmax = calculate_error_sum(error_sum_minmax, all_measurements[key]['min'], ydata[i])
-            error_sum_minmax = calculate_error_sum(error_sum_minmax, all_measurements[key]['max'], ydata[i])
+            all_measurements[key]['coefficient'] = coefficient
+            all_measurements[key]['intercept'] = intercept
 
 
 
-        s = (key + " = {" + '  "p":1, ' +
-            '  "lower":' + str(minimumg_selectivity) + ',' +
-            '  "upper":' + str(maximum_selectivity) +
-            ', "coeff":' + str(all_measurements[key]['coefficient'][0]) +
-            ', "intercept":' + str(all_measurements[key]['intercept']) +
-            ', "log_coeff":' + str(params[0]) +
-            ', "log_intercept":' + str(params[1]) +
-            ', "best": "')
+            # log curve fit
+            params, residuals, rank, singular_values, rcond = np.polyfit(np.log([x if x!=1.0 else 1.0001 for x in xdata]), ydata, 1, full=True)
 
-        if create_this_key and print_repository:
-            if error_sum_log == min([error_sum_lin[0], error_sum_log, error_sum_minmax]):
-                s = s + "log"
-                all_measurements[key]['best']="log"
-            elif error_sum_lin == min([error_sum_lin, error_sum_log, error_sum_minmax]):
-                s = s + "lin"
-                all_measurements[key]['best'] = "lin"
-            elif error_sum_minmax == min([error_sum_lin, error_sum_log, error_sum_minmax]):
-                s = s + "minmax"
-                all_measurements[key]['best'] = "minmax"
-            print(s + '"}')
+            all_measurements[key]['log_coeff'] = params[0]
+            all_measurements[key]['log_intercept'] = params[1]
+
+            def calculate_error_sum(error_sum, y1, y2):
+                error = (y1 - y2) ** 2
+                return error_sum + error
+
+            # calculate errors for all algorithms
+            error_sum_log, error_sum_lin, error_sum_minmax = 0, 0, 0
+            for i in range(0, len(xdata)):
+                error_sum_log = calculate_error_sum(error_sum_log, params[0] * np.log(xdata[i]) + params[1], ydata[i])
+                error_sum_lin = calculate_error_sum(error_sum_lin, xdata[i] * all_measurements[key]['coefficient'] + all_measurements[key]['intercept'], ydata[i])
+                error_sum_minmax = calculate_error_sum(error_sum_minmax, all_measurements[key]['min'], ydata[i])
+                error_sum_minmax = calculate_error_sum(error_sum_minmax, all_measurements[key]['max'], ydata[i])
+
+
+
+            s = (key + " = {" + '  "p":1, ' +
+                '  "lower":' + str(minimumg_selectivity) + ',' +
+                '  "upper":' + str(maximum_selectivity) +
+                ', "coeff":' + str(all_measurements[key]['coefficient'][0]) +
+                ', "intercept":' + str(all_measurements[key]['intercept']) +
+                ', "log_coeff":' + str(params[0]) +
+                ', "log_intercept":' + str(params[1]) +
+                ', "best": "')
+
+            if create_this_key and print_repository:
+                if error_sum_log == min([error_sum_lin[0], error_sum_log, error_sum_minmax]):
+                    s = s + "log"
+                    all_measurements[key]['best']="log"
+                elif error_sum_lin == min([error_sum_lin, error_sum_log, error_sum_minmax]):
+                    s = s + "lin"
+                    all_measurements[key]['best'] = "lin"
+                elif error_sum_minmax == min([error_sum_lin, error_sum_log, error_sum_minmax]):
+                    s = s + "minmax"
+                    all_measurements[key]['best'] = "minmax"
+                print(s + '"}')
 
     f.close()
 
@@ -165,7 +167,7 @@ def execute_generate_plots(date_id, file_identifier, plot_type, all_measurements
 
     for key in all_measurements2: # TODO JRK: This or the other?
 
-        if all_measurements2[key]['coefficient'] != 0.0: # TODO JRK: Why would it?
+        if 'coefficient' in all_measurements2[key] and all_measurements2[key]['coefficient'] != 0.0 and len(all_measurements2[key]['xdata']) > 0 and len(all_measurements2[key]['ydata']) > 0: # TODO JRK: Why would it?
             my_dpi = 96
             plt.figure(figsize=(200 * image_scale / my_dpi, 150 * image_scale / my_dpi), dpi=my_dpi)
             plt.title("Selectivity profile: " + key)

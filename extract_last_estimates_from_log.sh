@@ -12,7 +12,7 @@ function parse_card_est {
             lower1=`gzcat $1 | perl -p0e 's/Picked.*//igs' | grep -i cardinality | grep -i -F "$line" | grep -i in1@  | tail -1 | sed -e 's/^.*to (//' | sed -e 's/\.\..*//'`
             lower=`echo $lower | sed 's/,//g'`
             lower1=`echo $lower1 | sed 's/,//g'`
-            lower=$(($lower+$lower1))
+            lower=$(( lower > lower1 ? lower : lower1 ))
          fi
 
          s=$s$lower
@@ -22,7 +22,7 @@ function parse_card_est {
             upper1=`gzcat $1 | perl -p0e 's/Picked.*//igs' | grep -i cardinality | grep -i -F "$line" | grep -i in1@  | tail -1 | sed -e 's/^.*to (//' | sed -e 's/^.*\.\.//' | sed -e 's/, .*//'`
             upper=`echo $upper | sed 's/,//g'`
             upper1=`echo $upper1 | sed 's/,//g'`
-            upper=$(($upper+$upper1))
+            upper=$(( upper > upper1 ? upper : upper1 ))
          fi
 
 	     s="$s;$upper"
