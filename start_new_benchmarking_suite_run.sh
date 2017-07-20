@@ -70,6 +70,20 @@ if [ $exec_mode = "validate-noexec" ]; then
 
 fi
 
+if [ $exec_mode = "baseline-training-noexec" ]; then
+
+    timeout=$3
+
+    mkdir ~/suite-logs-thor-baseline-$filename
+    cp ~/MA-Scripts/benchmark-thor-blank-noexec-best.properties ~/MA-Scripts/benchmark-thor-baseline-$filename.properties
+    sh ~/MA-Scripts/reoptimizer_benchmark_suite.sh suite-logs-thor-baseline-$filename validation $timeout benchmark-thor-baseline-$filename.properties
+
+    #mkdir ~/suite-logs-thor-training-$filename
+    #cp ~/MA-Scripts/benchmark-thor-blank-noexec-best.properties ~/MA-Scripts/benchmark-thor-training-$filename.properties
+    #sh ~/MA-Scripts/reoptimizer_benchmark_suite.sh suite-logs-thor-training-$filename training $timeout benchmark-thor-training-$filename.properties
+
+fi
+
 if [ $exec_mode = "generate-baseline-and-training-logs" ]; then
 
     timeout=$3
