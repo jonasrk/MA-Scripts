@@ -42,22 +42,22 @@ function parse_card_est {
 
 echo 'dataset;op name;in lower;in upper;in conf;out lower;out upper;out conf'
 for filename in ./SINDY* ; do
-    for operator in 'my.udf.Sindy.filter1' 'my.udf.Sindy.flatmap1' 'my.udf.Sindy.flatmap2' 'my.udf.Sindy.reduceBy1' 'my.udf.Sindy.reduceBy2'; do
+    for operator in 'my.filter' 'my.flatmap' 'my.flatmap' 'my.reduceBy' 'my.reduceBy'; do
     	parse_card_est $filename "$operator" in@
     done
 done
 for filename in ./Croco* ; do
-    for operator in 'my.udf.CrocoPR.distinct1' 'my.udf.CrocoPR.distinct2' 'my.udf.CrocoPR.flatMap'; do
+    for operator in 'my.distinct' 'my.distinct' 'my.flatMap'; do
     	parse_card_est $filename "$operator" in@
     done
 done
 for filename in ./Croco* ; do
-    for operator in 'my.udf.CrocoPR.join1' 'my.udf.CrocoPR.join2' 'my.udf.CrocoPR.join3'; do
+    for operator in 'my.join' 'my.join' 'my.join'; do
     	parse_card_est $filename "$operator" in0@
     done
 done
 for filename in ./KMeans* ; do
-    for operator in 'my.udf.kmeans.flatmap' 'my.udf.kmeans.reduceByKey'; do
+    for operator in 'my.flatmap' 'my.reduceByKey'; do
     	parse_card_est $filename "$operator" in@
     done
 done
@@ -67,17 +67,17 @@ done
 #    done
 #done
 for filename in ./TpcH* ; do
-    for operator in 'my.udf.tpchq3file.filter1' 'my.udf.tpchq3file.filter2' 'my.udf.tpchq3file.filter3' 'my.udf.tpchq3file.reduce'; do
+    for operator in 'my.filter' 'my.filter' 'my.filter' 'my.reduce'; do
     	parse_card_est $filename "$operator" in@
     done
 done
 for filename in ./TpcH* ; do
-    for operator in 'my.udf.tpchq3file.join1' 'my.udf.tpchq3file.join2'; do
+    for operator in 'my.join' 'my.join'; do
     	parse_card_est $filename "$operator" in0@
     done
 done
 for filename in ./Wordcount* ; do
-    for operator in 'my.udf.wordcount.filter' 'my.udf.wordcount.flatmap' 'my.udf.wordcount.reduce'; do
+    for operator in 'my.filter' 'my.flatmap' 'my.reduce'; do
     	parse_card_est $filename "$operator" in@
     done
 done

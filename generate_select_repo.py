@@ -20,7 +20,7 @@ def read_and_process_json(file, print_repository):
         for execGroup in parsed['execGroups']:
             if ('selectivityKey' in execGroup['ctx']):
                 selectivityKey = execGroup['ctx']['selectivityKey']
-                if ('my.udf.' in selectivityKey):
+                if ('my.' in selectivityKey):
                     key = selectivityKey.split('-')[0]
                     if key not in all_measurements:
                         all_measurements[key] = {}
